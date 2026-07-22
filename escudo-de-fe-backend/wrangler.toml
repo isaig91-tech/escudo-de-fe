@@ -1,0 +1,12 @@
+name = "escudo-de-fe-backend"
+main = "worker.js"
+compatibility_date = "2024-09-01"
+
+[[kv_namespaces]]
+binding = "ESCUDO_KV"
+id = "wrangler kv namespace create ESCUDO_KV"
+
+[vars]
+ALLOWED_ORIGIN = "*"
+DAILY_LIMIT = "500"
+PER_IP_LIMIT = "15"

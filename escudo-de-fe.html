@@ -1,0 +1,1440 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Escudo de Fe â€” ApologÃ©tica CatÃ³lica</title>
+<meta name="theme-color" content="#1a1a2e">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Escudo de Fe">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#c9a227;--gold-light:#e8c66a;--gold-pale:#fdf6e3;--navy:#1a1a2e;--navy2:#16213e;--cream:#f8f5ef;--text:#1c1c1c;--text2:#555;--text3:#888;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--card:#ffffff;--bg:#f4f1eb;--radius:14px;--radius-sm:9px;--green:#0f6e56;--green-bg:#e1f5ee;--purple:#3c3489;--purple-bg:#eeedfe;--red:#a32d2d;--orange:#c45e00;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;color:var(--text);}
+.app{display:flex;flex-direction:column;height:100dvh;max-width:480px;margin:0 auto;background:var(--cream);position:relative;overflow:hidden;box-shadow:0 0 40px rgba(0,0,0,0.4);}
+.header{background:var(--navy);color:#fff;padding:13px 15px 11px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.header-left{display:flex;align-items:center;gap:10px;}
+.logo{width:37px;height:37px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:19px;color:var(--navy);font-weight:600;}
+.app-name{font-family:'Cinzel',serif;font-size:16px;color:#fff;letter-spacing:.02em;}
+.app-tagline{font-size:10px;color:rgba(255,255,255,.45);margin-top:1px;}
+.header-btns{display:flex;gap:6px;align-items:center;}
+.hbtn{background:rgba(255,255,255,.08);border:.5px solid rgba(255,255,255,.18);border-radius:8px;color:var(--gold);font-size:11px;padding:5px 8px;cursor:pointer;display:flex;align-items:center;gap:4px;font-family:'Inter',sans-serif;transition:background .15s;white-space:nowrap;}
+.hbtn:hover{background:rgba(255,255,255,.15);}
+.hbtn.premium{background:linear-gradient(135deg,#c9a22720,#e8c66a20);border-color:var(--gold);}
+.tabs{background:var(--navy2);display:flex;border-bottom:1px solid rgba(255,255,255,.06);flex-shrink:0;}
+.tab{flex:1;padding:8px 2px 7px;font-size:9.5px;color:rgba(255,255,255,.38);text-align:center;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;font-family:'Inter',sans-serif;}
+.tab svg{display:block;margin:0 auto 3px;width:17px;height:17px;}
+.tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+.screens{flex:1;overflow:hidden;position:relative;}
+.screen{display:none;height:100%;flex-direction:column;overflow:hidden;}
+.screen.active{display:flex;}
+
+/* â”€â”€ DEBATE â”€â”€ */
+.chat-area{flex:1;overflow-y:auto;padding:13px 13px 8px;display:flex;flex-direction:column;gap:11px;scroll-behavior:smooth;}
+.empty-state{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px 20px;gap:8px;color:var(--text3);}
+.empty-cross{font-size:50px;color:var(--gold);opacity:.7;margin-bottom:2px;}
+.empty-state h3{font-family:'Cinzel',serif;font-size:14px;color:var(--navy);}
+.empty-state p{font-size:12px;line-height:1.6;max-width:260px;}
+.msg-wrap{display:flex;flex-direction:column;gap:3px;}
+.msg-label{font-size:10px;color:var(--text3);display:flex;align-items:center;gap:4px;}
+.msg-label svg{width:11px;height:11px;}
+.bubble{border-radius:11px;padding:9px 12px;font-size:13px;line-height:1.55;}
+.bubble.opponent{background:#e2e2e2;color:#1a1a1a;border-radius:4px 11px 11px 11px;max-width:88%;}
+.bubble.thinking{background:var(--navy);color:rgba(255,255,255,.6);font-size:12px;border-radius:11px 11px 11px 4px;max-width:80%;animation:pth 1.4s infinite;}
+@keyframes pth{0%,100%{opacity:.6}50%{opacity:1}}
+.response-card{background:var(--card);border-radius:var(--radius);border:.5px solid var(--border2);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.rc-header{background:var(--navy);padding:9px 13px;display:flex;align-items:center;gap:7px;}
+.rc-header span{font-family:'Cinzel',serif;font-size:12px;color:var(--gold);}
+.rc-body{padding:11px 13px;display:flex;flex-direction:column;gap:8px;}
+.verse-block{background:var(--gold-pale);border-left:3px solid var(--gold);padding:8px 10px;border-radius:0 7px 7px 0;}
+.verse-text{font-size:12px;color:#5c4a00;font-style:italic;line-height:1.5;font-family:'Lora',serif;}
+.verse-ref{font-size:11px;font-weight:600;color:#854f0b;font-style:normal;margin-top:2px;}
+.arg-text{font-size:12.5px;color:var(--text2);line-height:1.65;}
+.badges{display:flex;gap:4px;flex-wrap:wrap;}
+.badge{font-size:10px;padding:2px 7px;border-radius:20px;font-weight:500;}
+.badge.cic{background:var(--green-bg);color:var(--green);}
+.badge.ap{background:var(--purple-bg);color:var(--purple);}
+.badge.warn{background:#fff3cd;color:#856404;}
+.card-acts{display:flex;gap:5px;padding-top:6px;border-top:.5px solid var(--border);margin-top:1px;}
+.cact{flex:1;font-size:11px;padding:6px 4px;border-radius:8px;border:.5px solid var(--border2);background:var(--bg);color:var(--text2);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:4px;font-family:'Inter',sans-serif;transition:background .15s;}
+.cact:hover{background:#ece8e0;}
+.cact svg{width:13px;height:13px;}
+.debate-footer{padding:9px 13px 13px;background:var(--cream);border-top:.5px solid var(--border2);flex-shrink:0;display:flex;flex-direction:column;gap:7px;}
+.mode-row{display:flex;gap:5px;}
+.mode-btn{flex:1;padding:6px 3px;border-radius:8px;font-size:10.5px;font-weight:500;border:.5px solid var(--border2);background:var(--card);color:var(--text2);cursor:pointer;text-align:center;transition:all .15s;font-family:'Inter',sans-serif;}
+.mode-btn.active{background:var(--navy);color:var(--gold);border-color:var(--navy);}
+.listen-status{display:none;align-items:center;gap:8px;font-size:11px;color:#854f0b;}
+.listen-status.visible{display:flex;}
+.wave{display:flex;gap:3px;align-items:center;flex-shrink:0;}
+.wave span{width:3px;border-radius:2px;background:var(--gold);animation:wv .8s ease-in-out infinite;}
+.wave span:nth-child(1){height:6px;animation-delay:0s}.wave span:nth-child(2){height:14px;animation-delay:.1s}.wave span:nth-child(3){height:10px;animation-delay:.2s}.wave span:nth-child(4){height:18px;animation-delay:.3s}.wave span:nth-child(5){height:8px;animation-delay:.4s}
+@keyframes wv{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.7)}}
+.mic-btn{width:100%;padding:12px;background:var(--gold);color:var(--navy);border:none;border-radius:11px;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;font-family:'Cinzel',serif;letter-spacing:.03em;transition:background .2s,transform .1s;}
+.mic-btn:active{transform:scale(.98);}
+.mic-btn.recording{background:var(--red);color:#fff;animation:prec 1.5s infinite;}
+.mic-btn svg{width:17px;height:17px;}
+@keyframes prec{0%,100%{box-shadow:0 0 0 0 rgba(163,45,45,.35)}50%{box-shadow:0 0 0 10px rgba(163,45,45,0)}}
+.premium-lock{background:linear-gradient(135deg,#fdf6e3,#fff8e6);border:.5px solid var(--gold-light);border-radius:11px;padding:14px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:7px;}
+.premium-lock p{font-size:12px;color:#5c4a00;line-height:1.5;}
+.premium-lock .unlock-btn{background:var(--gold);color:var(--navy);border:none;border-radius:9px;padding:8px 20px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Cinzel',serif;}
+
+/* â”€â”€ BIBLIA â”€â”€ */
+.bible-area{flex:1;overflow-y:auto;display:flex;flex-direction:column;}
+.bible-top{padding:12px 13px 8px;display:flex;flex-direction:column;gap:8px;flex-shrink:0;}
+.bible-version-row{display:flex;gap:5px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none;}
+.bible-version-row::-webkit-scrollbar{display:none;}
+.bv-btn{flex-shrink:0;padding:5px 11px;border-radius:20px;border:.5px solid var(--border2);font-size:11px;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif;background:var(--card);color:var(--text2);transition:all .15s;white-space:nowrap;}
+.bv-btn.active{background:var(--navy);color:var(--gold);border-color:var(--navy);}
+.bv-btn.warn-version{border-color:#ffc107;color:#856404;background:#fff9e6;}
+.bible-search-wrap{background:var(--card);border:.5px solid var(--border2);border-radius:10px;display:flex;align-items:center;gap:7px;padding:9px 12px;}
+.bible-search-wrap svg{width:17px;height:17px;color:var(--text3);flex-shrink:0;}
+.bible-search-wrap input{border:none;background:transparent;flex:1;font-size:13px;color:var(--text);outline:none;font-family:'Inter',sans-serif;}
+.bible-nav{display:flex;gap:6px;align-items:center;padding:0 13px 8px;}
+.bible-select{flex:1;border:.5px solid var(--border2);border-radius:9px;padding:7px 10px;font-size:13px;background:var(--card);color:var(--text);font-family:'Inter',sans-serif;outline:none;cursor:pointer;}
+.bible-content-area{flex:1;overflow-y:auto;padding:4px 13px 16px;}
+.bible-chapter-title{font-family:'Cinzel',serif;font-size:13px;color:var(--navy);margin-bottom:10px;padding-bottom:8px;border-bottom:.5px solid var(--border);}
+.bible-verse-item{display:flex;gap:8px;padding:4px 0;line-height:1.65;}
+.bible-verse-item:hover{background:var(--gold-pale);border-radius:6px;padding:4px 6px;margin:0 -6px;}
+.bv-num{font-size:10px;font-weight:600;color:var(--gold);min-width:20px;padding-top:3px;flex-shrink:0;}
+.bv-text{font-size:13px;color:var(--text);font-family:'Lora',serif;line-height:1.7;}
+.bv-text.search-match{background:#fff3cd;border-radius:3px;padding:0 2px;}
+.bible-warn{background:#fff3cd;border:.5px solid #ffc107;border-radius:9px;padding:9px 12px;font-size:11px;color:#856404;line-height:1.5;margin:0 13px 8px;display:none;}
+.bible-warn.visible{display:block;}
+.bible-loading{text-align:center;padding:30px;color:var(--text3);font-size:13px;}
+
+/* â”€â”€ BUSCAR â”€â”€ */
+.buscar-inner{flex:1;overflow-y:auto;padding:13px;display:flex;flex-direction:column;gap:11px;}
+.search-box{display:flex;gap:7px;align-items:center;background:var(--card);border:.5px solid var(--border2);border-radius:10px;padding:9px 12px;}
+.search-box svg{width:17px;height:17px;color:var(--text3);flex-shrink:0;}
+.search-box input{border:none;background:transparent;flex:1;font-size:13px;color:var(--text);outline:none;font-family:'Inter',sans-serif;}
+.chips-label{font-size:10.5px;color:var(--text3);font-weight:500;text-transform:uppercase;letter-spacing:.06em;}
+.chips{display:flex;flex-wrap:wrap;gap:5px;}
+.chip{padding:5px 10px;border-radius:20px;background:var(--card);border:.5px solid var(--border2);font-size:11.5px;color:var(--text2);cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif;}
+.chip:hover,.chip.active-chip{background:var(--navy);color:var(--gold);border-color:var(--navy);}
+.chip.free-chip::after{content:' âœ“';color:var(--green);font-size:10px;}
+.result-card{display:none;background:var(--card);border-radius:var(--radius);border:.5px solid var(--border2);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.result-card.visible{display:block;}
+.result-header{background:var(--navy);padding:10px 14px;}
+.result-header h3{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);}
+.result-body{padding:12px 14px;display:flex;flex-direction:column;gap:8px;}
+.search-loading{display:none;text-align:center;padding:20px;color:var(--text3);font-size:13px;}
+.free-label{font-size:10px;background:var(--green-bg);color:var(--green);padding:2px 8px;border-radius:20px;display:inline-block;font-weight:500;}
+.premium-label{font-size:10px;background:#fff3cd;color:var(--orange);padding:2px 8px;border-radius:20px;display:inline-block;font-weight:500;}
+
+/* â”€â”€ GUARDADOS â”€â”€ */
+.guardados-inner{flex:1;overflow-y:auto;padding:13px;display:flex;flex-direction:column;gap:9px;}
+.saved-item{background:var(--card);border-radius:11px;border:.5px solid var(--border2);padding:11px 13px;display:flex;gap:11px;align-items:flex-start;cursor:pointer;transition:box-shadow .15s;}
+.saved-item:hover{box-shadow:0 2px 10px rgba(0,0,0,.08);}
+.saved-icon{width:35px;height:35px;background:var(--gold-pale);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);}
+.saved-icon svg{width:17px;height:17px;}
+.saved-title{font-size:13px;font-weight:600;color:var(--navy);}
+.saved-preview{font-size:11px;color:var(--text3);margin-top:2px;line-height:1.4;}
+.donate-banner{background:var(--gold-pale);border-radius:12px;border:.5px solid var(--gold-light);padding:14px;text-align:center;display:none;flex-direction:column;align-items:center;gap:7px;}
+.donate-banner p{font-size:12px;color:#5c4a00;line-height:1.5;}
+.donate-banner-btn{background:var(--gold);color:var(--navy);border:none;border-radius:9px;padding:8px 20px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Cinzel',serif;}
+
+/* â”€â”€ AJUSTES â”€â”€ */
+.config-inner{flex:1;overflow-y:auto;padding:13px;display:flex;flex-direction:column;gap:13px;}
+.cg-label{font-size:10.5px;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;font-weight:500;margin-bottom:-5px;}
+.cfg-card{background:var(--card);border-radius:var(--radius);border:.5px solid var(--border2);overflow:hidden;}
+.cfg-row{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;border-bottom:.5px solid var(--border);cursor:pointer;transition:background .1s;}
+.cfg-row:last-child{border-bottom:none;}
+.cfg-row:hover{background:#fafaf7;}
+.cfg-left{display:flex;align-items:center;gap:10px;}
+.cfg-icon{color:var(--gold);flex-shrink:0;}
+.cfg-icon svg{width:19px;height:19px;}
+.cfg-label{font-size:13px;color:var(--text);font-weight:500;}
+.cfg-sub{font-size:11px;color:var(--text3);margin-top:1px;}
+.toggle{width:37px;height:21px;background:#ccc;border-radius:11px;position:relative;cursor:pointer;transition:background .2s;flex-shrink:0;}
+.toggle.on{background:var(--gold);}
+.toggle::after{content:'';position:absolute;width:17px;height:17px;background:#fff;border-radius:50%;top:2px;left:2px;transition:left .18s;box-shadow:0 1px 3px rgba(0,0,0,.2);}
+.toggle.on::after{left:18px;}
+.chev svg{width:15px;height:15px;color:var(--text3);}
+.apikey-section{background:var(--card);border-radius:var(--radius);border:.5px solid var(--border2);padding:13px 14px;display:flex;flex-direction:column;gap:9px;}
+.apikey-label{font-size:12px;color:var(--text2);font-weight:600;}
+.apikey-row{display:flex;gap:6px;}
+.apikey-input{flex:1;background:var(--bg);border:.5px solid var(--border2);border-radius:9px;padding:9px 11px;font-size:13px;color:var(--text);outline:none;font-family:'Inter',sans-serif;transition:border-color .15s;}
+.apikey-input:focus{border-color:var(--gold);}
+.apikey-save{background:var(--navy);color:var(--gold);border:none;border-radius:9px;padding:9px 13px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;}
+.apikey-hint{font-size:11px;color:var(--text3);line-height:1.5;}
+.apikey-hint a{color:var(--gold);}
+.version-note{text-align:center;padding:2px 0 6px;font-size:11px;color:var(--text3);line-height:1.6;}
+
+/* â”€â”€ MODALS â”€â”€ */
+.modal-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;align-items:flex-end;justify-content:center;}
+.modal-backdrop.open{display:flex;}
+.modal-box{background:var(--cream);border-radius:20px 20px 0 0;padding:18px 17px 28px;width:100%;max-width:480px;max-height:85vh;overflow-y:auto;}
+.modal-handle{width:34px;height:4px;background:var(--border2);border-radius:2px;margin:0 auto 15px;}
+.modal-title{font-family:'Cinzel',serif;font-size:15px;color:var(--navy);margin-bottom:13px;display:flex;align-items:center;gap:8px;}
+.modal-title svg{color:var(--gold);width:19px;height:19px;}
+.lang-list{display:flex;flex-direction:column;gap:6px;}
+.lang-item{display:flex;align-items:center;gap:11px;padding:11px 13px;border-radius:10px;border:.5px solid var(--border2);background:var(--card);cursor:pointer;font-size:13px;color:var(--text);transition:all .15s;}
+.lang-item.selected{border-color:var(--gold);background:var(--gold-pale);color:#854f0b;font-weight:500;}
+.lang-flag{font-size:21px;}
+.modal-close{width:100%;margin-top:13px;padding:11px;background:var(--navy);color:var(--gold);border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Cinzel',serif;}
+.donate-opts{display:flex;flex-direction:column;gap:7px;margin-bottom:9px;}
+.donate-opt{display:flex;align-items:center;gap:11px;padding:11px 13px;border-radius:10px;border:.5px solid var(--border2);background:var(--card);cursor:pointer;transition:all .15s;}
+.donate-opt:hover{border-color:var(--gold);background:var(--gold-pale);}
+.do-icon{font-size:23px;}
+.do-name{font-size:14px;font-weight:600;color:var(--navy);}
+.do-desc{font-size:11px;color:var(--text3);}
+.donate-skip{width:100%;padding:9px;background:transparent;border:.5px solid var(--border2);border-radius:9px;color:var(--text3);font-size:13px;cursor:pointer;font-family:'Inter',sans-serif;}
+.toast{position:fixed;bottom:85px;left:50%;transform:translateX(-50%);background:#333;color:#fff;font-size:12px;padding:8px 15px;border-radius:9px;z-index:300;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap;max-width:90vw;text-align:center;}
+.toast.show{opacity:1;}
+.no-speech-warn{background:#fff3cd;border:.5px solid #ffc107;border-radius:9px;padding:9px 12px;font-size:12px;color:#856404;line-height:1.5;display:none;}
+.no-speech-warn.visible{display:block;}
+
+.auth-bar{background:#0f1628;padding:6px 13px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-shrink:0;border-bottom:.5px solid rgba(255,255,255,.06);}
+.auth-avatar{width:25px;height:25px;border-radius:50%;border:1.5px solid var(--gold);object-fit:cover;}
+.auth-initials{width:25px;height:25px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--navy);}
+.auth-name{font-size:11px;color:rgba(255,255,255,.7);max-width:100px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.auth-plan-tag{font-size:9px;padding:1px 6px;border-radius:8px;background:rgba(201,162,39,.18);color:var(--gold);font-weight:700;border:.5px solid rgba(201,162,39,.3);}
+.auth-signin-btn{background:rgba(255,255,255,.07);border:.5px solid rgba(255,255,255,.15);border-radius:7px;color:#fff;font-size:10px;padding:4px 9px;cursor:pointer;display:flex;align-items:center;gap:5px;font-family:Inter,sans-serif;}
+.auth-logout{font-size:10px;color:rgba(255,255,255,.35);cursor:pointer;background:none;border:none;font-family:Inter,sans-serif;padding:3px 5px;}
+.auth-logout:hover{color:rgba(255,255,255,.6);}
+/* Ad modal */
+.ad-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:500;align-items:center;justify-content:center;flex-direction:column;gap:12px;}
+.ad-modal.open{display:flex;}
+.ad-box{background:var(--card);border-radius:16px;width:300px;overflow:hidden;}
+.ad-top{background:var(--bg);padding:7px 13px;font-size:10px;color:var(--text3);display:flex;justify-content:space-between;}
+.ad-body{padding:20px;min-height:180px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;text-align:center;}
+.ad-placeholder{background:var(--bg);border-radius:10px;width:100%;min-height:130px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;padding:16px;}
+.ad-skip-btn{width:100%;padding:11px;background:var(--navy);color:var(--gold);border:none;font-size:12px;font-weight:600;cursor:pointer;font-family:'Cinzel',serif;opacity:.4;transition:opacity .25s;}
+.ad-skip-btn.ready{opacity:1;}
+.ad-remove{font-size:11px;color:#8899cc;cursor:pointer;text-decoration:underline;}
+/* Plans */
+.planes-inner{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:10px;}
+.planes-hdr{text-align:center;padding:8px 0 4px;}
+.planes-hdr h2{font-family:'Cinzel',serif;font-size:16px;color:var(--navy);}
+.planes-hdr p{font-size:12px;color:var(--text3);margin-top:4px;line-height:1.5;}
+.plan-card{border-radius:var(--radius);border:.5px solid var(--border2);overflow:hidden;background:var(--card);}
+.plan-card.starred{border-color:var(--gold);box-shadow:0 3px 18px rgba(201,162,39,.18);}
+.plan-card.purpled{border-color:#5b4fd4;}
+.plan-hdr{padding:12px 14px 10px;display:flex;align-items:flex-start;justify-content:space-between;}
+.plan-hdr.fh{background:var(--navy);}
+.plan-hdr.dh{background:linear-gradient(135deg,#b8891c,#d4a72a);}
+.plan-hdr.ah{background:linear-gradient(135deg,#3c3489,#5b4fd4);}
+.plan-name{font-family:'Cinzel',serif;font-size:14px;font-weight:600;}
+.plan-hdr.fh .plan-name{color:var(--gold);}
+.plan-hdr.dh .plan-name,.plan-hdr.ah .plan-name{color:#fff;}
+.plan-price .amt{font-size:22px;font-weight:700;line-height:1;}
+.plan-price .per{font-size:10px;opacity:.75;}
+.plan-hdr.fh .plan-price{color:rgba(255,255,255,.65);}
+.plan-hdr.dh .plan-price,.plan-hdr.ah .plan-price{color:#fff;}
+.plan-pill{font-size:9px;padding:2px 7px;border-radius:10px;font-weight:700;display:inline-block;margin-top:3px;}
+.plan-pill.pop{background:rgba(255,255,255,.22);color:#fff;}
+.plan-pill.best{background:var(--gold);color:var(--navy);}
+.plan-feats{padding:11px 14px;display:flex;flex-direction:column;gap:6px;}
+.plan-feat{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text2);line-height:1.4;}
+.plan-feat.y svg{color:var(--green);}
+.plan-feat.n svg{color:#ccc;}
+.plan-feat.n span{color:var(--text3);}
+.plan-cta{margin:0 14px 13px;padding:11px;border-radius:9px;border:none;font-size:13px;font-weight:700;cursor:pointer;width:calc(100% - 28px);font-family:'Cinzel',serif;}
+.plan-cta.fc{background:var(--bg);color:var(--navy);border:.5px solid var(--border2);}
+.plan-cta.dc{background:linear-gradient(135deg,#c9a227,#e8c66a);color:var(--navy);}
+.plan-cta.ac{background:linear-gradient(135deg,#3c3489,#5b4fd4);color:#fff;}
+.plan-note{font-size:10px;color:var(--text3);text-align:center;padding:0 14px 12px;}
+/* Login modal */
+.login-inner{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;}
+.login-shield-wrap{width:68px;height:68px;margin:0 auto;}
+.login-shield-wrap svg{width:100%;height:100%;}
+.login-modal-title{font-family:'Cinzel',serif;font-size:17px;color:var(--navy);}
+.login-sub{font-size:12px;color:var(--text3);line-height:1.6;max-width:240px;}
+.login-benefits{background:var(--bg);border-radius:10px;padding:10px 13px;width:100%;text-align:left;display:flex;flex-direction:column;gap:6px;}
+.login-benefit{font-size:12px;color:var(--text2);display:flex;align-items:center;gap:7px;}
+.login-benefit svg{color:var(--green);width:13px;height:13px;flex-shrink:0;}
+.google-btn{width:100%;padding:11px;background:#fff;color:#3c4043;border:1.5px solid #dadce0;border-radius:10px;font-size:13px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;font-family:Inter,sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.08);}
+.google-btn:hover{box-shadow:0 2px 8px rgba(0,0,0,.14);}
+.login-skip-link{font-size:11px;color:var(--text3);cursor:pointer;background:none;border:none;font-family:Inter,sans-serif;padding:4px;}
+</style>
+</head>
+<body>
+<div class="app">
+<!-- HEADER -->
+<header class="header">
+  <div class="header-left">
+    <div class="logo">âœ</div>
+    <div>
+      <div class="app-name">Escudo de Fe</div>
+      <div class="app-tagline">ApologÃ©tica CatÃ³lica IA</div>
+    </div>
+  </div>
+  <div class="header-btns">
+    <button class="hbtn" onclick="openModal('lang-modal')" aria-label="Idioma">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20"/></svg>
+      <span id="cur-lang-btn">ðŸ‡ªðŸ‡¸ ES</span>
+    </button>
+    <button class="hbtn premium" onclick="openModal('premium-modal')" aria-label="Premium">â­ Premium</button>
+  </div>
+</header>
+<!-- TABS -->
+<nav class="tabs" role="tablist">
+  <div class="tab active" role="tab" onclick="showScreen('debate',this)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 013 3v7a3 3 0 11-6 0V5a3 3 0 013-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v3M8 22h8"/></svg>
+    Debate
+  </div>
+  <div class="tab" role="tab" onclick="showScreen('biblia',this)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+    Biblia
+  </div>
+  <div class="tab" role="tab" onclick="showScreen('buscar',this)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    Buscar
+  </div>
+  <div class="tab" role="tab" onclick="showScreen('guardados',this)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+    Guardados
+  </div>
+  <div class="tab" role="tab" onclick="showScreen('ajustes',this)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+    Ajustes
+  </div>
+</nav>
+<!-- AUTH BAR -->
+<div class="auth-bar" id="auth-bar">
+  <div style="display:flex;align-items:center;gap:8px;">
+    <div id="auth-avatar-wrap"></div>
+    <div>
+      <div id="auth-name-el" style="font-size:11px;color:rgba(255,255,255,.7);">Invitado</div>
+      <span id="auth-plan-tag" class="auth-plan-tag">GRATIS</span>
+    </div>
+  </div>
+  <div style="display:flex;align-items:center;gap:6px;">
+    <button class="auth-logout" id="auth-logout-btn" onclick="signOut()" style="display:none;">Salir</button>
+    <button class="auth-signin-btn" id="auth-signin-btn" onclick="openModal('login-modal')">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Iniciar sesion
+    </button>
+  </div>
+</div>
+<div class="screens">
+
+<!-- â”€â”€ DEBATE â”€â”€ -->
+<section class="screen active" id="screen-debate">
+  <div class="chat-area" id="chat-area">
+    <div class="empty-state" id="empty-state">
+      <div class="empty-cross">âœ</div>
+      <h3>Listo para defender la fe</h3>
+      <p>Elige un modo y presiona el botÃ³n. La IA escucharÃ¡ y responderÃ¡ con doctrina, citas bÃ­blicas y fuentes patrÃ­sticas.</p>
+    </div>
+  </div>
+  <div class="debate-footer">
+    <div class="mode-row" role="group">
+      <button class="mode-btn active" id="mode-debate" onclick="setMode('debate')">âš”ï¸ Debate</button>
+      <button class="mode-btn" id="mode-duda" onclick="setMode('duda')">â“ Duda</button>
+      <button class="mode-btn" id="mode-evan" onclick="setMode('evan')">ðŸ•Šï¸ Evangelizar</button>
+    </div>
+    <div class="no-speech-warn" id="no-speech-warn">Tu navegador no soporta voz. Usa Chrome en Android o escribe en Buscar.</div>
+    <div class="listen-status" id="listen-status">
+      <div class="wave"><span></span><span></span><span></span><span></span><span></span></div>
+      <span id="listen-txt">Escuchando...</span>
+    </div>
+    <button class="mic-btn" id="mic-btn" onclick="toggleListen()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 013 3v7a3 3 0 11-6 0V5a3 3 0 013-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v3M8 22h8"/></svg>
+      <span id="mic-label">Escuchar debate</span>
+    </button>
+  </div>
+</section>
+
+<!-- â”€â”€ BIBLIA â”€â”€ -->
+<section class="screen" id="screen-biblia">
+  <div class="bible-area">
+    <div class="bible-top">
+      <div class="bible-version-row" role="group" aria-label="VersiÃ³n bÃ­blica">
+        <button class="bv-btn active" onclick="setBibleVersion('BJ',this)">ðŸ“– Biblia de JerusalÃ©n</button>
+        <button class="bv-btn" onclick="setBibleVersion('RV',this)">Reina-Valera 1960</button>
+        <button class="bv-btn" onclick="setBibleVersion('NVI',this)">NVI</button>
+        <button class="bv-btn warn-version" onclick="setBibleVersion('TNM',this)" title="Solo para referencia apologÃ©tica">âš ï¸ T. del N. Mundo</button>
+      </div>
+      <div id="bible-warn" class="bible-warn">
+        âš ï¸ <strong>Solo para uso apologÃ©tico.</strong> La TraducciÃ³n del Nuevo Mundo contiene alteraciones doctrinales. Se incluye para que puedas identificar y refutar los textos que usan los Testigos de JehovÃ¡, comparÃ¡ndolos con versiones fieles.
+      </div>
+      <div class="bible-search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="bible-search" placeholder="Buscar versÃ­culo o palabra..." oninput="searchBible(this.value)">
+      </div>
+      <div class="bible-nav">
+        <select class="bible-select" id="book-select" onchange="loadBook()">
+          <option value="GEN">GÃ©nesis</option><option value="EXO">Ã‰xodo</option>
+          <option value="SAL">Salmos</option><option value="PRO">Proverbios</option>
+          <option value="ISA">IsaÃ­as</option><option value="MAT">Mateo</option>
+          <option value="MAR">Marcos</option><option value="LUC">Lucas</option>
+          <option value="JUA">Juan</option><option value="HEC">Hechos</option>
+          <option value="ROM">Romanos</option><option value="1CO">1 Corintios</option>
+          <option value="GAL">GÃ¡latas</option><option value="EFE">Efesios</option>
+          <option value="FIL">Filipenses</option><option value="COL">Colosenses</option>
+          <option value="1TI">1 Timoteo</option><option value="HEB">Hebreos</option>
+          <option value="SAN">Santiago</option><option value="1PE">1 Pedro</option>
+          <option value="APO">Apocalipsis</option>
+          <option value="1MA">1 Macabeos (CatÃ³lico)</option>
+          <option value="2MA">2 Macabeos (CatÃ³lico)</option>
+        </select>
+        <select class="bible-select" id="chapter-select" style="max-width:90px" onchange="loadChapter()">
+          <option value="1">Cap. 1</option>
+        </select>
+      </div>
+    </div>
+    <div id="bible-warn-tnm-msg" class="bible-warn" style="margin:0 13px 8px;display:none;"></div>
+    <div class="bible-content-area" id="bible-content">
+      <div class="bible-chapter-title" id="bible-chapter-title">GÃ©nesis 1 â€” Biblia de JerusalÃ©n</div>
+      <div id="bible-verses"></div>
+    </div>
+  </div>
+</section>
+
+<!-- â”€â”€ BUSCAR â”€â”€ -->
+<section class="screen" id="screen-buscar">
+  <div class="buscar-inner">
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" id="search-input" placeholder="Â¿QuÃ© dice la Iglesia sobre...?" oninput="handleSearch(this.value)" autocomplete="off">
+    </div>
+    <div class="chips-label">Temas gratuitos âœ“ â€” Siempre disponibles</div>
+    <div class="chips" id="chips-container"></div>
+    <div class="search-loading" id="search-loading">Consultando la IA apologÃ©tica...</div>
+    <div class="result-card" id="result-card">
+      <div class="result-header"><h3 id="rc-title">â€”</h3></div>
+      <div class="result-body">
+        <div id="rc-type-label"></div>
+        <div class="verse-block">
+          <div class="verse-text" id="rc-verse">"..."</div>
+          <div class="verse-ref" id="rc-ref">â€”</div>
+        </div>
+        <div class="arg-text" id="rc-arg">...</div>
+        <div class="badges" id="rc-badges"></div>
+        <div class="card-acts">
+          <button class="cact" onclick="shareWhatsApp()" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/></svg>WhatsApp
+          </button>
+          <button class="cact" onclick="saveCurrentResult()" aria-label="Guardar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>Guardar
+          </button>
+          <button class="cact" onclick="copyResult()" aria-label="Copiar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="premium-search-prompt" style="display:none;" class="premium-lock">
+      <div style="font-size:28px;">â­</div>
+      <p>Este tema requiere IA en tiempo real. Configura tu API Key de Anthropic en Ajustes para desbloquearlo, o <strong>apoya la misiÃ³n</strong> con una donaciÃ³n.</p>
+      <button class="unlock-btn" onclick="showScreen('ajustes',document.querySelectorAll('.tab')[4])">Configurar API Key</button>
+    </div>
+  </div>
+</section>
+
+<!-- â”€â”€ GUARDADOS â”€â”€ -->
+<section class="screen" id="screen-guardados">
+  <div class="guardados-inner" id="guardados-list">
+    <div id="guardados-empty" style="text-align:center;padding:38px 20px;color:var(--text3);font-size:13px;display:none;">
+      <div style="font-size:38px;margin-bottom:9px;">ðŸ”–</div>
+      AÃºn no tienes respuestas guardadas.<br>Busca un tema y toca "Guardar".
+    </div>
+    <div class="donate-banner" id="donate-banner">
+      <div style="font-size:26px;">ðŸ™</div>
+      <p>Esta app es gratuita y sin anuncios para todos los catÃ³licos del mundo. Tu apoyo sostiene la misiÃ³n de defender la fe.</p>
+      <button class="donate-banner-btn" onclick="openModal('donate-modal')">Apoyar la misiÃ³n</button>
+    </div>
+  </div>
+</section>
+
+<!-- â”€â”€ AJUSTES â”€â”€ -->
+<section class="screen" id="screen-ajustes">
+  <div class="config-inner">
+    <div class="apikey-section">
+      <div class="apikey-label">ðŸ”‘ API Key propia (uso ilimitado personal)</div>
+      <div class="apikey-row">
+        <input class="apikey-input" type="password" id="apikey-input" placeholder="sk-ant-api03-..." autocomplete="off">
+        <button class="apikey-save" onclick="saveApiKey()">Guardar</button>
+      </div>
+      <div class="apikey-hint">ObtÃ©n tu clave en <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a> (primeros $5 gratis). Se guarda solo en este dispositivo.</div>
+    </div>
+    <div class="cg-label">Idioma y voz</div>
+    <div class="cfg-card">
+      <div class="cfg-row" onclick="openModal('lang-modal')">
+        <div class="cfg-left">
+          <div class="cfg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20"/></svg></div>
+          <div><div class="cfg-label">Idioma de la app</div><div class="cfg-sub" id="cfg-lang-name">EspaÃ±ol</div></div>
+        </div>
+        <div class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <div class="cfg-row">
+        <div class="cfg-left">
+          <div class="cfg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 013 3v7a3 3 0 11-6 0V5a3 3 0 013-3z"/></svg></div>
+          <div><div class="cfg-label">Detectar idioma de voz</div><div class="cfg-sub">AutomÃ¡tico</div></div>
+        </div>
+        <div class="toggle on" onclick="this.classList.toggle('on')" role="switch" aria-label="Auto idioma"></div>
+      </div>
+    </div>
+    <div class="cg-label">Contenido</div>
+    <div class="cfg-card">
+      <div class="cfg-row">
+        <div class="cfg-left">
+          <div class="cfg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+          <div><div class="cfg-label">Referencias patrÃ­sticas</div><div class="cfg-sub">Padres de la Iglesia en respuestas</div></div>
+        </div>
+        <div class="toggle on" onclick="this.classList.toggle('on')" role="switch" aria-label="PatrÃ­stica"></div>
+      </div>
+      <div class="cfg-row">
+        <div class="cfg-left">
+          <div class="cfg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <div><div class="cfg-label">Historial de consultas</div><div class="cfg-sub">Guardar bÃºsquedas de esta sesiÃ³n</div></div>
+        </div>
+        <div class="toggle on" onclick="this.classList.toggle('on')" role="switch" aria-label="Historial"></div>
+      </div>
+    </div>
+    <div class="cg-label">MisiÃ³n</div>
+    <div class="cfg-card">
+      <div class="cfg-row" onclick="openModal('donate-modal')">
+        <div class="cfg-left">
+          <div class="cfg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+          <div><div class="cfg-label">Apoyar la misiÃ³n</div><div class="cfg-sub">Ko-fi Â· PayPal Â· Buy Me a Coffee</div></div>
+        </div>
+        <div class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <div class="cfg-row" onclick="shareApp()">
+        <div class="cfg-left">
+          <div class="cfg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
+          <div><div class="cfg-label">Compartir la app</div><div class="cfg-sub">Invitar a otros catÃ³licos</div></div>
+        </div>
+        <div class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+    </div>
+    <div id="quota-status" style="background:var(--green-bg);border-radius:10px;padding:11px 14px;font-size:12px;color:var(--green);line-height:1.6;cursor:pointer" onclick="loadQuotaStatus()">
+      ðŸŒ Toca para ver tu cuota comunitaria de hoy
+    </div>
+    <div class="version-note">Escudo de Fe v1.0 Â· Gratuita, sin anuncios<br>Basada en el Catecismo de la Iglesia CatÃ³lica</div>
+  </div>
+</section>
+
+
+<!-- â”€â”€ PLANES â”€â”€ -->
+<section class="screen" id="screen-planes">
+  <div class="planes-inner">
+    <div class="planes-hdr">
+      <h2>Planes de acceso</h2>
+      <p>Elige el nivel que mejor se adapta a tu mision</p>
+    </div>
+    <div class="plan-card">
+      <div class="plan-hdr fh">
+        <div><div class="plan-name">Discipulo</div><span class="plan-pill pop">GRATUITO SIEMPRE</span></div>
+        <div class="plan-price"><div class="amt" style="color:rgba(255,255,255,.65)">$0</div><div class="per" style="color:rgba(255,255,255,.4)">para siempre</div></div>
+      </div>
+      <div class="plan-feats">
+        <div class="plan-feat y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Respuestas completas con IA (Gemini gratuito)</span></div>
+        <div class="plan-feat y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>15 consultas comunitarias por dia</span></div>
+        <div class="plan-feat y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Biblia en 4 versiones + login con Google</span></div>
+        <div class="plan-feat y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Guardar y compartir por WhatsApp</span></div>
+        <div class="plan-feat n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span>Anuncios cada 5 consultas</span></div>
+        <div class="plan-feat n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span>Sin analisis patristico profundo con Claude</span></div>
+      </div>
+      <button class="plan-cta fc">Plan actual â€” Continuar gratis</button>
+    </div>
+    <div class="plan-card starred">
+      <div class="plan-hdr dh">
+        <div><div class="plan-name">Apologeta</div><span class="plan-pill pop">MAS POPULAR</span></div>
+        <div class="plan-price"><div class="amt" style="color:#fff">$2.99</div><div class="per" style="color:rgba(255,255,255,.75)">/ mes</div></div>
+      </div>
+      <div class="plan-feats">
+        <div class="plan-feat y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Todo del plan gratuito</span></div>
+        <div class="plan-feat y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Sin publicidad</span></div>
+        <div class="plan-feat y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Respuestas profundas con Claude (Anthropic)</span></div>
+        <div class="plan-feat y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Analisis patristico extendido</span></div>
+        <div class="plan-feat y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Debate con reconocimiento de voz</span></div>
+        <div class="plan-feat y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Consultas ilimitadas</span></div>
+      </div>
+      <button class="plan-cta dc" onclick="suscribirse('apologeta')">Suscribirse â€” $2.99/mes</button>
+      <div class="plan-note">Menos de $0.10 centavos al dia</div>
+    </div>
+    <div class="plan-card purpled">
+      <div class="plan-hdr ah">
+        <div><div class="plan-name">Misionero</div><span class="plan-pill best">MEJOR VALOR</span></div>
+        <div class="plan-price"><div class="amt" style="color:#fff">$6.99</div><div class="per" style="color:rgba(255,255,255,.75)">/ mes</div></div>
+      </div>
+      <div class="plan-feats">
+        <div class="plan-feat y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Todo del plan Apologeta</span></div>
+        <div class="plan-feat y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Modo evangelizacion avanzado</span></div>
+        <div class="plan-feat y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Acceso prioritario a nuevas funciones</span></div>
+        <div class="plan-feat y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Soporte directo por WhatsApp</span></div>
+        <div class="plan-feat y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Tu suscripcion sostiene el credito comunitario</span></div>
+        <div class="plan-feat y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Badge Misionero visible en la app</span></div>
+      </div>
+      <button class="plan-cta ac" onclick="suscribirse('misionero')">Suscribirse â€” $6.99/mes</button>
+      <div class="plan-note">Apoya la mision global</div>
+    </div>
+    <div style="background:var(--gold-pale);border-radius:12px;border:.5px solid var(--gold-light);padding:14px;text-align:center;">
+      <div style="font-size:22px;margin-bottom:6px;">&#128591;</div>
+      <div style="font-family:'Cinzel',serif;font-size:13px;color:var(--navy);margin-bottom:5px;">Donacion voluntaria</div>
+      <div style="font-size:11px;color:#5c4a00;line-height:1.6;margin-bottom:10px;">Si la app te ha ayudado, apoya la mision con cualquier monto. Sin compromisos.</div>
+      <button onclick="openModal('donate-modal')" style="background:var(--gold);color:var(--navy);border:none;border-radius:8px;padding:8px 20px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Cinzel',serif;">Hacer una donacion</button>
+    </div>
+    <div style="text-align:center;font-size:10px;color:var(--text3);padding-bottom:8px;">Escudo de Fe v1.0 â€” Gratuita para todos los catolicos del mundo</div>
+  </div>
+</section>
+</div><!-- /screens -->
+
+<!-- ANUNCIO PANTALLA COMPLETA cada 5 consultas -->
+<div class="ad-modal" id="ad-modal">
+  <div class="ad-box">
+    <div class="ad-top">
+      <span>Publicidad â€” sostiene la app gratuita</span>
+      <span id="ad-countdown" style="font-weight:700;color:var(--gold)">5s</span>
+    </div>
+    <div class="ad-body">
+      <!-- REEMPLAZA ESTE BLOQUE CON TU CODIGO DE GOOGLE ADSENSE -->
+      <!-- <ins class="adsbygoogle" style="display:block;width:260px;height:130px" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXX"></ins> -->
+      <div class="ad-placeholder">
+        <div style="font-size:28px;color:var(--gold)">&#10013;</div>
+        <div style="font-size:11px;color:var(--text3);line-height:1.6;text-align:center;">
+          <strong style="color:var(--navy);display:block;margin-bottom:3px;">Espacio Google AdSense</strong>
+          Registrate en adsense.google.com<br>para activar los anuncios reales.
+        </div>
+      </div>
+    </div>
+    <button class="ad-skip-btn" id="ad-skip-btn" onclick="closeAd()" disabled>Continuar en <span id="ad-timer">5</span>s</button>
+  </div>
+  <div class="ad-remove" onclick="showScreen('planes',document.querySelectorAll('.tab')[3]);closeAd()">
+    Quitar publicidad â€” Ver planes sin anuncios
+  </div>
+</div>
+
+<!-- MODAL LOGIN GOOGLE -->
+<div class="modal-backdrop" id="login-modal">
+  <div class="modal-box">
+    <div class="modal-handle"></div>
+    <div class="login-inner">
+      <div class="login-shield-wrap">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+          <rect width="200" height="200" rx="40" fill="#1a1a2e"/>
+          <path d="M100 18 L162 46 L162 110 Q162 158 100 180 Q38 158 38 110 L38 46 Z" fill="#16213e" stroke="#c9a227" stroke-width="7"/>
+          <path d="M100 30 L150 54 L150 108 Q150 148 100 168 Q50 148 50 108 L50 54 Z" fill="#0d1526" stroke="#2a5298" stroke-width="5"/>
+          <rect x="93" y="58" width="14" height="90" rx="3" fill="#c9a227"/>
+          <rect x="62" y="89" width="76" height="14" rx="3" fill="#c9a227"/>
+          <circle cx="100" cy="96" r="8" fill="#1a1a2e"/>
+          <circle cx="100" cy="96" r="3" fill="#e8c66a"/>
+        </svg>
+      </div>
+      <div class="login-modal-title">Bienvenido a Escudo de Fe</div>
+      <div class="login-sub">Inicia sesion con Google para guardar tu progreso y sincronizar tu plan entre dispositivos.</div>
+      <div class="login-benefits">
+        <div class="login-benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Historial sincronizado en todos tus dispositivos</div>
+        <div class="login-benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Respuestas guardadas en la nube</div>
+        <div class="login-benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Gestiona tu suscripcion desde cualquier lugar</div>
+        <div class="login-benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Cuota comunitaria vinculada a tu cuenta</div>
+      </div>
+      <button class="google-btn" onclick="signInWithGoogle()">
+        <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.89C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/></svg>
+        Continuar con Google
+      </button>
+      <button class="login-skip-link" onclick="closeModal('login-modal')">Continuar sin cuenta</button>
+    </div>
+  </div>
+</div>
+</div><!-- /app -->
+
+<!-- MODAL IDIOMA -->
+<div class="modal-backdrop" id="lang-modal">
+  <div class="modal-box">
+    <div class="modal-handle"></div>
+    <div class="modal-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20"/></svg>Selecciona tu idioma</div>
+    <div class="lang-list">
+      <div class="lang-item selected" onclick="selectLang(this,'ðŸ‡ªðŸ‡¸ ES','EspaÃ±ol','es-ES')"><span class="lang-flag">ðŸ‡ªðŸ‡¸</span>EspaÃ±ol</div>
+      <div class="lang-item" onclick="selectLang(this,'ðŸ‡¬ðŸ‡§ EN','English','en-US')"><span class="lang-flag">ðŸ‡¬ðŸ‡§</span>English</div>
+      <div class="lang-item" onclick="selectLang(this,'ðŸ‡§ðŸ‡· PT','PortuguÃªs','pt-BR')"><span class="lang-flag">ðŸ‡§ðŸ‡·</span>PortuguÃªs (Brasil)</div>
+      <div class="lang-item" onclick="selectLang(this,'ðŸ‡«ðŸ‡· FR','FranÃ§ais','fr-FR')"><span class="lang-flag">ðŸ‡«ðŸ‡·</span>FranÃ§ais</div>
+      <div class="lang-item" onclick="selectLang(this,'ðŸ‡®ðŸ‡¹ IT','Italiano','it-IT')"><span class="lang-flag">ðŸ‡®ðŸ‡¹</span>Italiano</div>
+      <div class="lang-item" onclick="selectLang(this,'ðŸ‡µðŸ‡± PL','Polski','pl-PL')"><span class="lang-flag">ðŸ‡µðŸ‡±</span>Polski</div>
+    </div>
+    <button class="modal-close" onclick="closeModal('lang-modal')">Confirmar</button>
+  </div>
+</div>
+
+<!-- MODAL DONACIÃ“N -->
+<div class="modal-backdrop" id="donate-modal">
+  <div class="modal-box">
+    <div class="modal-handle"></div>
+    <div class="modal-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Apoyar la misiÃ³n</div>
+    <p style="font-size:12px;color:var(--text2);margin-bottom:13px;line-height:1.6;">Esta app es gratuita y sin anuncios para todos los catÃ³licos del mundo. Tu apoyo sostiene la misiÃ³n de defender la fe.</p>
+    <div class="donate-opts">
+      <div class="donate-opt" onclick="window.open('https://ko-fi.com','_blank')">
+        <span class="do-icon">â˜•</span><div><div class="do-name">Ko-fi</div><div class="do-desc">DonaciÃ³n Ãºnica Â· Sin comisiÃ³n</div></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;margin-left:auto;color:var(--text3)"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+      </div>
+      <div class="donate-opt" onclick="window.open('https://paypal.com','_blank')">
+        <span class="do-icon">ðŸ’™</span><div><div class="do-name">PayPal</div><div class="do-desc">Universal Â· Todo el mundo</div></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;margin-left:auto;color:var(--text3)"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+      </div>
+      <div class="donate-opt" onclick="window.open('https://buymeacoffee.com','_blank')">
+        <span class="do-icon">ðŸ§¡</span><div><div class="do-name">Buy Me a Coffee</div><div class="do-desc">Popular en comunidades digitales</div></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;margin-left:auto;color:var(--text3)"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+      </div>
+    </div>
+    <button class="donate-skip" onclick="closeModal('donate-modal')">QuizÃ¡s mÃ¡s tarde</button>
+  </div>
+</div>
+
+<!-- MODAL PREMIUM -->
+<div class="modal-backdrop" id="premium-modal">
+  <div class="modal-box">
+    <div class="modal-handle"></div>
+    <div class="modal-title">â­ Acceso Premium</div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:15px;">
+      <div style="background:var(--green-bg);border-radius:10px;padding:12px 14px;">
+        <div style="font-size:12px;font-weight:600;color:var(--green);margin-bottom:6px;">ðŸŒ Gratuito para todos â€” CrÃ©dito comunitario</div>
+        <div style="font-size:12px;color:var(--text2);line-height:1.6;">
+          â€¢ 15 consultas IA por persona al dÃ­a (sostenidas por donaciones)<br>
+          â€¢ 15 temas apologÃ©ticos siempre disponibles sin lÃ­mite<br>
+          â€¢ Biblia en 4 versiones (JerusalÃ©n, RV60, NVI, T.N.Mundo)<br>
+          â€¢ Guardar y compartir por WhatsApp<br>
+          â€¢ Sin anuncios, sin registro requerido
+        </div>
+      </div>
+      <div style="background:var(--gold-pale);border-radius:10px;padding:12px 14px;border:.5px solid var(--gold-light);">
+        <div style="font-size:12px;font-weight:600;color:#854f0b;margin-bottom:6px;">â­ Premium â€” Con tu API Key de Anthropic</div>
+        <div style="font-size:12px;color:var(--text2);line-height:1.6;">
+          â€¢ Consultas ilimitadas sin afectar la cuota comunitaria<br>
+          â€¢ Debate en tiempo real con reconocimiento de voz<br>
+          â€¢ Preguntas personalizadas en cualquier idioma<br>
+          â€¢ ~$5 USD = 800â€“1,600 consultas propias
+        </div>
+      </div>
+      <div style="background:#f0edf9;border-radius:10px;padding:12px 14px;border:.5px solid #c4b8f0;">
+        <div style="font-size:12px;font-weight:600;color:var(--purple);margin-bottom:6px;">ðŸ™ Apoyar la misiÃ³n</div>
+        <div style="font-size:12px;color:var(--text2);line-height:1.6;">
+          Las donaciones pagan el crÃ©dito de IA para todos. Con $30-50 USD/mes se sostienen 10,000+ consultas mensuales para catÃ³licos de todo el mundo.
+        </div>
+      </div>
+    </div>
+    <button class="modal-close" onclick="closeModal('premium-modal');openModal('donate-modal')">Apoyar con una donaciÃ³n</button>
+    <button class="donate-skip" style="margin-top:8px" onclick="closeModal('premium-modal');showScreen('ajustes',document.querySelectorAll('.tab')[4])">Configurar API Key propia</button>
+    <button class="donate-skip" style="margin-top:6px" onclick="closeModal('premium-modal')">Continuar con el crÃ©dito gratuito</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+<script>
+// â”€â”€ DATOS OFFLINE (50 temas gratuitos) â”€â”€
+const FREE_TOPICS = {
+  'Papado y Pedro': { cic:'CIC Â§881-882', verse:'TÃº eres Pedro, y sobre esta piedra edificarÃ© mi Iglesia; y las puertas del Hades no prevalecerÃ¡n contra ella.', ref:'â€” Mateo 16:18', arg:'Cristo entregÃ³ las llaves del Reino Ãºnicamente a Pedro (Mt 16:19), sÃ­mbolo de autoridad suprema en el AT. San Ireneo (180 d.C.) enumera la sucesiÃ³n papal desde Pedro como criterio de ortodoxia. La infalibilidad papal en materia de fe fue definida en el Concilio Vaticano I (1870) y aplica solo cuando el Papa habla ex cathedra.', sources:['Padre Luis Toro','El Papista','CIC Â§891'] },
+  'MarÃ­a Madre de Dios': { cic:'CIC Â§495', verse:'Desde ahora me dirÃ¡n bienaventurada todas las generaciones.', ref:'â€” Lucas 1:48', arg:'MarÃ­a es Theotokos (Madre de Dios), definido en el Concilio de Ã‰feso (431 d.C.) contra Nestorio. Su maternidad divina no la hace igual a Dios sino que seÃ±ala la divinidad de Cristo. La veneraciÃ³n (dulÃ­a) que se le rinde es distinta de la adoraciÃ³n (latreia) que solo se da a Dios.', sources:['Padre Luis Toro','Santiago AlarcÃ³n','Concilio de Ã‰feso'] },
+  'EucaristÃ­a y Presencia Real': { cic:'CIC Â§1374-1381', verse:'Mi carne es verdadera comida, y mi sangre es verdadera bebida.', ref:'â€” Juan 6:55', arg:'JesÃºs no corrigiÃ³ a quienes se escandalizaron por Sus palabras (Jn 6:60-66), seÃ±al de que hablaba literalmente. San Ignacio de AntioquÃ­a (107 d.C.) llama la EucaristÃ­a "carne de Cristo". La TransubstanciaciÃ³n fue definida en el Concilio de Trento. Todos los Padres de la Iglesia del primer milenio creyeron en la presencia real.', sources:['Santiago AlarcÃ³n','Padre Luis Toro','San Ignacio de AntioquÃ­a'] },
+  'Purgatorio': { cic:'CIC Â§1030-1032', verse:'Ã‰l mismo se salvarÃ¡, pero como quien pasa a travÃ©s del fuego.', ref:'â€” 1 Corintios 3:15', arg:'Judas Macabeo orÃ³ por los difuntos (2 Mac 12:46), prÃ¡ctica que supone una purificaciÃ³n post-mortem. JesÃºs habla de pecados no perdonados "ni en este siglo ni en el venidero" (Mt 12:32), implicando posibilidad de perdÃ³n despuÃ©s de la muerte. Tertuliano (200 d.C.) y San AgustÃ­n atestiguan esta doctrina.', sources:['Soldado Apologeta','Santiago AlarcÃ³n'] },
+  'Bautismo infantil': { cic:'CIC Â§1250-1252', verse:'Si alguno no nace de agua y del EspÃ­ritu, no puede entrar en el reino de Dios.', ref:'â€” Juan 3:5', arg:'El bautismo reemplaza a la circuncisiÃ³n (Col 2:11-12), que en el AT se aplicaba a los infantes al 8Âº dÃ­a. Hogares enteros fueron bautizados (Hch 16:33; 1Co 1:16). OrÃ­genes (185 d.C.) afirma que la Iglesia recibiÃ³ de los ApÃ³stoles la costumbre de bautizar niÃ±os.', sources:['Santiago AlarcÃ³n','Soldado Apologeta'] },
+  'Sola Scriptura': { cic:'CIC Â§80-83', verse:'La Iglesia del Dios vivo, columna y fundamento de la verdad.', ref:'â€” 1 Timoteo 3:15', arg:'La Biblia nunca enseÃ±a que ella sola es regla de fe â€” el principio de Sola Scriptura no estÃ¡ en la Escritura, por lo que se contradice a sÃ­ mismo. Pablo manda seguir las tradiciones orales (2 Tes 2:15). El canon bÃ­blico fue cerrado por la Iglesia CatÃ³lica en los concilios de Hipona (393) y Cartago (397).', sources:['JosÃ© Placencia','Padre Luis Toro'] },
+  'ConfesiÃ³n sacramental': { cic:'CIC Â§1461-1467', verse:'A quienes perdonÃ©is los pecados, les quedan perdonados; a quienes se los retengÃ¡is, les quedan retenidos.', ref:'â€” Juan 20:23', arg:'Cristo dio a los ApÃ³stoles poder de perdonar o retener pecados â€” lo cual es imposible sin conocer los pecados del penitente, de ahÃ­ la confesiÃ³n auricular. Santiago 5:16 ordena confesar los pecados. San Cipriano (250 d.C.) y San AgustÃ­n atestiguan esta prÃ¡ctica como recibida de los ApÃ³stoles.', sources:['Santiago AlarcÃ³n','JosÃ© Placencia'] },
+  'IntercesiÃ³n de los Santos': { cic:'CIC Â§956-959', verse:'Los veinticuatro ancianos ofrecÃ­an incienso, que son las oraciones de los santos.', ref:'â€” Apocalipsis 5:8', arg:'Pedir intercesiÃ³n a los santos es anÃ¡logo a pedir oraciÃ³n a un hermano vivo: si la intercesiÃ³n es posible en vida, con mayor razÃ³n tras la muerte, cuando se vive mÃ¡s plenamente en Cristo (Rm 8:38-39). La nube de testigos (Heb 12:1) estÃ¡ viva ante Dios. El Ap 5:8 muestra a los santos presentando las oraciones de los fieles.', sources:['Soldado Apologeta','Padre Luis Toro'] },
+  'Matrimonio e indisolubilidad': { cic:'CIC Â§1650-1651', verse:'Lo que Dios uniÃ³, que no lo separe el hombre.', ref:'â€” Mateo 19:6', arg:'El matrimonio sacramental es indisoluble por instituciÃ³n divina (Mc 10:11-12). La Iglesia no prohÃ­be el divorcio civil como recurso legal, sino que enseÃ±a que no disuelve el vÃ­nculo sacramental. La nulidad matrimonial declara que el vÃ­nculo vÃ¡lido nunca existiÃ³, no que se disuelve.', sources:['Padre Luis Toro','Santiago AlarcÃ³n'] },
+  'Infalibilidad papal': { cic:'CIC Â§891', verse:'He rogado por ti, para que tu fe no falte; y tÃº, una vez convertido, confirma a tus hermanos.', ref:'â€” Lucas 22:32', arg:'Cristo orÃ³ especÃ­ficamente para que la fe de Pedro no fallara, fundamentando la infalibilidad. Esta prerrogativa aplica solo cuando el Papa define solemnemente, ex cathedra, doctrinas de fe o moral para toda la Iglesia â€” ha ocurrido solo dos veces desde 1870. No implica impecabilidad personal.', sources:['El Papista','Padre Luis Toro'] },
+  'Inmaculada ConcepciÃ³n': { cic:'CIC Â§491-492', verse:'El SeÃ±or estÃ¡ contigo; bendita tÃº entre todas las mujeres.', ref:'â€” Lucas 1:28', arg:'El saludo del Ã¡ngel "llena de gracia" (kecharitomÃ©ne en griego) es un participio perfecto pasivo que implica un estado de gracia permanente y completo desde antes del encuentro. MarÃ­a es el Arca Nueva (Lc 1:35 cf. Ã‰x 40:35): asÃ­ como el Arca portaba la Palabra escrita, MarÃ­a portÃ³ la Palabra encarnada. Definida como dogma por PÃ­o IX en 1854.', sources:['Padre Luis Toro','Santiago AlarcÃ³n'] },
+  'AsunciÃ³n de MarÃ­a': { cic:'CIC Â§966', verse:'Una gran seÃ±al apareciÃ³ en el cielo: una mujer vestida del sol, con la luna debajo de sus pies.', ref:'â€” Apocalipsis 12:1', arg:'La AsunciÃ³n es el tipo cumplido del Arca del SeÃ±or (Ap 11:19 seguido de 12:1). La TradiciÃ³n universal desde los primeros siglos no conoce ninguna tumba de MarÃ­a con su cuerpo â€” hecho significativo dado el culto a reliquias de la Ã©poca. Definida dogmÃ¡ticamente por PÃ­o XII en 1950.', sources:['Santiago AlarcÃ³n','El Papista'] },
+  'Trinidad': { cic:'CIC Â§253-255', verse:'BautizÃ¡ndolos en el nombre del Padre, y del Hijo, y del EspÃ­ritu Santo.', ref:'â€” Mateo 28:19', arg:'JesÃºs usa el nombre singular (no plural) para las tres Personas, seÃ±alando la unidad de esencia. En 1 Jn 5:7 (Comma Johanneum) y 2 Co 13:14 se aprecian las tres Personas. El Credo Niceno-Constantinopolitano (381 d.C.) formulÃ³ esta doctrina refutando el arrianismo. Los Testigos de JehovÃ¡ rechazan la Trinidad pero el NT usa tÃ­tulo divino para Cristo (Jn 1:1; 8:58; 20:28).', sources:['Padre Luis Toro','Soldado Apologeta'] },
+  'Biblia y canon catÃ³lico': { cic:'CIC Â§120', verse:'Toda Escritura es inspirada por Dios y Ãºtil para enseÃ±ar, reprender, corregir e instruir en justicia.', ref:'â€” 2 Timoteo 3:16', arg:'Los protestantes eliminaron 7 libros del AT (TobÃ­as, Judit, 1-2 Mac, SabidurÃ­a, SirÃ¡cide, Baruc) que estaban en la Septuaginta â€” versiÃ³n usada por JesÃºs y los ApÃ³stoles. El canon bÃ­blico actual fue definido por la Iglesia CatÃ³lica en los concilios de Hipona (393) y Cartago (397). Nadie puede citar la Biblia como autoridad mientras rechaza a la instituciÃ³n que la definiÃ³.', sources:['JosÃ© Placencia','Santiago AlarcÃ³n'] },
+  'Sacerdocio y celibato': { cic:'CIC Â§1579', verse:'Quisiera que todos fueran como yo; pero cada uno tiene de Dios su propio don.', ref:'â€” 1 Corintios 7:7', arg:'El celibato sacerdotal no es un dogma sino una disciplina eclesiÃ¡stica con profundo fundamento bÃ­blico: Pablo lo recomienda para una entrega total al Reino (1Co 7:32-34). Existen sacerdotes casados en las Iglesias Orientales en comuniÃ³n con Roma. El celibato es un signo escatolÃ³gico del Reino de los Cielos (Mt 19:12).', sources:['Padre Luis Toro','El Papista'] },
+};
+
+// â”€â”€ BIBLE DATA (muestra representativa, en producciÃ³n se usa API) â”€â”€
+const BIBLE_SAMPLES = {
+  'GEN': {
+    chapters: 50,
+    '1': [
+      {n:1,t:'En el principio creÃ³ Dios los cielos y la tierra.'},
+      {n:2,t:'La tierra estaba confusa y vacÃ­a, y las tinieblas cubrÃ­an el abismo, mientras el espÃ­ritu de Dios aleteaba sobre la superficie de las aguas.'},
+      {n:3,t:'Dijo Dios: Â«Haya luzÂ», y hubo luz.'},
+      {n:4,t:'Vio Dios que la luz era buena, y apartÃ³ Dios la luz de las tinieblas.'},
+      {n:5,t:'LlamÃ³ Dios a la luz Â«dÃ­aÂ» y a las tinieblas las llamÃ³ Â«nocheÂ». Hubo una tarde y una maÃ±ana: dÃ­a primero.'},
+      {n:6,t:'Dijo Dios: Â«Haya un firmamento en medio de las aguas, que las divida en dosÂ».'},
+      {n:26,t:'Dijo Dios: Â«Hagamos al hombre a nuestra imagen y semejanza; que domine los peces del mar, las aves del cielo, los animales domÃ©sticos y todo animal que repta sobre la tierraÂ».'},
+      {n:27,t:'CreÃ³, pues, Dios al hombre a imagen suya, a imagen de Dios lo creÃ³, varÃ³n y mujer los creÃ³.'},
+    ]
+  },
+  'MAT': {
+    chapters: 28,
+    '16': [
+      {n:13,t:'Al llegar JesÃºs a la regiÃ³n de Cesarea de Filipo, preguntÃ³ a sus discÃ­pulos: Â«Â¿QuiÃ©n dicen los hombres que es el Hijo del hombre?Â»'},
+      {n:16,t:'RespondiÃ³ SimÃ³n Pedro: Â«TÃº eres el Cristo, el Hijo de Dios vivoÂ».'},
+      {n:17,t:'JesÃºs le respondiÃ³: Â«Bienaventurado eres, SimÃ³n, hijo de JonÃ¡s, porque no te lo revelÃ³ la carne ni la sangre, sino mi Padre que estÃ¡ en los cielosÂ».'},
+      {n:18,t:'Y yo te digo que tÃº eres Pedro, y sobre esta piedra edificarÃ© mi Iglesia, y las puertas del infierno no prevalecerÃ¡n contra ella.'},
+      {n:19,t:'A ti te darÃ© las llaves del reino de los cielos; y lo que ates en la tierra, atado quedarÃ¡ en los cielos, y lo que desates en la tierra, desatado quedarÃ¡ en los cielos.'},
+    ]
+  },
+  'JUA': {
+    chapters: 21,
+    '1': [
+      {n:1,t:'En el principio existÃ­a la Palabra, y la Palabra estaba junto a Dios, y la Palabra era Dios.'},
+      {n:2,t:'Ella estaba en el principio junto a Dios.'},
+      {n:3,t:'Todo se hizo por ella y sin ella no se hizo nada de lo que existe.'},
+      {n:14,t:'Y la Palabra se hizo carne, y puso su Morada entre nosotros, y hemos contemplado su gloria, gloria que recibe del Padre como Hijo Ãºnico, lleno de gracia y de verdad.'},
+    ],
+    '6': [
+      {n:51,t:'Yo soy el pan vivo que ha bajado del cielo; el que coma de este pan, vivirÃ¡ para siempre; y el pan que yo darÃ© es mi carne, dada por la vida del mundo.'},
+      {n:53,t:'JesÃºs les dijo: Â«En verdad, en verdad os digo: si no comÃ©is la carne del Hijo del hombre y no bebÃ©is su sangre, no tenÃ©is vida en vosotrosÂ».'},
+      {n:54,t:'El que come mi carne y bebe mi sangre tiene vida eterna, y yo le resucitarÃ© en el Ãºltimo dÃ­a.'},
+      {n:55,t:'Mi carne es verdadera comida y mi sangre es verdadera bebida.'},
+    ],
+    '20': [
+      {n:22,t:'Dicho esto, exhalÃ³ su aliento sobre ellos y les dijo: Â«Recibid el EspÃ­ritu SantoÂ».'},
+      {n:23,t:'A quienes les perdonÃ©is los pecados, les quedan perdonados; a quienes se los retengÃ¡is, les quedan retenidos.'},
+    ]
+  },
+  'LUC': {
+    chapters: 24,
+    '1': [
+      {n:26,t:'Al sexto mes, el Ã¡ngel Gabriel fue enviado por Dios a una ciudad de Galilea, llamada Nazaret,'},
+      {n:27,t:'a una virgen desposada con un hombre llamado JosÃ©, de la casa de David; el nombre de la virgen era MarÃ­a.'},
+      {n:28,t:'Y entrando, le dijo: Â«AlÃ©grate, llena de gracia, el SeÃ±or estÃ¡ contigoÂ».'},
+      {n:46,t:'Y dijo MarÃ­a: Â«Proclama mi alma la grandeza del SeÃ±or,'},
+      {n:47,t:'se alegra mi espÃ­ritu en Dios, mi Salvador,'},
+      {n:48,t:'porque ha mirado la humillaciÃ³n de su esclava. Desde ahora me felicitarÃ¡n todas las generaciones,'},
+    ]
+  },
+  'HEC': {
+    chapters: 28,
+    '2': [
+      {n:38,t:'Pedro les contestÃ³: Â«ConvertÃ­os y que cada uno de vosotros se haga bautizar en el nombre de Jesucristo para remisiÃ³n de vuestros pecados; y recibirÃ©is el don del EspÃ­ritu SantoÂ».'},
+      {n:39,t:'Pues la promesa es para vosotros y para vuestros hijos y para todos los que estÃ¡n lejos, para cuantos llame el SeÃ±or Dios nuestro.Â»'},
+    ]
+  },
+  'APO': {
+    chapters: 22,
+    '12': [
+      {n:1,t:'Una gran seÃ±al apareciÃ³ en el cielo: una Mujer, vestida del sol, con la luna debajo de sus pies y una corona de doce estrellas sobre su cabeza.'},
+      {n:2,t:'EstÃ¡ encinta, y grita con los dolores del parto y con el tormento de dar a luz.'},
+      {n:17,t:'Entonces el DragÃ³n se llenÃ³ de furor contra la Mujer, y se fue a hacer la guerra al resto de su descendencia, a los que guardan los mandamientos de Dios y mantienen el testimonio de JesÃºs.'},
+    ]
+  },
+};
+
+// Versiones y sus diferencias notables
+const VERSION_LABELS = { BJ:'Biblia de JerusalÃ©n', RV:'Reina-Valera 1960', NVI:'Nueva VersiÃ³n Internacional', TNM:'TraducciÃ³n del Nuevo Mundo' };
+
+// Alteraciones conocidas de la TNM (para referencia apologÃ©tica)
+const TNM_NOTES = {
+  'JUA-1-1': 'La TNM traduce "la Palabra era un dios" en lugar de "la Palabra era Dios" â€” alteraciÃ³n doctrinal para negar la divinidad de Cristo. El griego original (Î¸Îµá½¸Ï‚ á¼¦Î½ á½ Î»ÏŒÎ³Î¿Ï‚) no tiene artÃ­culo indefinido en griego, idioma que no tiene artÃ­culo indefinido.',
+};
+
+// â”€â”€ CONFIGURACIÃ“N â”€â”€
+// Cuando tengas tu Worker desplegado, reemplaza esta URL con la tuya.
+// Ej: 'https://escudo-de-fe-backend.escudo-de-fe.workers.dev'
+const BACKEND_URL = 'https://escudo-de-fe-backend.escudo-de-fe.workers.dev';
+
+// API Key personal (opcional â€” desbloquea uso ilimitado sin depender de la cuota comunitaria)
+let apiKey = localStorage.getItem('ef_apikey') || '';
+
+// â”€â”€ STATE â”€â”€
+let currentMode = 'debate';
+let isListening = false;
+let recognition = null;
+let speechSupported = false;
+let currentLang = { code:'ðŸ‡ªðŸ‡¸ ES', name:'EspaÃ±ol', speech:'es-ES' };
+let savedItems = JSON.parse(localStorage.getItem('ef_saved') || '[]');
+let useCount = parseInt(localStorage.getItem('ef_uses') || '0');
+let currentSearchResult = null;
+let currentBibleVersion = 'BJ';
+let currentBook = 'GEN';
+let currentChapter = 1;
+
+// â”€â”€ INIT â”€â”€
+document.addEventListener('DOMContentLoaded', () => {
+  if (apiKey) document.getElementById('apikey-input').value = apiKey;
+  updateAuthBar();
+  speechSupported = ('webkitSpeechRecognition' in window) || ('SpeechRecognition' in window);
+  if (!speechSupported) document.getElementById('no-speech-warn').classList.add('visible');
+  renderChips();
+  renderSaved();
+  loadBibleChapter();
+});
+
+// â”€â”€ NAV â”€â”€
+function showScreen(name, el) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('screen-' + name).classList.add('active');
+  if (el) el.classList.add('active');
+}
+
+// â”€â”€ MODE â”€â”€
+function setMode(m) {
+  currentMode = m;
+  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('mode-' + m).classList.add('active');
+  const labels = { debate:'Escuchar debate', duda:'Hacer mi pregunta', evan:'Modo pastoral' };
+  document.getElementById('mic-label').textContent = labels[m];
+}
+
+// â”€â”€ SPEECH â”€â”€
+function toggleListen() {
+  if (!speechSupported) { showToast('Usa Chrome en Android para la funciÃ³n de voz'); return; }
+  // Funciona con backend comunitario O con API Key personal
+  isListening ? stopListening() : startListening();
+}
+
+function startListening() {
+  const SpeechR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  recognition = new SpeechR();
+  recognition.lang = currentLang.speech;
+  recognition.continuous = false;
+  recognition.interimResults = false;
+  recognition.onstart = () => {
+    isListening = true;
+    document.getElementById('mic-btn').classList.add('recording');
+    document.getElementById('mic-label').textContent = 'Escuchando... (toca para parar)';
+    document.getElementById('listen-status').classList.add('visible');
+    const lbl = { debate:'Escuchando al oponente...', duda:'Escuchando tu pregunta...', evan:'Escuchando el tema...' };
+    document.getElementById('listen-txt').textContent = lbl[currentMode];
+    removeEmpty();
+  };
+  recognition.onresult = (e) => {
+    const text = e.results[0][0].transcript;
+    stopListening();
+    addOpponentBubble(text);
+    callAI(text);
+  };
+  recognition.onerror = (e) => { stopListening(); if (e.error !== 'aborted') showToast('Error: ' + e.error); };
+  recognition.onend = () => { if (isListening) stopListening(); };
+  recognition.start();
+}
+
+function stopListening() {
+  isListening = false;
+  if (recognition) { try { recognition.stop(); } catch(e){} recognition = null; }
+  document.getElementById('mic-btn').classList.remove('recording');
+  const labels = { debate:'Escuchar debate', duda:'Hacer mi pregunta', evan:'Modo pastoral' };
+  document.getElementById('mic-label').textContent = labels[currentMode];
+  document.getElementById('listen-status').classList.remove('visible');
+}
+
+// â”€â”€ CHAT â”€â”€
+function removeEmpty() { const e = document.getElementById('empty-state'); if (e) e.remove(); }
+
+function addOpponentBubble(text) {
+  const area = document.getElementById('chat-area');
+  const lbl = { debate:'Oponente detectado', duda:'Tu pregunta', evan:'Tema a evangelizar' };
+  const wrap = document.createElement('div');
+  wrap.className = 'msg-wrap';
+  wrap.innerHTML = `<div class="msg-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:11px;height:11px"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>${lbl[currentMode]}</div><div class="bubble opponent">"${text}"</div>`;
+  area.appendChild(wrap);
+  area.scrollTop = area.scrollHeight;
+}
+
+function addThinkingBubble() {
+  const area = document.getElementById('chat-area');
+  const el = document.createElement('div');
+  el.id = 'thinking-bubble';
+  el.className = 'msg-wrap';
+  el.innerHTML = `<div class="msg-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:11px;height:11px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Escudo de Fe Â· IA</div><div class="bubble thinking">Analizando con doctrina catÃ³lica...</div>`;
+  area.appendChild(el);
+  area.scrollTop = area.scrollHeight;
+}
+
+function removeThinking() { const el = document.getElementById('thinking-bubble'); if (el) el.remove(); }
+
+function addResponseCard(data) {
+  const area = document.getElementById('chat-area');
+  const card = document.createElement('div');
+  card.className = 'msg-wrap';
+  const src = (data.sources || []).map(s => `<span class="badge ap">${s}</span>`).join('');
+  card.innerHTML = `<div class="msg-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:11px;height:11px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Escudo de Fe Â· IA</div>
+    <div class="response-card">
+      <div class="rc-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:15px;height:15px;color:var(--gold)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>${data.topic||'Respuesta'}</span></div>
+      <div class="rc-body">
+        ${data.verse?`<div class="verse-block"><div class="verse-text">"${data.verse}"</div><div class="verse-ref">${data.verseRef||''}</div></div>`:''}
+        <div class="arg-text">${data.argument||''}</div>
+        <div class="badges">${data.cic?`<span class="badge cic">${data.cic}</span>`:''} ${src}</div>
+        <div class="card-acts">
+          <button class="cact" onclick="shareCardWA(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/></svg>WhatsApp</button>
+          <button class="cact" onclick="saveCardBtn(this)" data-topic="${(data.topic||'').replace(/"/g,'&quot;')}" data-verse="${(data.verse||'').replace(/"/g,'&quot;')}" data-ref="${(data.verseRef||'').replace(/"/g,'&quot;')}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>Guardar</button>
+        </div>
+      </div>
+    </div>`;
+  area.appendChild(card);
+  area.scrollTop = area.scrollHeight;
+  maybeShowAd();
+}
+
+// â”€â”€ AI â”€â”€
+// â”€â”€ Sistema dual: Backend comunitario + API Key personal â”€â”€
+async function callAI(question) {
+  addThinkingBubble();
+  try {
+    const parsed = apiKey
+      ? await callAnthropicDirect(question, currentMode, apiKey)
+      : await callCommunityBackend(question, currentMode);
+    removeThinking();
+    addResponseCard(parsed);
+  } catch(err) {
+    removeThinking();
+    const area = document.getElementById('chat-area');
+    const e = document.createElement('div');
+    const isCuota = err.message.includes('cuota') || err.message.includes('lÃ­mite');
+    e.innerHTML = `<div class="bubble" style="background:#fff3cd;color:#856404;font-size:12px;padding:10px 12px;border-radius:10px;line-height:1.6;">
+      ${isCuota
+        ? 'â³ ' + err.message + ' <br><br><button onclick="openModal('donate-modal')" style="background:var(--gold);color:var(--navy);border:none;border-radius:7px;padding:5px 12px;font-size:11px;cursor:pointer;font-weight:600;">Apoyar la misiÃ³n</button>'
+        : 'âŒ ' + err.message}
+    </div>`;
+    area.appendChild(e);
+    area.scrollTop = area.scrollHeight;
+  }
+}
+
+// Llama al Worker comunitario (sin API Key del usuario)
+async function callCommunityBackend(question, mode) {
+  const res = await fetch(BACKEND_URL + '/ask', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ question, mode })
+  });
+  const d = await res.json();
+  if (!res.ok || d.error) throw new Error(d.message || d.error || 'Error del servidor comunitario');
+  if (d.quota) {
+    const restantes = d.quota.limit - d.quota.used;
+    if (restantes <= 3) showToast(`Te quedan ${restantes} consultas gratuitas hoy`);
+  }
+  return d.data;
+}
+
+// Llama directamente a Anthropic con la API Key personal
+async function callAnthropicDirect(question, mode, key) {
+  const modeP = {
+    debate: 'Debate apologÃ©tico â€” defiende la posiciÃ³n catÃ³lica con firmeza y caridad.',
+    duda: 'Duda personal â€” responde de forma clara y pastoral para un laico.',
+    evan: 'EvangelizaciÃ³n â€” responde de forma acogedora y dialogante.'
+  };
+  const sys = `Eres experto en apologÃ©tica catÃ³lica. Responde ÃšNICAMENTE con JSON sin texto adicional:
+{"topic":"TÃ­tulo (mÃ¡x 5 palabras)","verse":"Cita bÃ­blica","verseRef":"â€” Libro Cap:Ver","cic":"CIC Â§nÃºmero","argument":"Argumento en 3-4 oraciones con referencia patrÃ­stica.","sources":["fuente1","fuente2"]}
+Fuentes: Padre Luis Toro, Santiago AlarcÃ³n, Soldado Apologeta, JosÃ© Placencia, San AgustÃ­n, San Ireneo, Concilio Vaticano II. Responde en el idioma del usuario.
+Modo: ${modeP[mode]}`;
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
+    body: JSON.stringify({ model: 'claude-sonnet-4-6', max_tokens: 1000, system: sys, messages: [{ role: 'user', content: question }] })
+  });
+  if (!res.ok) throw new Error((await res.json()).error?.message || 'Error de API Key personal');
+  const d = await res.json();
+  return JSON.parse(d.content.map(b => b.text || '').join('').replace(/```json|```/g, '').trim());
+}
+
+// â”€â”€ BIBLIA â”€â”€
+function setBibleVersion(v, btn) {
+  currentBibleVersion = v;
+  document.querySelectorAll('.bv-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const warn = document.getElementById('bible-warn');
+  warn.style.display = v === 'TNM' ? 'block' : 'none';
+  loadBibleChapter();
+}
+
+function loadBook() {
+  currentBook = document.getElementById('book-select').value;
+  currentChapter = 1;
+  const data = BIBLE_SAMPLES[currentBook];
+  const chapSel = document.getElementById('chapter-select');
+  const maxCh = data ? data.chapters : 10;
+  chapSel.innerHTML = Array.from({length:maxCh},(_,i)=>`<option value="${i+1}">Cap. ${i+1}</option>`).join('');
+  loadBibleChapter();
+}
+
+function loadChapter() {
+  currentChapter = parseInt(document.getElementById('chapter-select').value);
+  loadBibleChapter();
+}
+
+function loadBibleChapter() {
+  const title = document.getElementById('bible-chapter-title');
+  const versesEl = document.getElementById('bible-verses');
+  const bookName = document.getElementById('book-select').options[document.getElementById('book-select').selectedIndex]?.text || '';
+  const vName = VERSION_LABELS[currentBibleVersion] || currentBibleVersion;
+  title.textContent = `${bookName} ${currentChapter} â€” ${vName}`;
+
+  const data = BIBLE_SAMPLES[currentBook];
+  if (!data || !data[String(currentChapter)]) {
+    versesEl.innerHTML = `<div style="text-align:center;padding:30px;color:var(--text3);font-size:13px;">ðŸ“– En la versiÃ³n completa, este capÃ­tulo se cargarÃ¡ desde la API bÃ­blica.<br><br>Por ahora estÃ¡n disponibles los capÃ­tulos de muestra de los libros apologÃ©ticos mÃ¡s usados.</div>`;
+    return;
+  }
+  const verses = data[String(currentChapter)];
+  const versionSuffix = currentBibleVersion !== 'BJ' ? ` <span style="font-size:10px;color:var(--text3)">[${currentBibleVersion}]</span>` : '';
+  versesEl.innerHTML = verses.map(v => {
+    const noteKey = `${currentBook}-${currentChapter}-${v.n}`;
+    const note = currentBibleVersion === 'TNM' && TNM_NOTES[noteKey] ? `<div class="badge warn" style="margin-top:5px;display:inline-block;font-size:10px;">âš ï¸ ${TNM_NOTES[noteKey]}</div>` : '';
+    return `<div class="bible-verse-item"><span class="bv-num">${v.n}</span><div><span class="bv-text">${v.t}${versionSuffix}</span>${note}</div></div>`;
+  }).join('');
+}
+
+function searchBible(val) {
+  if (!val) { loadBibleChapter(); return; }
+  const versesEl = document.getElementById('bible-verses');
+  // Buscar en todos los capÃ­tulos disponibles del libro actual
+  const data = BIBLE_SAMPLES[currentBook];
+  if (!data) return;
+  const results = [];
+  Object.entries(data).forEach(([ch, verses]) => {
+    if (!Array.isArray(verses)) return;
+    verses.forEach(v => {
+      if (v.t.toLowerCase().includes(val.toLowerCase())) {
+        results.push({ch, ...v});
+      }
+    });
+  });
+  if (results.length === 0) {
+    versesEl.innerHTML = `<div style="text-align:center;padding:20px;color:var(--text3);font-size:13px;">Sin resultados en este libro.</div>`;
+  } else {
+    versesEl.innerHTML = results.map(r => {
+      const hi = r.t.replace(new RegExp(`(${val})`, 'gi'), '<mark style="background:#fff3cd;border-radius:2px;padding:0 1px">$1</mark>');
+      return `<div class="bible-verse-item"><span class="bv-num">${r.n}</span><div class="bv-text">${hi}</div></div>`;
+    }).join('');
+  }
+}
+
+// â”€â”€ BUSCAR â”€â”€
+const FREE_KEYS = Object.keys(FREE_TOPICS);
+function renderChips() {
+  const c = document.getElementById('chips-container');
+  c.innerHTML = FREE_KEYS.map(k => `<span class="chip free-chip" onclick="loadFreeTopic('${k}')">${k}</span>`).join('');
+}
+
+let searchTimer = null;
+function handleSearch(val) {
+  clearTimeout(searchTimer);
+  const card = document.getElementById('result-card');
+  const premBlock = document.getElementById('premium-search-prompt');
+  if (!val) { card.classList.remove('visible'); premBlock.style.display='none'; return; }
+  // Buscar en temas gratuitos primero
+  const match = FREE_KEYS.find(k => k.toLowerCase().includes(val.toLowerCase()));
+  if (match) { loadFreeTopic(match); return; }
+  // Si no hay match gratuito, ofrecer IA si tiene key
+  // Intenta backend comunitario (o API Key si la tiene)
+  searchTimer = setTimeout(() => searchWithAI(val), 700);
+}
+
+function loadFreeTopic(key) {
+  const d = FREE_TOPICS[key];
+  if (!d) return;
+  currentSearchResult = { topic:key, verse:d.verse, verseRef:d.ref, cic:d.cic, argument:d.arg, sources:d.sources };
+  document.getElementById('rc-title').textContent = key;
+  document.getElementById('rc-type-label').innerHTML = '<span class="free-label">âœ“ Contenido gratuito</span>';
+  document.getElementById('rc-verse').textContent = '"' + d.verse + '"';
+  document.getElementById('rc-ref').textContent = d.ref;
+  document.getElementById('rc-arg').textContent = d.arg;
+  const b = document.getElementById('rc-badges');
+  b.innerHTML = `<span class="badge cic">${d.cic}</span>` + (d.sources||[]).map(s=>`<span class="badge ap">${s}</span>`).join('');
+  document.getElementById('result-card').classList.add('visible');
+  document.getElementById('premium-search-prompt').style.display = 'none';
+  document.getElementById('search-loading').style.display = 'none';
+  // Highlight chip
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active-chip'));
+  document.querySelectorAll('.chip').forEach(c => { if (c.textContent.includes(key)) c.classList.add('active-chip'); });
+}
+
+async function searchWithAI(topic) {
+  document.getElementById('search-loading').style.display = 'block';
+  document.getElementById('result-card').classList.remove('visible');
+  document.getElementById('premium-search-prompt').style.display = 'none';
+  try {
+    // Usa backend comunitario si no hay API Key personal
+    let parsed;
+    if (apiKey) {
+      parsed = await callAnthropicDirect('Explica la posiciÃ³n de la Iglesia CatÃ³lica sobre: ' + topic, 'duda', apiKey);
+    } else {
+      parsed = await callCommunityBackend('Explica la posiciÃ³n de la Iglesia CatÃ³lica sobre: ' + topic, 'duda');
+    }
+    currentSearchResult = parsed;
+    document.getElementById('rc-title').textContent = parsed.topic || topic;
+    const isPersonal = !!apiKey;
+    document.getElementById('rc-type-label').innerHTML = isPersonal
+      ? '<span class="premium-label">â­ Tu API Key personal</span>'
+      : '<span class="free-label">ðŸŒ CrÃ©dito comunitario</span>';
+    document.getElementById('rc-verse').textContent = '"' + (parsed.verse||'') + '"';
+    document.getElementById('rc-ref').textContent = parsed.verseRef||'';
+    document.getElementById('rc-arg').textContent = parsed.argument||'';
+    const b = document.getElementById('rc-badges');
+    b.innerHTML = (parsed.cic ? `<span class="badge cic">${parsed.cic}</span>` : '') + (parsed.sources||[]).map(s=>`<span class="badge ap">${s}</span>`).join('');
+    document.getElementById('search-loading').style.display = 'none';
+    document.getElementById('result-card').classList.add('visible');
+  } catch(err) {
+    document.getElementById('search-loading').style.display = 'none';
+    const isCuota = err.message.includes('cuota') || err.message.includes('lÃ­mite');
+    if (isCuota) {
+      document.getElementById('premium-search-prompt').style.display = 'block';
+      document.getElementById('premium-search-prompt').innerHTML = `<div style="font-size:28px;">â³</div><p>${err.message}</p><button class="unlock-btn" onclick="openModal('donate-modal')">Apoyar la misiÃ³n</button>`;
+    } else {
+      showToast('Error al buscar: ' + err.message);
+    }
+  }
+}
+
+function pickChip(topic) { document.getElementById('search-input').value = topic; loadFreeTopic(topic); }
+
+// â”€â”€ GUARDADOS â”€â”€
+function saveCardBtn(btn) {
+  const topic = btn.dataset.topic, verse = btn.dataset.verse, ref = btn.dataset.ref;
+  if (savedItems.find(s=>s.topic===topic)) { showToast('Ya estÃ¡ guardado'); return; }
+  savedItems.unshift({topic,verse,ref,date:Date.now()});
+  localStorage.setItem('ef_saved', JSON.stringify(savedItems));
+  renderSaved(); showToast('Guardado âœ“');
+}
+
+function saveCurrentResult() {
+  if (!currentSearchResult) return;
+  saveCardBtn({dataset:{topic:currentSearchResult.topic,verse:currentSearchResult.verse,ref:currentSearchResult.verseRef}});
+}
+
+function renderSaved() {
+  const list = document.getElementById('guardados-list');
+  const empty = document.getElementById('guardados-empty');
+  const banner = document.getElementById('donate-banner');
+  list.querySelectorAll('.saved-item').forEach(e=>e.remove());
+  if (savedItems.length===0) { empty.style.display='block'; banner.style.display='none'; return; }
+  empty.style.display='none';
+  savedItems.forEach(item => {
+    const el = document.createElement('div');
+    el.className = 'saved-item';
+    el.innerHTML = `<div class="saved-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div><div class="saved-title">${item.topic}</div><div class="saved-preview">${item.ref||''} Â· "${(item.verse||'').substring(0,55)}${(item.verse||'').length>55?'...':''}"</div></div>`;
+    list.insertBefore(el, banner);
+  });
+  if (savedItems.length>=2) banner.style.display='flex';
+}
+
+// â”€â”€ API KEY â”€â”€
+function saveApiKey() {
+  const val = document.getElementById('apikey-input').value.trim();
+  if (!val) { showToast('Ingresa una API Key vÃ¡lida'); return; }
+  apiKey = val; localStorage.setItem('ef_apikey', val);
+  showToast('API Key guardada âœ“');
+}
+
+// â”€â”€ LANG â”€â”€
+function selectLang(el,code,name,speech) {
+  document.querySelectorAll('.lang-item').forEach(i=>i.classList.remove('selected'));
+  el.classList.add('selected');
+  currentLang = {code,name,speech};
+  document.getElementById('cur-lang-btn').textContent = code;
+  document.getElementById('cfg-lang-name').textContent = name;
+}
+
+// â”€â”€ ACCIONES â”€â”€
+function shareWhatsApp() {
+  if (!currentSearchResult) return;
+  const t = `*${currentSearchResult.topic}*\n\nðŸ“– ${currentSearchResult.verseRef}: "${currentSearchResult.verse}"\n\n${currentSearchResult.argument}\n\nðŸ“š ${currentSearchResult.cic||''}\n\n_Escudo de Fe â€” ApologÃ©tica CatÃ³lica IA_`;
+  window.open('https://wa.me/?text='+encodeURIComponent(t));
+}
+function shareCardWA(btn) {
+  const card = btn.closest('.response-card');
+  if (!card) return;
+  const topic = card.querySelector('span')?.textContent||'';
+  const verse = card.querySelector('.verse-text')?.textContent||'';
+  const ref = card.querySelector('.verse-ref')?.textContent||'';
+  const arg = card.querySelector('.arg-text')?.textContent||'';
+  const t = `*${topic}*\n\nðŸ“– ${ref}: ${verse}\n\n${arg}\n\n_Escudo de Fe â€” ApologÃ©tica CatÃ³lica IA_`;
+  window.open('https://wa.me/?text='+encodeURIComponent(t));
+}
+function copyResult() {
+  if (!currentSearchResult) return;
+  const t = `${currentSearchResult.topic}\n\n${currentSearchResult.verseRef}: "${currentSearchResult.verse}"\n\n${currentSearchResult.argument}\n\n${currentSearchResult.cic||''}`;
+  navigator.clipboard.writeText(t).then(()=>showToast('Copiado âœ“'));
+}
+function shareApp() {
+  const url = window.location.href;
+  if (navigator.share) navigator.share({title:'Escudo de Fe',text:'App de apologÃ©tica catÃ³lica con IA',url});
+  else navigator.clipboard.writeText(url).then(()=>showToast('Enlace copiado âœ“'));
+}
+
+// â”€â”€ MODALS â”€â”€
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+document.querySelectorAll('.modal-backdrop').forEach(m => m.addEventListener('click', e => { if(e.target===m) m.classList.remove('open'); }));
+
+// â”€â”€ TOAST â”€â”€
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2800);
+}
+
+// â”€â”€ CUOTA COMUNITARIA â”€â”€
+async function loadQuotaStatus() {
+  const el = document.getElementById('quota-status');
+  el.textContent = 'Consultando...';
+  try {
+    const res = await fetch(BACKEND_URL + '/status');
+    const d = await res.json();
+    const tuUsadas = d.yourUsage || 0;
+    const tuLimite = d.yourLimit || 15;
+    const comUsadas = d.communityUsage || 0;
+    const comLimite = d.communityLimit || 500;
+    const tuRestantes = tuLimite - tuUsadas;
+    el.innerHTML = `
+      <div style="font-weight:600;margin-bottom:5px;">ðŸŒ CrÃ©dito comunitario de hoy</div>
+      <div>Tu uso: <strong>${tuUsadas}/${tuLimite}</strong> consultas (te quedan <strong>${tuRestantes}</strong>)</div>
+      <div>Comunidad: <strong>${comUsadas}/${comLimite}</strong> consultas usadas hoy</div>
+      <div style="margin-top:6px;font-size:11px;opacity:.8;">El contador se reinicia cada dÃ­a a medianoche UTC.</div>`;
+    el.style.background = tuRestantes <= 3 ? '#fff3cd' : 'var(--green-bg)';
+    el.style.color = tuRestantes <= 3 ? '#856404' : 'var(--green)';
+  } catch(e) {
+    el.textContent = 'No se pudo conectar al servidor. Verifica la URL del backend en el cÃ³digo.';
+    el.style.color = 'var(--red)';
+  }
+}
+// â”€â”€ GOOGLE AUTH â”€â”€
+const GOOGLE_CLIENT_ID = 'TU_GOOGLE_CLIENT_ID.apps.googleusercontent.com';
+// Para obtener tu Client ID:
+// 1. Ve a https://console.cloud.google.com
+// 2. Crea un proyecto > APIs y Servicios > Credenciales
+// 3. Crear credenciales > ID de cliente OAuth 2.0 > Aplicacion web
+// 4. Agrega tu dominio en "Origenes autorizados"
+// 5. Copia el Client ID y pÃ©galo arriba
+
+let currentUser = null;
+let currentPlan = localStorage.getItem('ef_plan') || 'free';
+
+function signInWithGoogle() {
+  if (typeof google === 'undefined') {
+    showToast('Google Sign-In no disponible. Configura el Client ID en el codigo.');
+    return;
+  }
+  google.accounts.id.initialize({
+    client_id: GOOGLE_CLIENT_ID,
+    callback: handleGoogleResponse,
+    auto_select: false,
+    cancel_on_tap_outside: true,
+  });
+  google.accounts.id.prompt((notification) => {
+    if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+      // Fallback: mostrar el boton standard
+      google.accounts.id.renderButton(
+        document.getElementById('google-btn-fallback') || document.body,
+        { theme:'outline', size:'large', width:'260' }
+      );
+    }
+  });
+}
+
+function handleGoogleResponse(response) {
+  try {
+    const payload = JSON.parse(atob(response.credential.split('.')[1]));
+    currentUser = {
+      name: payload.name,
+      email: payload.email,
+      picture: payload.picture,
+      sub: payload.sub,
+    };
+    localStorage.setItem('ef_user', JSON.stringify(currentUser));
+    closeModal('login-modal');
+    updateAuthBar();
+    showToast('Bienvenido, ' + currentUser.name.split(' ')[0] + '!');
+  } catch(e) {
+    showToast('Error al iniciar sesion. Intenta de nuevo.');
+  }
+}
+
+function signOut() {
+  currentUser = null;
+  localStorage.removeItem('ef_user');
+  if (typeof google !== 'undefined') google.accounts.id.disableAutoSelect();
+  updateAuthBar();
+  showToast('Sesion cerrada');
+}
+
+function updateAuthBar() {
+  const savedUser = localStorage.getItem('ef_user');
+  if (savedUser) currentUser = JSON.parse(savedUser);
+
+  const avatarWrap = document.getElementById('auth-avatar-wrap');
+  const nameEl = document.getElementById('auth-name-el');
+  const planTag = document.getElementById('auth-plan-tag');
+  const signinBtn = document.getElementById('auth-signin-btn');
+  const logoutBtn = document.getElementById('auth-logout-btn');
+  const planBadge = document.querySelector('.plan-badge-header');
+
+  const planLabels = {free:'GRATIS', apologeta:'APOLOGETA', misionero:'MISIONERO'};
+
+  if (currentUser) {
+    if (currentUser.picture) {
+      avatarWrap.innerHTML = '<img class="auth-avatar" src="' + currentUser.picture + '" alt="' + currentUser.name + '" referrerpolicy="no-referrer">';
+    } else {
+      const initials = currentUser.name.split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase();
+      avatarWrap.innerHTML = '<div class="auth-initials">' + initials + '</div>';
+    }
+    nameEl.textContent = currentUser.name.split(' ')[0];
+    signinBtn.style.display = 'none';
+    logoutBtn.style.display = 'inline';
+  } else {
+    avatarWrap.innerHTML = '<div class="auth-initials" style="opacity:.5;">&#128100;</div>';
+    nameEl.textContent = 'Invitado';
+    signinBtn.style.display = 'flex';
+    logoutBtn.style.display = 'none';
+  }
+  if (planTag) planTag.textContent = planLabels[currentPlan] || 'GRATIS';
+}
+
+function suscribirse(plan) {
+  // Aqui va la integracion con tu procesador de pagos (Stripe, PayPal, etc.)
+  // Por ahora redirige a configurar API Key como alternativa inmediata
+  showToast('Pago proximamente. Usa tu API Key por ahora.');
+  closeModal('login-modal');
+  showScreen('ajustes', document.querySelectorAll('.tab')[4]);
+}
+
+// â”€â”€ ANUNCIO PANTALLA COMPLETA â”€â”€
+let adTimerInterval = null;
+let useCountAd = parseInt(localStorage.getItem('ef_uses') || '0');
+
+function maybeShowAd() {
+  if (currentPlan !== 'free') return;
+  useCountAd++;
+  localStorage.setItem('ef_uses', useCountAd);
+  if (useCountAd % 5 === 0) showAd();
+  if (useCountAd === 10) setTimeout(()=>openModal('donate-modal'), 1800);
+}
+
+function showAd() {
+  const modal = document.getElementById('ad-modal');
+  const skipBtn = document.getElementById('ad-skip-btn');
+  const timerEl = document.getElementById('ad-timer');
+  const countdown = document.getElementById('ad-countdown');
+  modal.classList.add('open');
+  skipBtn.disabled = true;
+  skipBtn.classList.remove('ready');
+  let secs = 5;
+  timerEl.textContent = secs;
+  countdown.textContent = secs + 's';
+  adTimerInterval = setInterval(() => {
+    secs--;
+    timerEl.textContent = secs;
+    countdown.textContent = secs + 's';
+    if (secs <= 0) {
+      clearInterval(adTimerInterval);
+      skipBtn.disabled = false;
+      skipBtn.classList.add('ready');
+      skipBtn.innerHTML = 'Continuar';
+      countdown.textContent = 'Listo âœ“';
+    }
+  }, 1000);
+}
+
+function closeAd() {
+  clearInterval(adTimerInterval);
+  document.getElementById('ad-modal').classList.remove('open');
+  document.getElementById('ad-skip-btn').innerHTML = 'Continuar en <span id="ad-timer">5</span>s';
+}
+
+// â”€â”€ INIT EXTENDIDO â”€â”€
+const _origInit = document.addEventListener;
+document.addEventListener('DOMContentLoaded', () => {
+  updateAuthBar();
+});
+
+// â”€â”€ TOAST â”€â”€
+function showToast(msg) {
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2800);
+}
+</script>
+</body>
+</html>

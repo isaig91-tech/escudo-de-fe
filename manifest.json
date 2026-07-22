@@ -1,0 +1,18 @@
+{
+  "name": "Escudo de Fe",
+  "short_name": "Escudo de Fe",
+  "description": "Apologetica Catolica con IA — Defiende tu fe con doctrina, Biblia y fuentes patristicas",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#1a1a2e",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" },
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "categories": ["education", "lifestyle", "religion"],
+  "lang": "es",
+  "dir": "ltr"
+}
