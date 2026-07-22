@@ -4,9 +4,8 @@ compatibility_date = "2024-09-01"
 
 [[kv_namespaces]]
 binding = "ESCUDO_KV"
-id = "wrangler kv namespace create ESCUDO_KV"
+id = "e69e2e9b95064a9da55855a010318151"
 
 [vars]
-ALLOWED_ORIGIN = "*"
 DAILY_LIMIT = "500"
 PER_IP_LIMIT = "15"

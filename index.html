@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Escudo de Fe — Apologética Católica</title>
+<title>Escudo de Fe - Apologetica Catolica</title>
 <meta name="theme-color" content="#1a1a2e">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
@@ -34,7 +34,7 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
 .screen{display:none;height:100%;flex-direction:column;overflow:hidden;}
 .screen.active{display:flex;}
 
-/* ── DEBATE ── */
+/* -- DEBATE -- */
 .chat-area{flex:1;overflow-y:auto;padding:13px 13px 8px;display:flex;flex-direction:column;gap:11px;scroll-behavior:smooth;}
 .empty-state{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px 20px;gap:8px;color:var(--text3);}
 .empty-cross{font-size:50px;color:var(--gold);opacity:.7;margin-bottom:2px;}
@@ -83,7 +83,7 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
 .premium-lock p{font-size:12px;color:#5c4a00;line-height:1.5;}
 .premium-lock .unlock-btn{background:var(--gold);color:var(--navy);border:none;border-radius:9px;padding:8px 20px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Cinzel',serif;}
 
-/* ── BIBLIA ── */
+/* -- BIBLIA -- */
 .bible-area{flex:1;overflow-y:auto;display:flex;flex-direction:column;}
 .bible-top{padding:12px 13px 8px;display:flex;flex-direction:column;gap:8px;flex-shrink:0;}
 .bible-version-row{display:flex;gap:5px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none;}
@@ -107,7 +107,7 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
 .bible-warn.visible{display:block;}
 .bible-loading{text-align:center;padding:30px;color:var(--text3);font-size:13px;}
 
-/* ── BUSCAR ── */
+/* -- BUSCAR -- */
 .buscar-inner{flex:1;overflow-y:auto;padding:13px;display:flex;flex-direction:column;gap:11px;}
 .search-box{display:flex;gap:7px;align-items:center;background:var(--card);border:.5px solid var(--border2);border-radius:10px;padding:9px 12px;}
 .search-box svg{width:17px;height:17px;color:var(--text3);flex-shrink:0;}
@@ -116,7 +116,7 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
 .chips{display:flex;flex-wrap:wrap;gap:5px;}
 .chip{padding:5px 10px;border-radius:20px;background:var(--card);border:.5px solid var(--border2);font-size:11.5px;color:var(--text2);cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif;}
 .chip:hover,.chip.active-chip{background:var(--navy);color:var(--gold);border-color:var(--navy);}
-.chip.free-chip::after{content:' ✓';color:var(--green);font-size:10px;}
+.chip.free-chip::after{content:' ';color:var(--green);font-size:10px;}
 .result-card{display:none;background:var(--card);border-radius:var(--radius);border:.5px solid var(--border2);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);}
 .result-card.visible{display:block;}
 .result-header{background:var(--navy);padding:10px 14px;}
@@ -126,7 +126,7 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
 .free-label{font-size:10px;background:var(--green-bg);color:var(--green);padding:2px 8px;border-radius:20px;display:inline-block;font-weight:500;}
 .premium-label{font-size:10px;background:#fff3cd;color:var(--orange);padding:2px 8px;border-radius:20px;display:inline-block;font-weight:500;}
 
-/* ── GUARDADOS ── */
+/* -- GUARDADOS -- */
 .guardados-inner{flex:1;overflow-y:auto;padding:13px;display:flex;flex-direction:column;gap:9px;}
 .saved-item{background:var(--card);border-radius:11px;border:.5px solid var(--border2);padding:11px 13px;display:flex;gap:11px;align-items:flex-start;cursor:pointer;transition:box-shadow .15s;}
 .saved-item:hover{box-shadow:0 2px 10px rgba(0,0,0,.08);}
@@ -138,7 +138,7 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
 .donate-banner p{font-size:12px;color:#5c4a00;line-height:1.5;}
 .donate-banner-btn{background:var(--gold);color:var(--navy);border:none;border-radius:9px;padding:8px 20px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Cinzel',serif;}
 
-/* ── AJUSTES ── */
+/* -- AJUSTES -- */
 .config-inner{flex:1;overflow-y:auto;padding:13px;display:flex;flex-direction:column;gap:13px;}
 .cg-label{font-size:10.5px;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;font-weight:500;margin-bottom:-5px;}
 .cfg-card{background:var(--card);border-radius:var(--radius);border:.5px solid var(--border2);overflow:hidden;}
@@ -165,7 +165,7 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
 .apikey-hint a{color:var(--gold);}
 .version-note{text-align:center;padding:2px 0 6px;font-size:11px;color:var(--text3);line-height:1.6;}
 
-/* ── MODALS ── */
+/* -- MODALS -- */
 .modal-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;align-items:flex-end;justify-content:center;}
 .modal-backdrop.open{display:flex;}
 .modal-box{background:var(--cream);border-radius:20px 20px 0 0;padding:18px 17px 28px;width:100%;max-width:480px;max-height:85vh;overflow-y:auto;}
@@ -258,18 +258,18 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
 <!-- HEADER -->
 <header class="header">
   <div class="header-left">
-    <div class="logo">✝</div>
+    <div class="logo">+</div>
     <div>
       <div class="app-name">Escudo de Fe</div>
-      <div class="app-tagline">Apologética Católica IA</div>
+      <div class="app-tagline">Apologetica Catolica IA</div>
     </div>
   </div>
   <div class="header-btns">
     <button class="hbtn" onclick="openModal('lang-modal')" aria-label="Idioma">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20"/></svg>
-      <span id="cur-lang-btn">🇪🇸 ES</span>
+      <span id="cur-lang-btn"> ES</span>
     </button>
-    <button class="hbtn premium" onclick="openModal('premium-modal')" aria-label="Premium">⭐ Premium</button>
+    <button class="hbtn premium" onclick="openModal('premium-modal')" aria-label="Premium"> Premium</button>
   </div>
 </header>
 <!-- TABS -->
@@ -314,20 +314,20 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
 </div>
 <div class="screens">
 
-<!-- ── DEBATE ── -->
+<!-- -- DEBATE -- -->
 <section class="screen active" id="screen-debate">
   <div class="chat-area" id="chat-area">
     <div class="empty-state" id="empty-state">
-      <div class="empty-cross">✝</div>
+      <div class="empty-cross">+</div>
       <h3>Listo para defender la fe</h3>
-      <p>Elige un modo y presiona el botón. La IA escuchará y responderá con doctrina, citas bíblicas y fuentes patrísticas.</p>
+      <p>Elige un modo y presiona el boton. La IA escuchara y respondera con doctrina, citas biblicas y fuentes patristicas.</p>
     </div>
   </div>
   <div class="debate-footer">
     <div class="mode-row" role="group">
-      <button class="mode-btn active" id="mode-debate" onclick="setMode('debate')">⚔️ Debate</button>
-      <button class="mode-btn" id="mode-duda" onclick="setMode('duda')">❓ Duda</button>
-      <button class="mode-btn" id="mode-evan" onclick="setMode('evan')">🕊️ Evangelizar</button>
+      <button class="mode-btn active" id="mode-debate" onclick="setMode('debate')">Debate</button>
+      <button class="mode-btn" id="mode-duda" onclick="setMode('duda')">Duda</button>
+      <button class="mode-btn" id="mode-evan" onclick="setMode('evan')">Evangelizar</button>
     </div>
     <div class="no-speech-warn" id="no-speech-warn">Tu navegador no soporta voz. Usa Chrome en Android o escribe en Buscar.</div>
     <div class="listen-status" id="listen-status">
@@ -341,38 +341,38 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
   </div>
 </section>
 
-<!-- ── BIBLIA ── -->
+<!-- -- BIBLIA -- -->
 <section class="screen" id="screen-biblia">
   <div class="bible-area">
     <div class="bible-top">
-      <div class="bible-version-row" role="group" aria-label="Versión bíblica">
-        <button class="bv-btn active" onclick="setBibleVersion('BJ',this)">📖 Biblia de Jerusalén</button>
+      <div class="bible-version-row" role="group" aria-label="Version biblica">
+        <button class="bv-btn active" onclick="setBibleVersion('BJ',this)"> Biblia de Jerusalen</button>
         <button class="bv-btn" onclick="setBibleVersion('RV',this)">Reina-Valera 1960</button>
         <button class="bv-btn" onclick="setBibleVersion('NVI',this)">NVI</button>
-        <button class="bv-btn warn-version" onclick="setBibleVersion('TNM',this)" title="Solo para referencia apologética">⚠️ T. del N. Mundo</button>
+        <button class="bv-btn warn-version" onclick="setBibleVersion('TNM',this)" title="Solo para referencia apologetica"> T. del N. Mundo</button>
       </div>
       <div id="bible-warn" class="bible-warn">
-        ⚠️ <strong>Solo para uso apologético.</strong> La Traducción del Nuevo Mundo contiene alteraciones doctrinales. Se incluye para que puedas identificar y refutar los textos que usan los Testigos de Jehová, comparándolos con versiones fieles.
+         <strong>Solo para uso apologetico.</strong> La Traduccion del Nuevo Mundo contiene alteraciones doctrinales. Se incluye para que puedas identificar y refutar los textos que usan los Testigos de Jehova, comparandolos con versiones fieles.
       </div>
       <div class="bible-search-wrap">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        <input type="text" id="bible-search" placeholder="Buscar versículo o palabra..." oninput="searchBible(this.value)">
+        <input type="text" id="bible-search" placeholder="Buscar versiculo o palabra..." oninput="searchBible(this.value)">
       </div>
       <div class="bible-nav">
         <select class="bible-select" id="book-select" onchange="loadBook()">
-          <option value="GEN">Génesis</option><option value="EXO">Éxodo</option>
+          <option value="GEN">Genesis</option><option value="EXO">Exodo</option>
           <option value="SAL">Salmos</option><option value="PRO">Proverbios</option>
-          <option value="ISA">Isaías</option><option value="MAT">Mateo</option>
+          <option value="ISA">Isaias</option><option value="MAT">Mateo</option>
           <option value="MAR">Marcos</option><option value="LUC">Lucas</option>
           <option value="JUA">Juan</option><option value="HEC">Hechos</option>
           <option value="ROM">Romanos</option><option value="1CO">1 Corintios</option>
-          <option value="GAL">Gálatas</option><option value="EFE">Efesios</option>
+          <option value="GAL">Galatas</option><option value="EFE">Efesios</option>
           <option value="FIL">Filipenses</option><option value="COL">Colosenses</option>
           <option value="1TI">1 Timoteo</option><option value="HEB">Hebreos</option>
           <option value="SAN">Santiago</option><option value="1PE">1 Pedro</option>
           <option value="APO">Apocalipsis</option>
-          <option value="1MA">1 Macabeos (Católico)</option>
-          <option value="2MA">2 Macabeos (Católico)</option>
+          <option value="1MA">1 Macabeos (Catolico)</option>
+          <option value="2MA">2 Macabeos (Catolico)</option>
         </select>
         <select class="bible-select" id="chapter-select" style="max-width:90px" onchange="loadChapter()">
           <option value="1">Cap. 1</option>
@@ -381,29 +381,29 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
     </div>
     <div id="bible-warn-tnm-msg" class="bible-warn" style="margin:0 13px 8px;display:none;"></div>
     <div class="bible-content-area" id="bible-content">
-      <div class="bible-chapter-title" id="bible-chapter-title">Génesis 1 — Biblia de Jerusalén</div>
+      <div class="bible-chapter-title" id="bible-chapter-title">Genesis 1 - Biblia de Jerusalen</div>
       <div id="bible-verses"></div>
     </div>
   </div>
 </section>
 
-<!-- ── BUSCAR ── -->
+<!-- -- BUSCAR -- -->
 <section class="screen" id="screen-buscar">
   <div class="buscar-inner">
     <div class="search-box">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-      <input type="text" id="search-input" placeholder="¿Qué dice la Iglesia sobre...?" oninput="handleSearch(this.value)" autocomplete="off">
+      <input type="text" id="search-input" placeholder="?Que dice la Iglesia sobre...?" oninput="handleSearch(this.value)" autocomplete="off">
     </div>
-    <div class="chips-label">Temas gratuitos ✓ — Siempre disponibles</div>
+    <div class="chips-label">Temas gratuitos  - Siempre disponibles</div>
     <div class="chips" id="chips-container"></div>
-    <div class="search-loading" id="search-loading">Consultando la IA apologética...</div>
+    <div class="search-loading" id="search-loading">Consultando la IA apologetica...</div>
     <div class="result-card" id="result-card">
-      <div class="result-header"><h3 id="rc-title">—</h3></div>
+      <div class="result-header"><h3 id="rc-title">-</h3></div>
       <div class="result-body">
         <div id="rc-type-label"></div>
         <div class="verse-block">
           <div class="verse-text" id="rc-verse">"..."</div>
-          <div class="verse-ref" id="rc-ref">—</div>
+          <div class="verse-ref" id="rc-ref">-</div>
         </div>
         <div class="arg-text" id="rc-arg">...</div>
         <div class="badges" id="rc-badges"></div>
@@ -421,52 +421,52 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
       </div>
     </div>
     <div id="premium-search-prompt" style="display:none;" class="premium-lock">
-      <div style="font-size:28px;">⭐</div>
-      <p>Este tema requiere IA en tiempo real. Configura tu API Key de Anthropic en Ajustes para desbloquearlo, o <strong>apoya la misión</strong> con una donación.</p>
+      <div style="font-size:28px;"></div>
+      <p>Este tema requiere IA en tiempo real. Configura tu API Key de Anthropic en Ajustes para desbloquearlo, o <strong>apoya la mision</strong> con una donacion.</p>
       <button class="unlock-btn" onclick="showScreen('ajustes',document.querySelectorAll('.tab')[4])">Configurar API Key</button>
     </div>
   </div>
 </section>
 
-<!-- ── GUARDADOS ── -->
+<!-- -- GUARDADOS -- -->
 <section class="screen" id="screen-guardados">
   <div class="guardados-inner" id="guardados-list">
     <div id="guardados-empty" style="text-align:center;padding:38px 20px;color:var(--text3);font-size:13px;display:none;">
-      <div style="font-size:38px;margin-bottom:9px;">🔖</div>
-      Aún no tienes respuestas guardadas.<br>Busca un tema y toca "Guardar".
+      <div style="font-size:38px;margin-bottom:9px;"></div>
+      Aun no tienes respuestas guardadas.<br>Busca un tema y toca "Guardar".
     </div>
     <div class="donate-banner" id="donate-banner">
-      <div style="font-size:26px;">🙏</div>
-      <p>Esta app es gratuita y sin anuncios para todos los católicos del mundo. Tu apoyo sostiene la misión de defender la fe.</p>
-      <button class="donate-banner-btn" onclick="openModal('donate-modal')">Apoyar la misión</button>
+      <div style="font-size:26px;"></div>
+      <p>Esta app es gratuita y sin anuncios para todos los catolicos del mundo. Tu apoyo sostiene la mision de defender la fe.</p>
+      <button class="donate-banner-btn" onclick="openModal('donate-modal')">Apoyar la mision</button>
     </div>
   </div>
 </section>
 
-<!-- ── AJUSTES ── -->
+<!-- -- AJUSTES -- -->
 <section class="screen" id="screen-ajustes">
   <div class="config-inner">
     <div class="apikey-section">
-      <div class="apikey-label">🔑 API Key propia (uso ilimitado personal)</div>
+      <div class="apikey-label"> API Key propia (uso ilimitado personal)</div>
       <div class="apikey-row">
         <input class="apikey-input" type="password" id="apikey-input" placeholder="sk-ant-api03-..." autocomplete="off">
         <button class="apikey-save" onclick="saveApiKey()">Guardar</button>
       </div>
-      <div class="apikey-hint">Obtén tu clave en <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a> (primeros $5 gratis). Se guarda solo en este dispositivo.</div>
+      <div class="apikey-hint">Obten tu clave en <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a> (primeros $5 gratis). Se guarda solo en este dispositivo.</div>
     </div>
     <div class="cg-label">Idioma y voz</div>
     <div class="cfg-card">
       <div class="cfg-row" onclick="openModal('lang-modal')">
         <div class="cfg-left">
           <div class="cfg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20"/></svg></div>
-          <div><div class="cfg-label">Idioma de la app</div><div class="cfg-sub" id="cfg-lang-name">Español</div></div>
+          <div><div class="cfg-label">Idioma de la app</div><div class="cfg-sub" id="cfg-lang-name">Espanol</div></div>
         </div>
         <div class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
       </div>
       <div class="cfg-row">
         <div class="cfg-left">
           <div class="cfg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 013 3v7a3 3 0 11-6 0V5a3 3 0 013-3z"/></svg></div>
-          <div><div class="cfg-label">Detectar idioma de voz</div><div class="cfg-sub">Automático</div></div>
+          <div><div class="cfg-label">Detectar idioma de voz</div><div class="cfg-sub">Automatico</div></div>
         </div>
         <div class="toggle on" onclick="this.classList.toggle('on')" role="switch" aria-label="Auto idioma"></div>
       </div>
@@ -476,44 +476,44 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
       <div class="cfg-row">
         <div class="cfg-left">
           <div class="cfg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-          <div><div class="cfg-label">Referencias patrísticas</div><div class="cfg-sub">Padres de la Iglesia en respuestas</div></div>
+          <div><div class="cfg-label">Referencias patristicas</div><div class="cfg-sub">Padres de la Iglesia en respuestas</div></div>
         </div>
-        <div class="toggle on" onclick="this.classList.toggle('on')" role="switch" aria-label="Patrística"></div>
+        <div class="toggle on" onclick="this.classList.toggle('on')" role="switch" aria-label="Patristica"></div>
       </div>
       <div class="cfg-row">
         <div class="cfg-left">
           <div class="cfg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-          <div><div class="cfg-label">Historial de consultas</div><div class="cfg-sub">Guardar búsquedas de esta sesión</div></div>
+          <div><div class="cfg-label">Historial de consultas</div><div class="cfg-sub">Guardar busquedas de esta sesion</div></div>
         </div>
         <div class="toggle on" onclick="this.classList.toggle('on')" role="switch" aria-label="Historial"></div>
       </div>
     </div>
-    <div class="cg-label">Misión</div>
+    <div class="cg-label">Mision</div>
     <div class="cfg-card">
       <div class="cfg-row" onclick="openModal('donate-modal')">
         <div class="cfg-left">
           <div class="cfg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
-          <div><div class="cfg-label">Apoyar la misión</div><div class="cfg-sub">Ko-fi · PayPal · Buy Me a Coffee</div></div>
+          <div><div class="cfg-label">Apoyar la mision</div><div class="cfg-sub">Ko-fi . PayPal . Buy Me a Coffee</div></div>
         </div>
         <div class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
       </div>
       <div class="cfg-row" onclick="shareApp()">
         <div class="cfg-left">
           <div class="cfg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
-          <div><div class="cfg-label">Compartir la app</div><div class="cfg-sub">Invitar a otros católicos</div></div>
+          <div><div class="cfg-label">Compartir la app</div><div class="cfg-sub">Invitar a otros catolicos</div></div>
         </div>
         <div class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
       </div>
     </div>
     <div id="quota-status" style="background:var(--green-bg);border-radius:10px;padding:11px 14px;font-size:12px;color:var(--green);line-height:1.6;cursor:pointer" onclick="loadQuotaStatus()">
-      🌍 Toca para ver tu cuota comunitaria de hoy
+       Toca para ver tu cuota comunitaria de hoy
     </div>
-    <div class="version-note">Escudo de Fe v1.0 · Gratuita, sin anuncios<br>Basada en el Catecismo de la Iglesia Católica</div>
+    <div class="version-note">Escudo de Fe v1.0 . Gratuita, sin anuncios<br>Basada en el Catecismo de la Iglesia Catolica</div>
   </div>
 </section>
 
 
-<!-- ── PLANES ── -->
+<!-- -- PLANES -- -->
 <section class="screen" id="screen-planes">
   <div class="planes-inner">
     <div class="planes-hdr">
@@ -533,7 +533,7 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
         <div class="plan-feat n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span>Anuncios cada 5 consultas</span></div>
         <div class="plan-feat n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span>Sin analisis patristico profundo con Claude</span></div>
       </div>
-      <button class="plan-cta fc">Plan actual — Continuar gratis</button>
+      <button class="plan-cta fc">Plan actual - Continuar gratis</button>
     </div>
     <div class="plan-card starred">
       <div class="plan-hdr dh">
@@ -548,7 +548,7 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
         <div class="plan-feat y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Debate con reconocimiento de voz</span></div>
         <div class="plan-feat y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Consultas ilimitadas</span></div>
       </div>
-      <button class="plan-cta dc" onclick="suscribirse('apologeta')">Suscribirse — $2.99/mes</button>
+      <button class="plan-cta dc" onclick="suscribirse('apologeta')">Suscribirse - $2.99/mes</button>
       <div class="plan-note">Menos de $0.10 centavos al dia</div>
     </div>
     <div class="plan-card purpled">
@@ -564,16 +564,16 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
         <div class="plan-feat y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Tu suscripcion sostiene el credito comunitario</span></div>
         <div class="plan-feat y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Badge Misionero visible en la app</span></div>
       </div>
-      <button class="plan-cta ac" onclick="suscribirse('misionero')">Suscribirse — $6.99/mes</button>
+      <button class="plan-cta ac" onclick="suscribirse('misionero')">Suscribirse - $6.99/mes</button>
       <div class="plan-note">Apoya la mision global</div>
     </div>
     <div style="background:var(--gold-pale);border-radius:12px;border:.5px solid var(--gold-light);padding:14px;text-align:center;">
-      <div style="font-size:22px;margin-bottom:6px;">&#128591;</div>
+      <div style="font-size:22px;margin-bottom:6px;"></div>
       <div style="font-family:'Cinzel',serif;font-size:13px;color:var(--navy);margin-bottom:5px;">Donacion voluntaria</div>
       <div style="font-size:11px;color:#5c4a00;line-height:1.6;margin-bottom:10px;">Si la app te ha ayudado, apoya la mision con cualquier monto. Sin compromisos.</div>
       <button onclick="openModal('donate-modal')" style="background:var(--gold);color:var(--navy);border:none;border-radius:8px;padding:8px 20px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Cinzel',serif;">Hacer una donacion</button>
     </div>
-    <div style="text-align:center;font-size:10px;color:var(--text3);padding-bottom:8px;">Escudo de Fe v1.0 — Gratuita para todos los catolicos del mundo</div>
+    <div style="text-align:center;font-size:10px;color:var(--text3);padding-bottom:8px;">Escudo de Fe v1.0 - Gratuita para todos los catolicos del mundo</div>
   </div>
 </section>
 </div><!-- /screens -->
@@ -582,14 +582,14 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
 <div class="ad-modal" id="ad-modal">
   <div class="ad-box">
     <div class="ad-top">
-      <span>Publicidad — sostiene la app gratuita</span>
+      <span>Publicidad - sostiene la app gratuita</span>
       <span id="ad-countdown" style="font-weight:700;color:var(--gold)">5s</span>
     </div>
     <div class="ad-body">
       <!-- REEMPLAZA ESTE BLOQUE CON TU CODIGO DE GOOGLE ADSENSE -->
       <!-- <ins class="adsbygoogle" style="display:block;width:260px;height:130px" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXX"></ins> -->
       <div class="ad-placeholder">
-        <div style="font-size:28px;color:var(--gold)">&#10013;</div>
+        <div style="font-size:28px;color:var(--gold)">+</div>
         <div style="font-size:11px;color:var(--text3);line-height:1.6;text-align:center;">
           <strong style="color:var(--navy);display:block;margin-bottom:3px;">Espacio Google AdSense</strong>
           Registrate en adsense.google.com<br>para activar los anuncios reales.
@@ -599,7 +599,7 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
     <button class="ad-skip-btn" id="ad-skip-btn" onclick="closeAd()" disabled>Continuar en <span id="ad-timer">5</span>s</button>
   </div>
   <div class="ad-remove" onclick="showScreen('planes',document.querySelectorAll('.tab')[3]);closeAd()">
-    Quitar publicidad — Ver planes sin anuncios
+    Quitar publicidad - Ver planes sin anuncios
   </div>
 </div>
 
@@ -643,38 +643,38 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
     <div class="modal-handle"></div>
     <div class="modal-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20"/></svg>Selecciona tu idioma</div>
     <div class="lang-list">
-      <div class="lang-item selected" onclick="selectLang(this,'🇪🇸 ES','Español','es-ES')"><span class="lang-flag">🇪🇸</span>Español</div>
-      <div class="lang-item" onclick="selectLang(this,'🇬🇧 EN','English','en-US')"><span class="lang-flag">🇬🇧</span>English</div>
-      <div class="lang-item" onclick="selectLang(this,'🇧🇷 PT','Português','pt-BR')"><span class="lang-flag">🇧🇷</span>Português (Brasil)</div>
-      <div class="lang-item" onclick="selectLang(this,'🇫🇷 FR','Français','fr-FR')"><span class="lang-flag">🇫🇷</span>Français</div>
-      <div class="lang-item" onclick="selectLang(this,'🇮🇹 IT','Italiano','it-IT')"><span class="lang-flag">🇮🇹</span>Italiano</div>
-      <div class="lang-item" onclick="selectLang(this,'🇵🇱 PL','Polski','pl-PL')"><span class="lang-flag">🇵🇱</span>Polski</div>
+      <div class="lang-item selected" onclick="selectLang(this,' ES','Espanol','es-ES')"><span class="lang-flag"></span>Espanol</div>
+      <div class="lang-item" onclick="selectLang(this,' EN','English','en-US')"><span class="lang-flag"></span>English</div>
+      <div class="lang-item" onclick="selectLang(this,' PT','Portugues','pt-BR')"><span class="lang-flag"></span>Portugues (Brasil)</div>
+      <div class="lang-item" onclick="selectLang(this,' FR','Francais','fr-FR')"><span class="lang-flag"></span>Francais</div>
+      <div class="lang-item" onclick="selectLang(this,' IT','Italiano','it-IT')"><span class="lang-flag"></span>Italiano</div>
+      <div class="lang-item" onclick="selectLang(this,' PL','Polski','pl-PL')"><span class="lang-flag"></span>Polski</div>
     </div>
     <button class="modal-close" onclick="closeModal('lang-modal')">Confirmar</button>
   </div>
 </div>
 
-<!-- MODAL DONACIÓN -->
+<!-- MODAL DONACION -->
 <div class="modal-backdrop" id="donate-modal">
   <div class="modal-box">
     <div class="modal-handle"></div>
-    <div class="modal-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Apoyar la misión</div>
-    <p style="font-size:12px;color:var(--text2);margin-bottom:13px;line-height:1.6;">Esta app es gratuita y sin anuncios para todos los católicos del mundo. Tu apoyo sostiene la misión de defender la fe.</p>
+    <div class="modal-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Apoyar la mision</div>
+    <p style="font-size:12px;color:var(--text2);margin-bottom:13px;line-height:1.6;">Esta app es gratuita y sin anuncios para todos los catolicos del mundo. Tu apoyo sostiene la mision de defender la fe.</p>
     <div class="donate-opts">
       <div class="donate-opt" onclick="window.open('https://ko-fi.com','_blank')">
-        <span class="do-icon">☕</span><div><div class="do-name">Ko-fi</div><div class="do-desc">Donación única · Sin comisión</div></div>
+        <span class="do-icon"></span><div><div class="do-name">Ko-fi</div><div class="do-desc">Donacion unica . Sin comision</div></div>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;margin-left:auto;color:var(--text3)"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
       </div>
       <div class="donate-opt" onclick="window.open('https://paypal.com','_blank')">
-        <span class="do-icon">💙</span><div><div class="do-name">PayPal</div><div class="do-desc">Universal · Todo el mundo</div></div>
+        <span class="do-icon"></span><div><div class="do-name">PayPal</div><div class="do-desc">Universal . Todo el mundo</div></div>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;margin-left:auto;color:var(--text3)"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
       </div>
       <div class="donate-opt" onclick="window.open('https://buymeacoffee.com','_blank')">
-        <span class="do-icon">🧡</span><div><div class="do-name">Buy Me a Coffee</div><div class="do-desc">Popular en comunidades digitales</div></div>
+        <span class="do-icon"></span><div><div class="do-name">Buy Me a Coffee</div><div class="do-desc">Popular en comunidades digitales</div></div>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;margin-left:auto;color:var(--text3)"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
       </div>
     </div>
-    <button class="donate-skip" onclick="closeModal('donate-modal')">Quizás más tarde</button>
+    <button class="donate-skip" onclick="closeModal('donate-modal')">Quizas mas tarde</button>
   </div>
 </div>
 
@@ -682,156 +682,156 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
 <div class="modal-backdrop" id="premium-modal">
   <div class="modal-box">
     <div class="modal-handle"></div>
-    <div class="modal-title">⭐ Acceso Premium</div>
+    <div class="modal-title"> Acceso Premium</div>
     <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:15px;">
       <div style="background:var(--green-bg);border-radius:10px;padding:12px 14px;">
-        <div style="font-size:12px;font-weight:600;color:var(--green);margin-bottom:6px;">🌍 Gratuito para todos — Crédito comunitario</div>
+        <div style="font-size:12px;font-weight:600;color:var(--green);margin-bottom:6px;"> Gratuito para todos - Credito comunitario</div>
         <div style="font-size:12px;color:var(--text2);line-height:1.6;">
-          • 15 consultas IA por persona al día (sostenidas por donaciones)<br>
-          • 15 temas apologéticos siempre disponibles sin límite<br>
-          • Biblia en 4 versiones (Jerusalén, RV60, NVI, T.N.Mundo)<br>
-          • Guardar y compartir por WhatsApp<br>
-          • Sin anuncios, sin registro requerido
+          - 15 consultas IA por persona al dia (sostenidas por donaciones)<br>
+          - 15 temas apologeticos siempre disponibles sin limite<br>
+          - Biblia en 4 versiones (Jerusalen, RV60, NVI, T.N.Mundo)<br>
+          - Guardar y compartir por WhatsApp<br>
+          - Sin anuncios, sin registro requerido
         </div>
       </div>
       <div style="background:var(--gold-pale);border-radius:10px;padding:12px 14px;border:.5px solid var(--gold-light);">
-        <div style="font-size:12px;font-weight:600;color:#854f0b;margin-bottom:6px;">⭐ Premium — Con tu API Key de Anthropic</div>
+        <div style="font-size:12px;font-weight:600;color:#854f0b;margin-bottom:6px;"> Premium - Con tu API Key de Anthropic</div>
         <div style="font-size:12px;color:var(--text2);line-height:1.6;">
-          • Consultas ilimitadas sin afectar la cuota comunitaria<br>
-          • Debate en tiempo real con reconocimiento de voz<br>
-          • Preguntas personalizadas en cualquier idioma<br>
-          • ~$5 USD = 800–1,600 consultas propias
+          - Consultas ilimitadas sin afectar la cuota comunitaria<br>
+          - Debate en tiempo real con reconocimiento de voz<br>
+          - Preguntas personalizadas en cualquier idioma<br>
+          - ~$5 USD = 800-1,600 consultas propias
         </div>
       </div>
       <div style="background:#f0edf9;border-radius:10px;padding:12px 14px;border:.5px solid #c4b8f0;">
-        <div style="font-size:12px;font-weight:600;color:var(--purple);margin-bottom:6px;">🙏 Apoyar la misión</div>
+        <div style="font-size:12px;font-weight:600;color:var(--purple);margin-bottom:6px;"> Apoyar la mision</div>
         <div style="font-size:12px;color:var(--text2);line-height:1.6;">
-          Las donaciones pagan el crédito de IA para todos. Con $30-50 USD/mes se sostienen 10,000+ consultas mensuales para católicos de todo el mundo.
+          Las donaciones pagan el credito de IA para todos. Con $30-50 USD/mes se sostienen 10,000+ consultas mensuales para catolicos de todo el mundo.
         </div>
       </div>
     </div>
-    <button class="modal-close" onclick="closeModal('premium-modal');openModal('donate-modal')">Apoyar con una donación</button>
+    <button class="modal-close" onclick="closeModal('premium-modal');openModal('donate-modal')">Apoyar con una donacion</button>
     <button class="donate-skip" style="margin-top:8px" onclick="closeModal('premium-modal');showScreen('ajustes',document.querySelectorAll('.tab')[4])">Configurar API Key propia</button>
-    <button class="donate-skip" style="margin-top:6px" onclick="closeModal('premium-modal')">Continuar con el crédito gratuito</button>
+    <button class="donate-skip" style="margin-top:6px" onclick="closeModal('premium-modal')">Continuar con el credito gratuito</button>
   </div>
 </div>
 
 <div class="toast" id="toast" role="alert" aria-live="polite"></div>
 
 <script>
-// ── DATOS OFFLINE (50 temas gratuitos) ──
+// -- DATOS OFFLINE (50 temas gratuitos) --
 const FREE_TOPICS = {
-  'Papado y Pedro': { cic:'CIC §881-882', verse:'Tú eres Pedro, y sobre esta piedra edificaré mi Iglesia; y las puertas del Hades no prevalecerán contra ella.', ref:'— Mateo 16:18', arg:'Cristo entregó las llaves del Reino únicamente a Pedro (Mt 16:19), símbolo de autoridad suprema en el AT. San Ireneo (180 d.C.) enumera la sucesión papal desde Pedro como criterio de ortodoxia. La infalibilidad papal en materia de fe fue definida en el Concilio Vaticano I (1870) y aplica solo cuando el Papa habla ex cathedra.', sources:['Padre Luis Toro','El Papista','CIC §891'] },
-  'María Madre de Dios': { cic:'CIC §495', verse:'Desde ahora me dirán bienaventurada todas las generaciones.', ref:'— Lucas 1:48', arg:'María es Theotokos (Madre de Dios), definido en el Concilio de Éfeso (431 d.C.) contra Nestorio. Su maternidad divina no la hace igual a Dios sino que señala la divinidad de Cristo. La veneración (dulía) que se le rinde es distinta de la adoración (latreia) que solo se da a Dios.', sources:['Padre Luis Toro','Santiago Alarcón','Concilio de Éfeso'] },
-  'Eucaristía y Presencia Real': { cic:'CIC §1374-1381', verse:'Mi carne es verdadera comida, y mi sangre es verdadera bebida.', ref:'— Juan 6:55', arg:'Jesús no corrigió a quienes se escandalizaron por Sus palabras (Jn 6:60-66), señal de que hablaba literalmente. San Ignacio de Antioquía (107 d.C.) llama la Eucaristía "carne de Cristo". La Transubstanciación fue definida en el Concilio de Trento. Todos los Padres de la Iglesia del primer milenio creyeron en la presencia real.', sources:['Santiago Alarcón','Padre Luis Toro','San Ignacio de Antioquía'] },
-  'Purgatorio': { cic:'CIC §1030-1032', verse:'Él mismo se salvará, pero como quien pasa a través del fuego.', ref:'— 1 Corintios 3:15', arg:'Judas Macabeo oró por los difuntos (2 Mac 12:46), práctica que supone una purificación post-mortem. Jesús habla de pecados no perdonados "ni en este siglo ni en el venidero" (Mt 12:32), implicando posibilidad de perdón después de la muerte. Tertuliano (200 d.C.) y San Agustín atestiguan esta doctrina.', sources:['Soldado Apologeta','Santiago Alarcón'] },
-  'Bautismo infantil': { cic:'CIC §1250-1252', verse:'Si alguno no nace de agua y del Espíritu, no puede entrar en el reino de Dios.', ref:'— Juan 3:5', arg:'El bautismo reemplaza a la circuncisión (Col 2:11-12), que en el AT se aplicaba a los infantes al 8º día. Hogares enteros fueron bautizados (Hch 16:33; 1Co 1:16). Orígenes (185 d.C.) afirma que la Iglesia recibió de los Apóstoles la costumbre de bautizar niños.', sources:['Santiago Alarcón','Soldado Apologeta'] },
-  'Sola Scriptura': { cic:'CIC §80-83', verse:'La Iglesia del Dios vivo, columna y fundamento de la verdad.', ref:'— 1 Timoteo 3:15', arg:'La Biblia nunca enseña que ella sola es regla de fe — el principio de Sola Scriptura no está en la Escritura, por lo que se contradice a sí mismo. Pablo manda seguir las tradiciones orales (2 Tes 2:15). El canon bíblico fue cerrado por la Iglesia Católica en los concilios de Hipona (393) y Cartago (397).', sources:['José Placencia','Padre Luis Toro'] },
-  'Confesión sacramental': { cic:'CIC §1461-1467', verse:'A quienes perdonéis los pecados, les quedan perdonados; a quienes se los retengáis, les quedan retenidos.', ref:'— Juan 20:23', arg:'Cristo dio a los Apóstoles poder de perdonar o retener pecados — lo cual es imposible sin conocer los pecados del penitente, de ahí la confesión auricular. Santiago 5:16 ordena confesar los pecados. San Cipriano (250 d.C.) y San Agustín atestiguan esta práctica como recibida de los Apóstoles.', sources:['Santiago Alarcón','José Placencia'] },
-  'Intercesión de los Santos': { cic:'CIC §956-959', verse:'Los veinticuatro ancianos ofrecían incienso, que son las oraciones de los santos.', ref:'— Apocalipsis 5:8', arg:'Pedir intercesión a los santos es análogo a pedir oración a un hermano vivo: si la intercesión es posible en vida, con mayor razón tras la muerte, cuando se vive más plenamente en Cristo (Rm 8:38-39). La nube de testigos (Heb 12:1) está viva ante Dios. El Ap 5:8 muestra a los santos presentando las oraciones de los fieles.', sources:['Soldado Apologeta','Padre Luis Toro'] },
-  'Matrimonio e indisolubilidad': { cic:'CIC §1650-1651', verse:'Lo que Dios unió, que no lo separe el hombre.', ref:'— Mateo 19:6', arg:'El matrimonio sacramental es indisoluble por institución divina (Mc 10:11-12). La Iglesia no prohíbe el divorcio civil como recurso legal, sino que enseña que no disuelve el vínculo sacramental. La nulidad matrimonial declara que el vínculo válido nunca existió, no que se disuelve.', sources:['Padre Luis Toro','Santiago Alarcón'] },
-  'Infalibilidad papal': { cic:'CIC §891', verse:'He rogado por ti, para que tu fe no falte; y tú, una vez convertido, confirma a tus hermanos.', ref:'— Lucas 22:32', arg:'Cristo oró específicamente para que la fe de Pedro no fallara, fundamentando la infalibilidad. Esta prerrogativa aplica solo cuando el Papa define solemnemente, ex cathedra, doctrinas de fe o moral para toda la Iglesia — ha ocurrido solo dos veces desde 1870. No implica impecabilidad personal.', sources:['El Papista','Padre Luis Toro'] },
-  'Inmaculada Concepción': { cic:'CIC §491-492', verse:'El Señor está contigo; bendita tú entre todas las mujeres.', ref:'— Lucas 1:28', arg:'El saludo del ángel "llena de gracia" (kecharitoméne en griego) es un participio perfecto pasivo que implica un estado de gracia permanente y completo desde antes del encuentro. María es el Arca Nueva (Lc 1:35 cf. Éx 40:35): así como el Arca portaba la Palabra escrita, María portó la Palabra encarnada. Definida como dogma por Pío IX en 1854.', sources:['Padre Luis Toro','Santiago Alarcón'] },
-  'Asunción de María': { cic:'CIC §966', verse:'Una gran señal apareció en el cielo: una mujer vestida del sol, con la luna debajo de sus pies.', ref:'— Apocalipsis 12:1', arg:'La Asunción es el tipo cumplido del Arca del Señor (Ap 11:19 seguido de 12:1). La Tradición universal desde los primeros siglos no conoce ninguna tumba de María con su cuerpo — hecho significativo dado el culto a reliquias de la época. Definida dogmáticamente por Pío XII en 1950.', sources:['Santiago Alarcón','El Papista'] },
-  'Trinidad': { cic:'CIC §253-255', verse:'Bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo.', ref:'— Mateo 28:19', arg:'Jesús usa el nombre singular (no plural) para las tres Personas, señalando la unidad de esencia. En 1 Jn 5:7 (Comma Johanneum) y 2 Co 13:14 se aprecian las tres Personas. El Credo Niceno-Constantinopolitano (381 d.C.) formuló esta doctrina refutando el arrianismo. Los Testigos de Jehová rechazan la Trinidad pero el NT usa título divino para Cristo (Jn 1:1; 8:58; 20:28).', sources:['Padre Luis Toro','Soldado Apologeta'] },
-  'Biblia y canon católico': { cic:'CIC §120', verse:'Toda Escritura es inspirada por Dios y útil para enseñar, reprender, corregir e instruir en justicia.', ref:'— 2 Timoteo 3:16', arg:'Los protestantes eliminaron 7 libros del AT (Tobías, Judit, 1-2 Mac, Sabiduría, Sirácide, Baruc) que estaban en la Septuaginta — versión usada por Jesús y los Apóstoles. El canon bíblico actual fue definido por la Iglesia Católica en los concilios de Hipona (393) y Cartago (397). Nadie puede citar la Biblia como autoridad mientras rechaza a la institución que la definió.', sources:['José Placencia','Santiago Alarcón'] },
-  'Sacerdocio y celibato': { cic:'CIC §1579', verse:'Quisiera que todos fueran como yo; pero cada uno tiene de Dios su propio don.', ref:'— 1 Corintios 7:7', arg:'El celibato sacerdotal no es un dogma sino una disciplina eclesiástica con profundo fundamento bíblico: Pablo lo recomienda para una entrega total al Reino (1Co 7:32-34). Existen sacerdotes casados en las Iglesias Orientales en comunión con Roma. El celibato es un signo escatológico del Reino de los Cielos (Mt 19:12).', sources:['Padre Luis Toro','El Papista'] },
+  'Papado y Pedro': { cic:'CIC 881-882', verse:'Tu eres Pedro, y sobre esta piedra edificare mi Iglesia; y las puertas del Hades no prevaleceran contra ella.', ref:'- Mateo 16:18', arg:'Cristo entrego las llaves del Reino unicamente a Pedro (Mt 16:19), simbolo de autoridad suprema en el AT. San Ireneo (180 d.C.) enumera la sucesion papal desde Pedro como criterio de ortodoxia. La infalibilidad papal en materia de fe fue definida en el Concilio Vaticano I (1870) y aplica solo cuando el Papa habla ex cathedra.', sources:['Padre Luis Toro','El Papista','CIC 891'] },
+  'Maria Madre de Dios': { cic:'CIC 495', verse:'Desde ahora me diran bienaventurada todas las generaciones.', ref:'- Lucas 1:48', arg:'Maria es Theotokos (Madre de Dios), definido en el Concilio de Efeso (431 d.C.) contra Nestorio. Su maternidad divina no la hace igual a Dios sino que senala la divinidad de Cristo. La veneracion (dulia) que se le rinde es distinta de la adoracion (latreia) que solo se da a Dios.', sources:['Padre Luis Toro','Santiago Alarcon','Concilio de Efeso'] },
+  'Eucaristia y Presencia Real': { cic:'CIC 1374-1381', verse:'Mi carne es verdadera comida, y mi sangre es verdadera bebida.', ref:'- Juan 6:55', arg:'Jesus no corrigio a quienes se escandalizaron por Sus palabras (Jn 6:60-66), senal de que hablaba literalmente. San Ignacio de Antioquia (107 d.C.) llama la Eucaristia "carne de Cristo". La Transubstanciacion fue definida en el Concilio de Trento. Todos los Padres de la Iglesia del primer milenio creyeron en la presencia real.', sources:['Santiago Alarcon','Padre Luis Toro','San Ignacio de Antioquia'] },
+  'Purgatorio': { cic:'CIC 1030-1032', verse:'El mismo se salvara, pero como quien pasa a traves del fuego.', ref:'- 1 Corintios 3:15', arg:'Judas Macabeo oro por los difuntos (2 Mac 12:46), practica que supone una purificacion post-mortem. Jesus habla de pecados no perdonados "ni en este siglo ni en el venidero" (Mt 12:32), implicando posibilidad de perdon despues de la muerte. Tertuliano (200 d.C.) y San Agustin atestiguan esta doctrina.', sources:['Soldado Apologeta','Santiago Alarcon'] },
+  'Bautismo infantil': { cic:'CIC 1250-1252', verse:'Si alguno no nace de agua y del Espiritu, no puede entrar en el reino de Dios.', ref:'- Juan 3:5', arg:'El bautismo reemplaza a la circuncision (Col 2:11-12), que en el AT se aplicaba a los infantes al 8 dia. Hogares enteros fueron bautizados (Hch 16:33; 1Co 1:16). Origenes (185 d.C.) afirma que la Iglesia recibio de los Apostoles la costumbre de bautizar ninos.', sources:['Santiago Alarcon','Soldado Apologeta'] },
+  'Sola Scriptura': { cic:'CIC 80-83', verse:'La Iglesia del Dios vivo, columna y fundamento de la verdad.', ref:'- 1 Timoteo 3:15', arg:'La Biblia nunca ensena que ella sola es regla de fe - el principio de Sola Scriptura no esta en la Escritura, por lo que se contradice a si mismo. Pablo manda seguir las tradiciones orales (2 Tes 2:15). El canon biblico fue cerrado por la Iglesia Catolica en los concilios de Hipona (393) y Cartago (397).', sources:['Jose Placencia','Padre Luis Toro'] },
+  'Confesion sacramental': { cic:'CIC 1461-1467', verse:'A quienes perdoneis los pecados, les quedan perdonados; a quienes se los retengais, les quedan retenidos.', ref:'- Juan 20:23', arg:'Cristo dio a los Apostoles poder de perdonar o retener pecados - lo cual es imposible sin conocer los pecados del penitente, de ahi la confesion auricular. Santiago 5:16 ordena confesar los pecados. San Cipriano (250 d.C.) y San Agustin atestiguan esta practica como recibida de los Apostoles.', sources:['Santiago Alarcon','Jose Placencia'] },
+  'Intercesion de los Santos': { cic:'CIC 956-959', verse:'Los veinticuatro ancianos ofrecian incienso, que son las oraciones de los santos.', ref:'- Apocalipsis 5:8', arg:'Pedir intercesion a los santos es analogo a pedir oracion a un hermano vivo: si la intercesion es posible en vida, con mayor razon tras la muerte, cuando se vive mas plenamente en Cristo (Rm 8:38-39). La nube de testigos (Heb 12:1) esta viva ante Dios. El Ap 5:8 muestra a los santos presentando las oraciones de los fieles.', sources:['Soldado Apologeta','Padre Luis Toro'] },
+  'Matrimonio e indisolubilidad': { cic:'CIC 1650-1651', verse:'Lo que Dios unio, que no lo separe el hombre.', ref:'- Mateo 19:6', arg:'El matrimonio sacramental es indisoluble por institucion divina (Mc 10:11-12). La Iglesia no prohibe el divorcio civil como recurso legal, sino que ensena que no disuelve el vinculo sacramental. La nulidad matrimonial declara que el vinculo valido nunca existio, no que se disuelve.', sources:['Padre Luis Toro','Santiago Alarcon'] },
+  'Infalibilidad papal': { cic:'CIC 891', verse:'He rogado por ti, para que tu fe no falte; y tu, una vez convertido, confirma a tus hermanos.', ref:'- Lucas 22:32', arg:'Cristo oro especificamente para que la fe de Pedro no fallara, fundamentando la infalibilidad. Esta prerrogativa aplica solo cuando el Papa define solemnemente, ex cathedra, doctrinas de fe o moral para toda la Iglesia - ha ocurrido solo dos veces desde 1870. No implica impecabilidad personal.', sources:['El Papista','Padre Luis Toro'] },
+  'Inmaculada Concepcion': { cic:'CIC 491-492', verse:'El Senor esta contigo; bendita tu entre todas las mujeres.', ref:'- Lucas 1:28', arg:'El saludo del angel "llena de gracia" (kecharitomene en griego) es un participio perfecto pasivo que implica un estado de gracia permanente y completo desde antes del encuentro. Maria es el Arca Nueva (Lc 1:35 cf. Ex 40:35): asi como el Arca portaba la Palabra escrita, Maria porto la Palabra encarnada. Definida como dogma por Pio IX en 1854.', sources:['Padre Luis Toro','Santiago Alarcon'] },
+  'Asuncion de Maria': { cic:'CIC 966', verse:'Una gran senal aparecio en el cielo: una mujer vestida del sol, con la luna debajo de sus pies.', ref:'- Apocalipsis 12:1', arg:'La Asuncion es el tipo cumplido del Arca del Senor (Ap 11:19 seguido de 12:1). La Tradicion universal desde los primeros siglos no conoce ninguna tumba de Maria con su cuerpo - hecho significativo dado el culto a reliquias de la epoca. Definida dogmaticamente por Pio XII en 1950.', sources:['Santiago Alarcon','El Papista'] },
+  'Trinidad': { cic:'CIC 253-255', verse:'Bautizandolos en el nombre del Padre, y del Hijo, y del Espiritu Santo.', ref:'- Mateo 28:19', arg:'Jesus usa el nombre singular (no plural) para las tres Personas, senalando la unidad de esencia. En 1 Jn 5:7 (Comma Johanneum) y 2 Co 13:14 se aprecian las tres Personas. El Credo Niceno-Constantinopolitano (381 d.C.) formulo esta doctrina refutando el arrianismo. Los Testigos de Jehova rechazan la Trinidad pero el NT usa titulo divino para Cristo (Jn 1:1; 8:58; 20:28).', sources:['Padre Luis Toro','Soldado Apologeta'] },
+  'Biblia y canon catolico': { cic:'CIC 120', verse:'Toda Escritura es inspirada por Dios y util para ensenar, reprender, corregir e instruir en justicia.', ref:'- 2 Timoteo 3:16', arg:'Los protestantes eliminaron 7 libros del AT (Tobias, Judit, 1-2 Mac, Sabiduria, Siracide, Baruc) que estaban en la Septuaginta - version usada por Jesus y los Apostoles. El canon biblico actual fue definido por la Iglesia Catolica en los concilios de Hipona (393) y Cartago (397). Nadie puede citar la Biblia como autoridad mientras rechaza a la institucion que la definio.', sources:['Jose Placencia','Santiago Alarcon'] },
+  'Sacerdocio y celibato': { cic:'CIC 1579', verse:'Quisiera que todos fueran como yo; pero cada uno tiene de Dios su propio don.', ref:'- 1 Corintios 7:7', arg:'El celibato sacerdotal no es un dogma sino una disciplina eclesiastica con profundo fundamento biblico: Pablo lo recomienda para una entrega total al Reino (1Co 7:32-34). Existen sacerdotes casados en las Iglesias Orientales en comunion con Roma. El celibato es un signo escatologico del Reino de los Cielos (Mt 19:12).', sources:['Padre Luis Toro','El Papista'] },
 };
 
-// ── BIBLE DATA (muestra representativa, en producción se usa API) ──
+// -- BIBLE DATA (muestra representativa, en produccion se usa API) --
 const BIBLE_SAMPLES = {
   'GEN': {
     chapters: 50,
     '1': [
-      {n:1,t:'En el principio creó Dios los cielos y la tierra.'},
-      {n:2,t:'La tierra estaba confusa y vacía, y las tinieblas cubrían el abismo, mientras el espíritu de Dios aleteaba sobre la superficie de las aguas.'},
-      {n:3,t:'Dijo Dios: «Haya luz», y hubo luz.'},
-      {n:4,t:'Vio Dios que la luz era buena, y apartó Dios la luz de las tinieblas.'},
-      {n:5,t:'Llamó Dios a la luz «día» y a las tinieblas las llamó «noche». Hubo una tarde y una mañana: día primero.'},
-      {n:6,t:'Dijo Dios: «Haya un firmamento en medio de las aguas, que las divida en dos».'},
-      {n:26,t:'Dijo Dios: «Hagamos al hombre a nuestra imagen y semejanza; que domine los peces del mar, las aves del cielo, los animales domésticos y todo animal que repta sobre la tierra».'},
-      {n:27,t:'Creó, pues, Dios al hombre a imagen suya, a imagen de Dios lo creó, varón y mujer los creó.'},
+      {n:1,t:'En el principio creo Dios los cielos y la tierra.'},
+      {n:2,t:'La tierra estaba confusa y vacia, y las tinieblas cubrian el abismo, mientras el espiritu de Dios aleteaba sobre la superficie de las aguas.'},
+      {n:3,t:'Dijo Dios: Haya luz>, y hubo luz.'},
+      {n:4,t:'Vio Dios que la luz era buena, y aparto Dios la luz de las tinieblas.'},
+      {n:5,t:'Llamo Dios a la luz dia> y a las tinieblas las llamo noche>. Hubo una tarde y una manana: dia primero.'},
+      {n:6,t:'Dijo Dios: Haya un firmamento en medio de las aguas, que las divida en dos>.'},
+      {n:26,t:'Dijo Dios: Hagamos al hombre a nuestra imagen y semejanza; que domine los peces del mar, las aves del cielo, los animales domesticos y todo animal que repta sobre la tierra>.'},
+      {n:27,t:'Creo, pues, Dios al hombre a imagen suya, a imagen de Dios lo creo, varon y mujer los creo.'},
     ]
   },
   'MAT': {
     chapters: 28,
     '16': [
-      {n:13,t:'Al llegar Jesús a la región de Cesarea de Filipo, preguntó a sus discípulos: «¿Quién dicen los hombres que es el Hijo del hombre?»'},
-      {n:16,t:'Respondió Simón Pedro: «Tú eres el Cristo, el Hijo de Dios vivo».'},
-      {n:17,t:'Jesús le respondió: «Bienaventurado eres, Simón, hijo de Jonás, porque no te lo reveló la carne ni la sangre, sino mi Padre que está en los cielos».'},
-      {n:18,t:'Y yo te digo que tú eres Pedro, y sobre esta piedra edificaré mi Iglesia, y las puertas del infierno no prevalecerán contra ella.'},
-      {n:19,t:'A ti te daré las llaves del reino de los cielos; y lo que ates en la tierra, atado quedará en los cielos, y lo que desates en la tierra, desatado quedará en los cielos.'},
+      {n:13,t:'Al llegar Jesus a la region de Cesarea de Filipo, pregunto a sus discipulos: ?Quien dicen los hombres que es el Hijo del hombre?>'},
+      {n:16,t:'Respondio Simon Pedro: Tu eres el Cristo, el Hijo de Dios vivo>.'},
+      {n:17,t:'Jesus le respondio: Bienaventurado eres, Simon, hijo de Jonas, porque no te lo revelo la carne ni la sangre, sino mi Padre que esta en los cielos>.'},
+      {n:18,t:'Y yo te digo que tu eres Pedro, y sobre esta piedra edificare mi Iglesia, y las puertas del infierno no prevaleceran contra ella.'},
+      {n:19,t:'A ti te dare las llaves del reino de los cielos; y lo que ates en la tierra, atado quedara en los cielos, y lo que desates en la tierra, desatado quedara en los cielos.'},
     ]
   },
   'JUA': {
     chapters: 21,
     '1': [
-      {n:1,t:'En el principio existía la Palabra, y la Palabra estaba junto a Dios, y la Palabra era Dios.'},
+      {n:1,t:'En el principio existia la Palabra, y la Palabra estaba junto a Dios, y la Palabra era Dios.'},
       {n:2,t:'Ella estaba en el principio junto a Dios.'},
       {n:3,t:'Todo se hizo por ella y sin ella no se hizo nada de lo que existe.'},
-      {n:14,t:'Y la Palabra se hizo carne, y puso su Morada entre nosotros, y hemos contemplado su gloria, gloria que recibe del Padre como Hijo único, lleno de gracia y de verdad.'},
+      {n:14,t:'Y la Palabra se hizo carne, y puso su Morada entre nosotros, y hemos contemplado su gloria, gloria que recibe del Padre como Hijo unico, lleno de gracia y de verdad.'},
     ],
     '6': [
-      {n:51,t:'Yo soy el pan vivo que ha bajado del cielo; el que coma de este pan, vivirá para siempre; y el pan que yo daré es mi carne, dada por la vida del mundo.'},
-      {n:53,t:'Jesús les dijo: «En verdad, en verdad os digo: si no coméis la carne del Hijo del hombre y no bebéis su sangre, no tenéis vida en vosotros».'},
-      {n:54,t:'El que come mi carne y bebe mi sangre tiene vida eterna, y yo le resucitaré en el último día.'},
+      {n:51,t:'Yo soy el pan vivo que ha bajado del cielo; el que coma de este pan, vivira para siempre; y el pan que yo dare es mi carne, dada por la vida del mundo.'},
+      {n:53,t:'Jesus les dijo: En verdad, en verdad os digo: si no comeis la carne del Hijo del hombre y no bebeis su sangre, no teneis vida en vosotros>.'},
+      {n:54,t:'El que come mi carne y bebe mi sangre tiene vida eterna, y yo le resucitare en el ultimo dia.'},
       {n:55,t:'Mi carne es verdadera comida y mi sangre es verdadera bebida.'},
     ],
     '20': [
-      {n:22,t:'Dicho esto, exhaló su aliento sobre ellos y les dijo: «Recibid el Espíritu Santo».'},
-      {n:23,t:'A quienes les perdonéis los pecados, les quedan perdonados; a quienes se los retengáis, les quedan retenidos.'},
+      {n:22,t:'Dicho esto, exhalo su aliento sobre ellos y les dijo: Recibid el Espiritu Santo>.'},
+      {n:23,t:'A quienes les perdoneis los pecados, les quedan perdonados; a quienes se los retengais, les quedan retenidos.'},
     ]
   },
   'LUC': {
     chapters: 24,
     '1': [
-      {n:26,t:'Al sexto mes, el ángel Gabriel fue enviado por Dios a una ciudad de Galilea, llamada Nazaret,'},
-      {n:27,t:'a una virgen desposada con un hombre llamado José, de la casa de David; el nombre de la virgen era María.'},
-      {n:28,t:'Y entrando, le dijo: «Alégrate, llena de gracia, el Señor está contigo».'},
-      {n:46,t:'Y dijo María: «Proclama mi alma la grandeza del Señor,'},
-      {n:47,t:'se alegra mi espíritu en Dios, mi Salvador,'},
-      {n:48,t:'porque ha mirado la humillación de su esclava. Desde ahora me felicitarán todas las generaciones,'},
+      {n:26,t:'Al sexto mes, el angel Gabriel fue enviado por Dios a una ciudad de Galilea, llamada Nazaret,'},
+      {n:27,t:'a una virgen desposada con un hombre llamado Jose, de la casa de David; el nombre de la virgen era Maria.'},
+      {n:28,t:'Y entrando, le dijo: Alegrate, llena de gracia, el Senor esta contigo>.'},
+      {n:46,t:'Y dijo Maria: Proclama mi alma la grandeza del Senor,'},
+      {n:47,t:'se alegra mi espiritu en Dios, mi Salvador,'},
+      {n:48,t:'porque ha mirado la humillacion de su esclava. Desde ahora me felicitaran todas las generaciones,'},
     ]
   },
   'HEC': {
     chapters: 28,
     '2': [
-      {n:38,t:'Pedro les contestó: «Convertíos y que cada uno de vosotros se haga bautizar en el nombre de Jesucristo para remisión de vuestros pecados; y recibiréis el don del Espíritu Santo».'},
-      {n:39,t:'Pues la promesa es para vosotros y para vuestros hijos y para todos los que están lejos, para cuantos llame el Señor Dios nuestro.»'},
+      {n:38,t:'Pedro les contesto: Convertios y que cada uno de vosotros se haga bautizar en el nombre de Jesucristo para remision de vuestros pecados; y recibireis el don del Espiritu Santo>.'},
+      {n:39,t:'Pues la promesa es para vosotros y para vuestros hijos y para todos los que estan lejos, para cuantos llame el Senor Dios nuestro.>'},
     ]
   },
   'APO': {
     chapters: 22,
     '12': [
-      {n:1,t:'Una gran señal apareció en el cielo: una Mujer, vestida del sol, con la luna debajo de sus pies y una corona de doce estrellas sobre su cabeza.'},
-      {n:2,t:'Está encinta, y grita con los dolores del parto y con el tormento de dar a luz.'},
-      {n:17,t:'Entonces el Dragón se llenó de furor contra la Mujer, y se fue a hacer la guerra al resto de su descendencia, a los que guardan los mandamientos de Dios y mantienen el testimonio de Jesús.'},
+      {n:1,t:'Una gran senal aparecio en el cielo: una Mujer, vestida del sol, con la luna debajo de sus pies y una corona de doce estrellas sobre su cabeza.'},
+      {n:2,t:'Esta encinta, y grita con los dolores del parto y con el tormento de dar a luz.'},
+      {n:17,t:'Entonces el Dragon se lleno de furor contra la Mujer, y se fue a hacer la guerra al resto de su descendencia, a los que guardan los mandamientos de Dios y mantienen el testimonio de Jesus.'},
     ]
   },
 };
 
 // Versiones y sus diferencias notables
-const VERSION_LABELS = { BJ:'Biblia de Jerusalén', RV:'Reina-Valera 1960', NVI:'Nueva Versión Internacional', TNM:'Traducción del Nuevo Mundo' };
+const VERSION_LABELS = { BJ:'Biblia de Jerusalen', RV:'Reina-Valera 1960', NVI:'Nueva Version Internacional', TNM:'Traduccion del Nuevo Mundo' };
 
-// Alteraciones conocidas de la TNM (para referencia apologética)
+// Alteraciones conocidas de la TNM (para referencia apologetica)
 const TNM_NOTES = {
-  'JUA-1-1': 'La TNM traduce "la Palabra era un dios" en lugar de "la Palabra era Dios" — alteración doctrinal para negar la divinidad de Cristo. El griego original (θεὸς ἦν ὁ λόγος) no tiene artículo indefinido en griego, idioma que no tiene artículo indefinido.',
+  'JUA-1-1': 'La TNM traduce "la Palabra era un dios" en lugar de "la Palabra era Dios" - alteracion doctrinal para negar la divinidad de Cristo. El griego original (   ) no tiene articulo indefinido en griego, idioma que no tiene articulo indefinido.',
 };
 
-// ── CONFIGURACIÓN ──
+// -- CONFIGURACION --
 // Cuando tengas tu Worker desplegado, reemplaza esta URL con la tuya.
 // Ej: 'https://escudo-de-fe-backend.escudo-de-fe.workers.dev'
 const BACKEND_URL = 'https://escudo-de-fe-backend.escudo-de-fe.workers.dev';
 
-// API Key personal (opcional — desbloquea uso ilimitado sin depender de la cuota comunitaria)
+// API Key personal (opcional - desbloquea uso ilimitado sin depender de la cuota comunitaria)
 let apiKey = localStorage.getItem('ef_apikey') || '';
 
-// ── STATE ──
+// -- STATE --
 let currentMode = 'debate';
 let isListening = false;
 let recognition = null;
 let speechSupported = false;
-let currentLang = { code:'🇪🇸 ES', name:'Español', speech:'es-ES' };
+let currentLang = { code:' ES', name:'Espanol', speech:'es-ES' };
 let savedItems = JSON.parse(localStorage.getItem('ef_saved') || '[]');
 let useCount = parseInt(localStorage.getItem('ef_uses') || '0');
 let currentSearchResult = null;
@@ -839,7 +839,7 @@ let currentBibleVersion = 'BJ';
 let currentBook = 'GEN';
 let currentChapter = 1;
 
-// ── INIT ──
+// -- INIT --
 document.addEventListener('DOMContentLoaded', () => {
   if (apiKey) document.getElementById('apikey-input').value = apiKey;
   updateAuthBar();
@@ -850,7 +850,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadBibleChapter();
 });
 
-// ── NAV ──
+// -- NAV --
 function showScreen(name, el) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
@@ -858,7 +858,7 @@ function showScreen(name, el) {
   if (el) el.classList.add('active');
 }
 
-// ── MODE ──
+// -- MODE --
 function setMode(m) {
   currentMode = m;
   document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
@@ -867,9 +867,9 @@ function setMode(m) {
   document.getElementById('mic-label').textContent = labels[m];
 }
 
-// ── SPEECH ──
+// -- SPEECH --
 function toggleListen() {
-  if (!speechSupported) { showToast('Usa Chrome en Android para la función de voz'); return; }
+  if (!speechSupported) { showToast('Usa Chrome en Android para la funcion de voz'); return; }
   // Funciona con backend comunitario O con API Key personal
   isListening ? stopListening() : startListening();
 }
@@ -909,7 +909,7 @@ function stopListening() {
   document.getElementById('listen-status').classList.remove('visible');
 }
 
-// ── CHAT ──
+// -- CHAT --
 function removeEmpty() { const e = document.getElementById('empty-state'); if (e) e.remove(); }
 
 function addOpponentBubble(text) {
@@ -927,7 +927,7 @@ function addThinkingBubble() {
   const el = document.createElement('div');
   el.id = 'thinking-bubble';
   el.className = 'msg-wrap';
-  el.innerHTML = `<div class="msg-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:11px;height:11px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Escudo de Fe · IA</div><div class="bubble thinking">Analizando con doctrina católica...</div>`;
+  el.innerHTML = `<div class="msg-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:11px;height:11px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Escudo de Fe . IA</div><div class="bubble thinking">Analizando con doctrina catolica...</div>`;
   area.appendChild(el);
   area.scrollTop = area.scrollHeight;
 }
@@ -939,7 +939,7 @@ function addResponseCard(data) {
   const card = document.createElement('div');
   card.className = 'msg-wrap';
   const src = (data.sources || []).map(s => `<span class="badge ap">${s}</span>`).join('');
-  card.innerHTML = `<div class="msg-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:11px;height:11px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Escudo de Fe · IA</div>
+  card.innerHTML = `<div class="msg-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:11px;height:11px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Escudo de Fe . IA</div>
     <div class="response-card">
       <div class="rc-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:15px;height:15px;color:var(--gold)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>${data.topic||'Respuesta'}</span></div>
       <div class="rc-body">
@@ -957,8 +957,8 @@ function addResponseCard(data) {
   maybeShowAd();
 }
 
-// ── AI ──
-// ── Sistema dual: Backend comunitario + API Key personal ──
+// -- AI --
+// -- Sistema dual: Backend comunitario + API Key personal --
 async function callAI(question) {
   addThinkingBubble();
   try {
@@ -971,11 +971,11 @@ async function callAI(question) {
     removeThinking();
     const area = document.getElementById('chat-area');
     const e = document.createElement('div');
-    const isCuota = err.message.includes('cuota') || err.message.includes('límite');
+    const isCuota = err.message.includes('cuota') || err.message.includes('limite');
     e.innerHTML = `<div class="bubble" style="background:#fff3cd;color:#856404;font-size:12px;padding:10px 12px;border-radius:10px;line-height:1.6;">
       ${isCuota
-        ? '⏳ ' + err.message + ' <br><br><button onclick="openModal('donate-modal')" style="background:var(--gold);color:var(--navy);border:none;border-radius:7px;padding:5px 12px;font-size:11px;cursor:pointer;font-weight:600;">Apoyar la misión</button>'
-        : '❌ ' + err.message}
+        ? ' ' + err.message + ' <br><br><button onclick="openModal(\"donate-modal\")" style="background:var(--gold);color:var(--navy);border:none;border-radius:7px;padding:5px 12px;font-size:11px;cursor:pointer;font-weight:600;">Apoyar la mision</button>'
+        : ' ' + err.message}
     </div>`;
     area.appendChild(e);
     area.scrollTop = area.scrollHeight;
@@ -1001,13 +1001,13 @@ async function callCommunityBackend(question, mode) {
 // Llama directamente a Anthropic con la API Key personal
 async function callAnthropicDirect(question, mode, key) {
   const modeP = {
-    debate: 'Debate apologético — defiende la posición católica con firmeza y caridad.',
-    duda: 'Duda personal — responde de forma clara y pastoral para un laico.',
-    evan: 'Evangelización — responde de forma acogedora y dialogante.'
+    debate: 'Debate apologetico - defiende la posicion catolica con firmeza y caridad.',
+    duda: 'Duda personal - responde de forma clara y pastoral para un laico.',
+    evan: 'Evangelizacion - responde de forma acogedora y dialogante.'
   };
-  const sys = `Eres experto en apologética católica. Responde ÚNICAMENTE con JSON sin texto adicional:
-{"topic":"Título (máx 5 palabras)","verse":"Cita bíblica","verseRef":"— Libro Cap:Ver","cic":"CIC §número","argument":"Argumento en 3-4 oraciones con referencia patrística.","sources":["fuente1","fuente2"]}
-Fuentes: Padre Luis Toro, Santiago Alarcón, Soldado Apologeta, José Placencia, San Agustín, San Ireneo, Concilio Vaticano II. Responde en el idioma del usuario.
+  const sys = `Eres experto en apologetica catolica. Responde UNICAMENTE con JSON sin texto adicional:
+{"topic":"Titulo (max 5 palabras)","verse":"Cita biblica","verseRef":"- Libro Cap:Ver","cic":"CIC numero","argument":"Argumento en 3-4 oraciones con referencia patristica.","sources":["fuente1","fuente2"]}
+Fuentes: Padre Luis Toro, Santiago Alarcon, Soldado Apologeta, Jose Placencia, San Agustin, San Ireneo, Concilio Vaticano II. Responde en el idioma del usuario.
 Modo: ${modeP[mode]}`;
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
@@ -1019,7 +1019,7 @@ Modo: ${modeP[mode]}`;
   return JSON.parse(d.content.map(b => b.text || '').join('').replace(/```json|```/g, '').trim());
 }
 
-// ── BIBLIA ──
+// -- BIBLIA --
 function setBibleVersion(v, btn) {
   currentBibleVersion = v;
   document.querySelectorAll('.bv-btn').forEach(b => b.classList.remove('active'));
@@ -1049,18 +1049,18 @@ function loadBibleChapter() {
   const versesEl = document.getElementById('bible-verses');
   const bookName = document.getElementById('book-select').options[document.getElementById('book-select').selectedIndex]?.text || '';
   const vName = VERSION_LABELS[currentBibleVersion] || currentBibleVersion;
-  title.textContent = `${bookName} ${currentChapter} — ${vName}`;
+  title.textContent = `${bookName} ${currentChapter} - ${vName}`;
 
   const data = BIBLE_SAMPLES[currentBook];
   if (!data || !data[String(currentChapter)]) {
-    versesEl.innerHTML = `<div style="text-align:center;padding:30px;color:var(--text3);font-size:13px;">📖 En la versión completa, este capítulo se cargará desde la API bíblica.<br><br>Por ahora están disponibles los capítulos de muestra de los libros apologéticos más usados.</div>`;
+    versesEl.innerHTML = `<div style="text-align:center;padding:30px;color:var(--text3);font-size:13px;"> En la version completa, este capitulo se cargara desde la API biblica.<br><br>Por ahora estan disponibles los capitulos de muestra de los libros apologeticos mas usados.</div>`;
     return;
   }
   const verses = data[String(currentChapter)];
   const versionSuffix = currentBibleVersion !== 'BJ' ? ` <span style="font-size:10px;color:var(--text3)">[${currentBibleVersion}]</span>` : '';
   versesEl.innerHTML = verses.map(v => {
     const noteKey = `${currentBook}-${currentChapter}-${v.n}`;
-    const note = currentBibleVersion === 'TNM' && TNM_NOTES[noteKey] ? `<div class="badge warn" style="margin-top:5px;display:inline-block;font-size:10px;">⚠️ ${TNM_NOTES[noteKey]}</div>` : '';
+    const note = currentBibleVersion === 'TNM' && TNM_NOTES[noteKey] ? `<div class="badge warn" style="margin-top:5px;display:inline-block;font-size:10px;"> ${TNM_NOTES[noteKey]}</div>` : '';
     return `<div class="bible-verse-item"><span class="bv-num">${v.n}</span><div><span class="bv-text">${v.t}${versionSuffix}</span>${note}</div></div>`;
   }).join('');
 }
@@ -1068,7 +1068,7 @@ function loadBibleChapter() {
 function searchBible(val) {
   if (!val) { loadBibleChapter(); return; }
   const versesEl = document.getElementById('bible-verses');
-  // Buscar en todos los capítulos disponibles del libro actual
+  // Buscar en todos los capitulos disponibles del libro actual
   const data = BIBLE_SAMPLES[currentBook];
   if (!data) return;
   const results = [];
@@ -1090,7 +1090,7 @@ function searchBible(val) {
   }
 }
 
-// ── BUSCAR ──
+// -- BUSCAR --
 const FREE_KEYS = Object.keys(FREE_TOPICS);
 function renderChips() {
   const c = document.getElementById('chips-container');
@@ -1116,7 +1116,7 @@ function loadFreeTopic(key) {
   if (!d) return;
   currentSearchResult = { topic:key, verse:d.verse, verseRef:d.ref, cic:d.cic, argument:d.arg, sources:d.sources };
   document.getElementById('rc-title').textContent = key;
-  document.getElementById('rc-type-label').innerHTML = '<span class="free-label">✓ Contenido gratuito</span>';
+  document.getElementById('rc-type-label').innerHTML = '<span class="free-label"> Contenido gratuito</span>';
   document.getElementById('rc-verse').textContent = '"' + d.verse + '"';
   document.getElementById('rc-ref').textContent = d.ref;
   document.getElementById('rc-arg').textContent = d.arg;
@@ -1138,16 +1138,16 @@ async function searchWithAI(topic) {
     // Usa backend comunitario si no hay API Key personal
     let parsed;
     if (apiKey) {
-      parsed = await callAnthropicDirect('Explica la posición de la Iglesia Católica sobre: ' + topic, 'duda', apiKey);
+      parsed = await callAnthropicDirect('Explica la posicion de la Iglesia Catolica sobre: ' + topic, 'duda', apiKey);
     } else {
-      parsed = await callCommunityBackend('Explica la posición de la Iglesia Católica sobre: ' + topic, 'duda');
+      parsed = await callCommunityBackend('Explica la posicion de la Iglesia Catolica sobre: ' + topic, 'duda');
     }
     currentSearchResult = parsed;
     document.getElementById('rc-title').textContent = parsed.topic || topic;
     const isPersonal = !!apiKey;
     document.getElementById('rc-type-label').innerHTML = isPersonal
-      ? '<span class="premium-label">⭐ Tu API Key personal</span>'
-      : '<span class="free-label">🌍 Crédito comunitario</span>';
+      ? '<span class="premium-label"> Tu API Key personal</span>'
+      : '<span class="free-label"> Credito comunitario</span>';
     document.getElementById('rc-verse').textContent = '"' + (parsed.verse||'') + '"';
     document.getElementById('rc-ref').textContent = parsed.verseRef||'';
     document.getElementById('rc-arg').textContent = parsed.argument||'';
@@ -1157,10 +1157,10 @@ async function searchWithAI(topic) {
     document.getElementById('result-card').classList.add('visible');
   } catch(err) {
     document.getElementById('search-loading').style.display = 'none';
-    const isCuota = err.message.includes('cuota') || err.message.includes('límite');
+    const isCuota = err.message.includes('cuota') || err.message.includes('limite');
     if (isCuota) {
       document.getElementById('premium-search-prompt').style.display = 'block';
-      document.getElementById('premium-search-prompt').innerHTML = `<div style="font-size:28px;">⏳</div><p>${err.message}</p><button class="unlock-btn" onclick="openModal('donate-modal')">Apoyar la misión</button>`;
+      document.getElementById('premium-search-prompt').innerHTML = `<div style="font-size:28px;"></div><p>${err.message}</p><button class="unlock-btn" onclick="openModal('donate-modal')">Apoyar la mision</button>`;
     } else {
       showToast('Error al buscar: ' + err.message);
     }
@@ -1169,13 +1169,13 @@ async function searchWithAI(topic) {
 
 function pickChip(topic) { document.getElementById('search-input').value = topic; loadFreeTopic(topic); }
 
-// ── GUARDADOS ──
+// -- GUARDADOS --
 function saveCardBtn(btn) {
   const topic = btn.dataset.topic, verse = btn.dataset.verse, ref = btn.dataset.ref;
-  if (savedItems.find(s=>s.topic===topic)) { showToast('Ya está guardado'); return; }
+  if (savedItems.find(s=>s.topic===topic)) { showToast('Ya esta guardado'); return; }
   savedItems.unshift({topic,verse,ref,date:Date.now()});
   localStorage.setItem('ef_saved', JSON.stringify(savedItems));
-  renderSaved(); showToast('Guardado ✓');
+  renderSaved(); showToast('Guardado ');
 }
 
 function saveCurrentResult() {
@@ -1194,21 +1194,21 @@ function renderSaved() {
     const el = document.createElement('div');
     el.className = 'saved-item';
     el.innerHTML = `<div class="saved-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-      <div><div class="saved-title">${item.topic}</div><div class="saved-preview">${item.ref||''} · "${(item.verse||'').substring(0,55)}${(item.verse||'').length>55?'...':''}"</div></div>`;
+      <div><div class="saved-title">${item.topic}</div><div class="saved-preview">${item.ref||''} . "${(item.verse||'').substring(0,55)}${(item.verse||'').length>55?'...':''}"</div></div>`;
     list.insertBefore(el, banner);
   });
   if (savedItems.length>=2) banner.style.display='flex';
 }
 
-// ── API KEY ──
+// -- API KEY --
 function saveApiKey() {
   const val = document.getElementById('apikey-input').value.trim();
-  if (!val) { showToast('Ingresa una API Key válida'); return; }
+  if (!val) { showToast('Ingresa una API Key valida'); return; }
   apiKey = val; localStorage.setItem('ef_apikey', val);
-  showToast('API Key guardada ✓');
+  showToast('API Key guardada ');
 }
 
-// ── LANG ──
+// -- LANG --
 function selectLang(el,code,name,speech) {
   document.querySelectorAll('.lang-item').forEach(i=>i.classList.remove('selected'));
   el.classList.add('selected');
@@ -1217,10 +1217,10 @@ function selectLang(el,code,name,speech) {
   document.getElementById('cfg-lang-name').textContent = name;
 }
 
-// ── ACCIONES ──
+// -- ACCIONES --
 function shareWhatsApp() {
   if (!currentSearchResult) return;
-  const t = `*${currentSearchResult.topic}*\n\n📖 ${currentSearchResult.verseRef}: "${currentSearchResult.verse}"\n\n${currentSearchResult.argument}\n\n📚 ${currentSearchResult.cic||''}\n\n_Escudo de Fe — Apologética Católica IA_`;
+  const t = `*${currentSearchResult.topic}*\n\n ${currentSearchResult.verseRef}: "${currentSearchResult.verse}"\n\n${currentSearchResult.argument}\n\n ${currentSearchResult.cic||''}\n\n_Escudo de Fe - Apologetica Catolica IA_`;
   window.open('https://wa.me/?text='+encodeURIComponent(t));
 }
 function shareCardWA(btn) {
@@ -1230,33 +1230,33 @@ function shareCardWA(btn) {
   const verse = card.querySelector('.verse-text')?.textContent||'';
   const ref = card.querySelector('.verse-ref')?.textContent||'';
   const arg = card.querySelector('.arg-text')?.textContent||'';
-  const t = `*${topic}*\n\n📖 ${ref}: ${verse}\n\n${arg}\n\n_Escudo de Fe — Apologética Católica IA_`;
+  const t = `*${topic}*\n\n ${ref}: ${verse}\n\n${arg}\n\n_Escudo de Fe - Apologetica Catolica IA_`;
   window.open('https://wa.me/?text='+encodeURIComponent(t));
 }
 function copyResult() {
   if (!currentSearchResult) return;
   const t = `${currentSearchResult.topic}\n\n${currentSearchResult.verseRef}: "${currentSearchResult.verse}"\n\n${currentSearchResult.argument}\n\n${currentSearchResult.cic||''}`;
-  navigator.clipboard.writeText(t).then(()=>showToast('Copiado ✓'));
+  navigator.clipboard.writeText(t).then(()=>showToast('Copiado '));
 }
 function shareApp() {
   const url = window.location.href;
-  if (navigator.share) navigator.share({title:'Escudo de Fe',text:'App de apologética católica con IA',url});
-  else navigator.clipboard.writeText(url).then(()=>showToast('Enlace copiado ✓'));
+  if (navigator.share) navigator.share({title:'Escudo de Fe',text:'App de apologetica catolica con IA',url});
+  else navigator.clipboard.writeText(url).then(()=>showToast('Enlace copiado '));
 }
 
-// ── MODALS ──
+// -- MODALS --
 function openModal(id) { document.getElementById(id).classList.add('open'); }
 function closeModal(id) { document.getElementById(id).classList.remove('open'); }
 document.querySelectorAll('.modal-backdrop').forEach(m => m.addEventListener('click', e => { if(e.target===m) m.classList.remove('open'); }));
 
-// ── TOAST ──
+// -- TOAST --
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg; t.classList.add('show');
   setTimeout(()=>t.classList.remove('show'),2800);
 }
 
-// ── CUOTA COMUNITARIA ──
+// -- CUOTA COMUNITARIA --
 async function loadQuotaStatus() {
   const el = document.getElementById('quota-status');
   el.textContent = 'Consultando...';
@@ -1269,25 +1269,25 @@ async function loadQuotaStatus() {
     const comLimite = d.communityLimit || 500;
     const tuRestantes = tuLimite - tuUsadas;
     el.innerHTML = `
-      <div style="font-weight:600;margin-bottom:5px;">🌍 Crédito comunitario de hoy</div>
+      <div style="font-weight:600;margin-bottom:5px;"> Credito comunitario de hoy</div>
       <div>Tu uso: <strong>${tuUsadas}/${tuLimite}</strong> consultas (te quedan <strong>${tuRestantes}</strong>)</div>
       <div>Comunidad: <strong>${comUsadas}/${comLimite}</strong> consultas usadas hoy</div>
-      <div style="margin-top:6px;font-size:11px;opacity:.8;">El contador se reinicia cada día a medianoche UTC.</div>`;
+      <div style="margin-top:6px;font-size:11px;opacity:.8;">El contador se reinicia cada dia a medianoche UTC.</div>`;
     el.style.background = tuRestantes <= 3 ? '#fff3cd' : 'var(--green-bg)';
     el.style.color = tuRestantes <= 3 ? '#856404' : 'var(--green)';
   } catch(e) {
-    el.textContent = 'No se pudo conectar al servidor. Verifica la URL del backend en el código.';
+    el.textContent = 'No se pudo conectar al servidor. Verifica la URL del backend en el codigo.';
     el.style.color = 'var(--red)';
   }
 }
-// ── GOOGLE AUTH ──
+// -- GOOGLE AUTH --
 const GOOGLE_CLIENT_ID = 'TU_GOOGLE_CLIENT_ID.apps.googleusercontent.com';
 // Para obtener tu Client ID:
 // 1. Ve a https://console.cloud.google.com
 // 2. Crea un proyecto > APIs y Servicios > Credenciales
 // 3. Crear credenciales > ID de cliente OAuth 2.0 > Aplicacion web
 // 4. Agrega tu dominio en "Origenes autorizados"
-// 5. Copia el Client ID y pégalo arriba
+// 5. Copia el Client ID y pegalo arriba
 
 let currentUser = null;
 let currentPlan = localStorage.getItem('ef_plan') || 'free';
@@ -1364,7 +1364,7 @@ function updateAuthBar() {
     signinBtn.style.display = 'none';
     logoutBtn.style.display = 'inline';
   } else {
-    avatarWrap.innerHTML = '<div class="auth-initials" style="opacity:.5;">&#128100;</div>';
+    avatarWrap.innerHTML = '<div class="auth-initials" style="opacity:.5;"></div>';
     nameEl.textContent = 'Invitado';
     signinBtn.style.display = 'flex';
     logoutBtn.style.display = 'none';
@@ -1380,7 +1380,7 @@ function suscribirse(plan) {
   showScreen('ajustes', document.querySelectorAll('.tab')[4]);
 }
 
-// ── ANUNCIO PANTALLA COMPLETA ──
+// -- ANUNCIO PANTALLA COMPLETA --
 let adTimerInterval = null;
 let useCountAd = parseInt(localStorage.getItem('ef_uses') || '0');
 
@@ -1412,7 +1412,7 @@ function showAd() {
       skipBtn.disabled = false;
       skipBtn.classList.add('ready');
       skipBtn.innerHTML = 'Continuar';
-      countdown.textContent = 'Listo ✓';
+      countdown.textContent = 'Listo ';
     }
   }, 1000);
 }
@@ -1423,18 +1423,14 @@ function closeAd() {
   document.getElementById('ad-skip-btn').innerHTML = 'Continuar en <span id="ad-timer">5</span>s';
 }
 
-// ── INIT EXTENDIDO ──
+// -- INIT EXTENDIDO --
 const _origInit = document.addEventListener;
 document.addEventListener('DOMContentLoaded', () => {
   updateAuthBar();
 });
 
-// ── TOAST ──
-function showToast(msg) {
-  const t=document.getElementById('toast');
-  t.textContent=msg;t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),2800);
-}
+// -- TOAST --
+
 </script>
 </body>
 </html>
