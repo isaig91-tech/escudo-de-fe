@@ -2,7 +2,7 @@
   "name": "Escudo de Fe",
   "short_name": "Escudo de Fe",
   "description": "Apologetica Catolica con IA — Defiende tu fe con doctrina, Biblia y fuentes patristicas",
-  "start_url": "/",
+  "start_url": "/escudo-de-fe/",
   "display": "standalone",
   "background_color": "#1a1a2e",
   "theme_color": "#1a1a2e",

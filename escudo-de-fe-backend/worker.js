@@ -30,9 +30,13 @@ async function handleAsk(request, env, cors) {
     const globalKey = 'global:' + today;
     const ipKey = 'ip:' + ip + ':' + today;
     const globalCount = parseInt((await env.ESCUDO_KV.get(globalKey)) || '0');
-    if (globalCount >= dailyLimit) return resp({ error: 'cuota_agotada', message: 'El credito comunitario de hoy se agoto. Vuelve manana.' }, 429, cors);
+    if (globalCount >= dailyLimit) {
+      return resp({ error: 'cuota_agotada', message: 'El credito comunitario de hoy se agoto. Vuelve manana.' }, 429, cors);
+    }
     const ipCount = parseInt((await env.ESCUDO_KV.get(ipKey)) || '0');
-    if (ipCount >= perIpLimit) return resp({ error: 'limite_ip', message: 'Limite de hoy alcanzado. Vuelve manana.' }, 429, cors);
+    if (ipCount >= perIpLimit) {
+      return resp({ error: 'limite_ip', message: 'Limite de hoy alcanzado. Vuelve manana.' }, 429, cors);
+    }
     const modeTexts = { debate: 'Debate apologetico.', duda: 'Duda personal.', evan: 'Evangelizacion.' };
     const fullPrompt = SYSTEM_PROMPT + ' Modo: ' + (modeTexts[mode] || modeTexts.duda) + ' Pregunta: ' + question;
     const aiResponse = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + env.GEMINI_API_KEY, {
@@ -40,17 +44,26 @@ async function handleAsk(request, env, cors) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ contents: [{ parts: [{ text: fullPrompt }] }], generationConfig: { temperature: 0.3, maxOutputTokens: 1000 } }),
     });
-    if (!aiResponse.ok) return resp({ error: 'Error al consultar la IA.' }, 502, cors);
+if (aiResponse.status === 429) {
+  const errBody = await aiResponse.text();
+  return resp({ error: 'limite_ip', message: 'Gemini 429: ' + errBody.substring(0, 150) }, 429, cors);
+}
+    if (!aiResponse.ok) {
+      return resp({ error: 'Error al consultar la IA. Codigo: ' + aiResponse.status }, 502, cors);
+    }
     const aiData = await aiResponse.json();
     const rawText = aiData.candidates?.[0]?.content?.parts?.[0]?.text || '';
     let parsed;
-    try { parsed = JSON.parse(rawText.replace(/```json|```/g, '').trim()); }
-    catch (e) { return resp({ error: 'Respuesta invalida.' }, 502, cors); }
+    try {
+      parsed = JSON.parse(rawText.replace(/```json|```/g, '').trim());
+    } catch (e) {
+      return resp({ error: 'Respuesta invalida.' }, 502, cors);
+    }
     await env.ESCUDO_KV.put(globalKey, String(globalCount + 1), { expirationTtl: 172800 });
     await env.ESCUDO_KV.put(ipKey, String(ipCount + 1), { expirationTtl: 172800 });
     return resp({ success: true, data: parsed, quota: { used: ipCount + 1, limit: perIpLimit } }, 200, cors);
   } catch (err) {
-    return resp({ error: 'Error interno.' }, 500, cors);
+    return resp({ error: 'Error interno: ' + err.message }, 500, cors);
   }
 }
 
