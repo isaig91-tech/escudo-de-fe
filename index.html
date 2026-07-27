@@ -251,6 +251,92 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
 .google-btn{width:100%;padding:11px;background:#fff;color:#3c4043;border:1.5px solid #dadce0;border-radius:10px;font-size:13px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;font-family:Inter,sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.08);}
 .google-btn:hover{box-shadow:0 2px 8px rgba(0,0,0,.14);}
 .login-skip-link{font-size:11px;color:var(--text3);cursor:pointer;background:none;border:none;font-family:Inter,sans-serif;padding:4px;}
+
+/* ── DICCIONARIO TEOLOGICO ── */
+.dict-modal-content{display:flex;flex-direction:column;gap:12px;}
+.dict-word{font-family:'Cinzel',serif;font-size:18px;color:var(--navy);font-weight:600;}
+.dict-cic{font-size:11px;background:var(--green-bg);color:var(--green);padding:2px 8px;border-radius:20px;display:inline-block;font-weight:500;}
+.dict-verse-mini{background:var(--gold-pale);border-left:3px solid var(--gold);padding:7px 10px;border-radius:0 7px 7px 0;font-size:12px;color:#5c4a00;font-style:italic;}
+.dict-level-tabs{display:flex;gap:6px;}
+.dict-level-btn{flex:1;padding:7px;border-radius:8px;border:.5px solid var(--border2);background:var(--card);color:var(--text2);font-size:12px;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;}
+.dict-level-btn.active{background:var(--navy);color:var(--gold);border-color:var(--navy);}
+.dict-def{font-size:13px;color:var(--text2);line-height:1.7;}
+.dict-search-wrap{background:var(--card);border:.5px solid var(--border2);border-radius:10px;display:flex;align-items:center;gap:7px;padding:9px 12px;margin-bottom:6px;}
+.dict-search-wrap input{border:none;background:transparent;flex:1;font-size:13px;color:var(--text);outline:none;font-family:'Inter',sans-serif;}
+.dict-terms-list{display:flex;flex-direction:column;gap:6px;}
+.dict-term-item{background:var(--card);border-radius:10px;border:.5px solid var(--border2);padding:10px 13px;cursor:pointer;transition:all .15s;}
+.dict-term-item:hover{border-color:var(--gold);background:var(--gold-pale);}
+.dict-term-name{font-size:13px;font-weight:600;color:var(--navy);}
+.dict-term-preview{font-size:11px;color:var(--text3);margin-top:2px;}
+/* ── CONCORDANCIA STRONG ── */
+.strong-card{background:var(--card);border-radius:12px;border:.5px solid var(--border2);padding:13px;display:flex;flex-direction:column;gap:8px;}
+.strong-number{font-size:22px;font-weight:700;color:var(--gold);font-family:'Cinzel',serif;}
+.strong-word{font-size:16px;color:var(--navy);font-weight:600;}
+.strong-lang{font-size:11px;background:var(--purple-bg);color:var(--purple);padding:2px 8px;border-radius:20px;display:inline-block;font-weight:500;}
+.strong-meaning{font-size:12.5px;color:var(--text2);line-height:1.65;}
+.strong-refs{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px;}
+.strong-ref{font-size:11px;padding:3px 8px;border-radius:20px;background:var(--blue-bg);color:var(--blue);cursor:pointer;}
+.strong-search{display:flex;gap:7px;margin-bottom:8px;}
+.strong-input{flex:1;background:var(--card);border:.5px solid var(--border2);border-radius:9px;padding:8px 11px;font-size:13px;color:var(--text);outline:none;font-family:'Inter',sans-serif;}
+.strong-input:focus{border-color:var(--gold);}
+/* ── MAPAS ── */
+.map-tabs{display:flex;gap:5px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;}
+.map-tabs::-webkit-scrollbar{display:none;}
+.map-tab-btn{flex-shrink:0;padding:6px 12px;border-radius:20px;border:.5px solid var(--border2);font-size:11px;font-weight:500;cursor:pointer;background:var(--card);color:var(--text2);transition:all .15s;}
+.map-tab-btn.active{background:var(--navy);color:var(--gold);border-color:var(--navy);}
+.map-description{font-size:12px;color:var(--text2);line-height:1.5;padding:8px 0 4px;}
+.map-places{display:flex;flex-direction:column;gap:6px;}
+.map-place-item{background:var(--card);border-radius:10px;border:.5px solid var(--border2);padding:10px 13px;display:flex;align-items:flex-start;gap:10px;cursor:pointer;transition:all .15s;}
+.map-place-item:hover{border-color:var(--gold);background:var(--gold-pale);}
+.map-place-icon{color:var(--gold);font-size:18px;flex-shrink:0;}
+.map-place-name{font-size:13px;font-weight:600;color:var(--navy);}
+.map-place-note{font-size:11px;color:var(--text3);margin-top:2px;}
+.map-open-btn{width:100%;padding:11px;background:var(--navy);color:var(--gold);border:none;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Cinzel',serif;margin-top:8px;}
+/* Tooltip biblico (click en palabra) */
+.bible-tooltip{position:fixed;background:var(--navy);color:#fff;border-radius:10px;padding:10px 13px;font-size:12px;max-width:260px;z-index:400;box-shadow:0 4px 20px rgba(0,0,0,.3);display:none;line-height:1.5;}
+.bible-tooltip.visible{display:block;}
+.bible-tooltip-title{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);margin-bottom:4px;}
+.bible-tooltip-close{float:right;cursor:pointer;color:rgba(255,255,255,.5);font-size:14px;}
+
+/* ── AUDIO ── */
+.audio-controls{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--navy);border-radius:10px;margin-bottom:8px;}
+.audio-btn{background:var(--gold);color:var(--navy);border:none;border-radius:8px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Cinzel',serif;display:flex;align-items:center;gap:6px;}
+.audio-btn svg{width:14px;height:14px;}
+.audio-speed{background:rgba(255,255,255,.1);border:.5px solid rgba(255,255,255,.2);border-radius:7px;color:#fff;font-size:11px;padding:5px 8px;cursor:pointer;font-family:Inter,sans-serif;}
+.audio-verse-highlight{background:var(--gold-pale);border-radius:4px;padding:1px 3px;}
+.audio-status{font-size:11px;color:rgba(255,255,255,.6);flex:1;}
+
+/* ── PLANES DIARIOS ── */
+.planes-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.plan-item{background:var(--card);border-radius:12px;border:.5px solid var(--border2);padding:12px;cursor:pointer;transition:all .15s;position:relative;overflow:hidden;}
+.plan-item:hover{border-color:var(--gold);}
+.plan-item.active-plan{border-color:var(--gold);background:var(--gold-pale);}
+.plan-item-icon{font-size:24px;margin-bottom:6px;}
+.plan-item-name{font-size:12px;font-weight:600;color:var(--navy);margin-bottom:3px;}
+.plan-item-desc{font-size:10px;color:var(--text3);line-height:1.4;}
+.plan-progress-bar{height:4px;background:var(--border);border-radius:2px;margin-top:8px;overflow:hidden;}
+.plan-progress-fill{height:100%;background:var(--gold);border-radius:2px;transition:width .4s;}
+.plan-progress-label{font-size:10px;color:var(--text3);margin-top:3px;}
+.plan-day-list{display:flex;flex-direction:column;gap:6px;}
+.plan-day-item{display:flex;align-items:center;gap:10px;padding:9px 12px;background:var(--card);border-radius:9px;border:.5px solid var(--border2);cursor:pointer;}
+.plan-day-item.completed{border-color:var(--green);background:var(--green-bg);}
+.plan-day-check{width:20px;height:20px;border-radius:50%;border:2px solid var(--border2);flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.plan-day-item.completed .plan-day-check{background:var(--green);border-color:var(--green);color:#fff;font-size:11px;}
+.plan-day-text{font-size:12px;color:var(--text);}
+.plan-day-ref{font-size:11px;color:var(--text3);}
+.plan-back-btn{background:none;border:none;color:var(--gold);font-size:13px;cursor:pointer;text-align:left;padding:0 0 8px;font-family:Inter,sans-serif;}
+.plan-overall-progress{background:var(--gold-pale);border-radius:10px;padding:12px;margin-bottom:10px;border:.5px solid var(--gold-light);}
+.plan-overall-title{font-family:'Cinzel',serif;font-size:13px;color:var(--navy);margin-bottom:6px;}
+.plan-overall-pct{font-size:28px;font-weight:700;color:var(--gold);}
+
+/* ── COMPARTIR COMUNIDAD ── */
+.share-verse-btn{display:flex;align-items:center;gap:5px;padding:5px 10px;border-radius:7px;border:.5px solid var(--border2);background:var(--card);font-size:11px;color:var(--text2);cursor:pointer;font-family:Inter,sans-serif;}
+.share-verse-btn:hover{background:var(--bg);}
+.verse-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;padding:4px 0;}
+.api-bible-note{background:var(--blue-bg);border:.5px solid #90c4f0;border-radius:9px;padding:9px 12px;font-size:12px;color:var(--blue);line-height:1.5;margin-bottom:8px;}
+
+/* Offline badge */
+.offline-badge{font-size:10px;background:#e8f2fc;color:var(--blue);padding:2px 7px;border-radius:20px;font-weight:500;}
 </style>
 </head>
 <body>
@@ -346,10 +432,11 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
   <div class="bible-area">
     <div class="bible-top">
       <div class="bible-version-row" role="group" aria-label="Version biblica">
-        <button class="bv-btn active" onclick="setBibleVersion('BJ',this)"> Biblia de Jerusalen</button>
+        <button class="bv-btn active" onclick="setBibleVersion('BJ',this)">Biblia de Jerusalen</button>
+        <button class="bv-btn" onclick="setBibleVersion('BLA',this)">Biblia Latinoamericana</button>
         <button class="bv-btn" onclick="setBibleVersion('RV',this)">Reina-Valera 1960</button>
         <button class="bv-btn" onclick="setBibleVersion('NVI',this)">NVI</button>
-        <button class="bv-btn warn-version" onclick="setBibleVersion('TNM',this)" title="Solo para referencia apologetica"> T. del N. Mundo</button>
+        <button class="bv-btn warn-version" onclick="setBibleVersion('TNM',this)" title="Solo para referencia apologetica">T. del N. Mundo</button>
       </div>
       <div id="bible-warn" class="bible-warn">
          <strong>Solo para uso apologetico.</strong> La Traduccion del Nuevo Mundo contiene alteraciones doctrinales. Se incluye para que puedas identificar y refutar los textos que usan los Testigos de Jehova, comparandolos con versiones fieles.
@@ -358,7 +445,15 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
         <input type="text" id="bible-search" placeholder="Buscar versiculo o palabra..." oninput="searchBible(this.value)">
       </div>
-      <div class="bible-nav">
+      <!-- HERRAMIENTAS BIBLICAS -->
+      <div style="display:flex;gap:5px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none;">
+        <button class="map-tab-btn active" onclick="setBibleTool('texto',this)">Texto</button>
+        <button class="map-tab-btn" onclick="setBibleTool('planes',this)">Planes</button>
+        <button class="map-tab-btn" onclick="setBibleTool('diccionario',this)">Diccionario</button>
+        <button class="map-tab-btn" onclick="setBibleTool('strong',this)">Concordancia</button>
+        <button class="map-tab-btn" onclick="setBibleTool('mapas',this)">Mapas</button>
+      </div>
+      <div class="bible-nav" id="bible-nav-row">
         <select class="bible-select" id="book-select" onchange="loadBook()">
           <option value="GEN">Genesis</option><option value="EXO">Exodo</option>
           <option value="SAL">Salmos</option><option value="PRO">Proverbios</option>
@@ -380,7 +475,90 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
       </div>
     </div>
     <div id="bible-warn-tnm-msg" class="bible-warn" style="margin:0 13px 8px;display:none;"></div>
-    <div class="bible-content-area" id="bible-content">
+    <!-- PANEL PLANES DIARIOS -->
+<div id="bible-panel-planes" style="display:none;flex:1;overflow-y:auto;padding:10px 12px;flex-direction:column;gap:10px;">
+  <div id="planes-grid-view">
+    <div style="font-size:12px;color:var(--text3);margin-bottom:8px;">Elige un plan y lee cada dia. La app guarda tu progreso automaticamente.</div>
+    <div class="planes-grid" id="planes-grid"></div>
+  </div>
+  <div id="planes-detail-view" style="display:none;flex-direction:column;gap:8px;">
+    <button class="plan-back-btn" onclick="showPlanesGrid()">volver a los planes</button>
+    <div class="plan-overall-progress">
+      <div class="plan-overall-title" id="plan-detail-name"></div>
+      <div style="display:flex;align-items:baseline;gap:6px;">
+        <span class="plan-overall-pct" id="plan-detail-pct">0%</span>
+        <span style="font-size:12px;color:var(--text3)" id="plan-detail-days"></span>
+      </div>
+      <div class="plan-progress-bar" style="margin-top:8px;"><div class="plan-progress-fill" id="plan-detail-fill" style="width:0%"></div></div>
+    </div>
+    <div class="plan-day-list" id="plan-day-list"></div>
+  </div>
+</div>
+<!-- PANEL DICCIONARIO -->
+<div id="bible-panel-diccionario" style="display:none;flex:1;overflow-y:auto;padding:10px 12px;flex-direction:column;gap:8px;">
+  <div class="dict-search-wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;color:var(--text3)"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    <input type="text" placeholder="Buscar termino teologico..." oninput="filterDict(this.value)" style="border:none;background:transparent;flex:1;font-size:13px;outline:none;font-family:Inter,sans-serif;">
+  </div>
+  <div class="dict-terms-list" id="dict-terms-list"></div>
+</div>
+<!-- PANEL DICCIONARIO DETALLE -->
+<div id="bible-panel-dict-detail" style="display:none;flex:1;overflow-y:auto;padding:10px 12px;flex-direction:column;gap:10px;">
+  <button onclick="showDictList()" style="background:none;border:none;color:var(--gold);font-size:13px;cursor:pointer;text-align:left;padding:0;font-family:Inter,sans-serif;">← Volver al diccionario</button>
+  <div class="dict-word" id="dict-detail-word"></div>
+  <span class="dict-cic" id="dict-detail-cic"></span>
+  <div class="dict-verse-mini" id="dict-detail-verse"></div>
+  <div class="dict-level-tabs">
+    <button class="dict-level-btn active" id="dict-btn-simple" onclick="setDictLevel('simple')">Simple</button>
+    <button class="dict-level-btn" id="dict-btn-advanced" onclick="setDictLevel('advanced')">Avanzado</button>
+  </div>
+  <div class="dict-def" id="dict-detail-def"></div>
+</div>
+<!-- PANEL CONCORDANCIA STRONG -->
+<div id="bible-panel-strong" style="display:none;flex:1;overflow-y:auto;padding:10px 12px;flex-direction:column;gap:8px;">
+  <div style="font-size:12px;color:var(--text3);line-height:1.5;margin-bottom:4px;">Escribe un numero Strong (ej: G4074) o una palabra clave</div>
+  <div class="strong-search">
+    <input class="strong-input" type="text" id="strong-input" placeholder="G4074 o Pedro..." oninput="searchStrong(this.value)">
+  </div>
+  <div id="strong-results">
+    <div style="display:flex;flex-wrap:wrap;gap:6px;">
+      <span class="strong-ref" onclick="document.getElementById('strong-input').value=this.textContent;searchStrong(this.textContent)" style="cursor:pointer;font-size:12px;padding:5px 10px;">G4074 Pedro</span>
+      <span class="strong-ref" onclick="document.getElementById('strong-input').value=this.textContent;searchStrong(this.textContent)" style="cursor:pointer;font-size:12px;padding:5px 10px;">G2316 Dios</span>
+      <span class="strong-ref" onclick="document.getElementById('strong-input').value=this.textContent;searchStrong(this.textContent)" style="cursor:pointer;font-size:12px;padding:5px 10px;">G2962 Senor</span>
+      <span class="strong-ref" onclick="document.getElementById('strong-input').value=this.textContent;searchStrong(this.textContent)" style="cursor:pointer;font-size:12px;padding:5px 10px;">G5485 Gracia</span>
+      <span class="strong-ref" onclick="document.getElementById('strong-input').value=this.textContent;searchStrong(this.textContent)" style="cursor:pointer;font-size:12px;padding:5px 10px;">G3340 Arrepentir</span>
+      <span class="strong-ref" onclick="document.getElementById('strong-input').value=this.textContent;searchStrong(this.textContent)" style="cursor:pointer;font-size:12px;padding:5px 10px;">H6697 Roca</span>
+    </div>
+  </div>
+</div>
+<!-- PANEL MAPAS -->
+<div id="bible-panel-mapas" style="display:none;flex:1;overflow-y:auto;padding:10px 12px;flex-direction:column;gap:8px;">
+  <div class="map-tabs" id="map-tabs"></div>
+  <div class="map-description" id="map-description"></div>
+  <div class="map-places" id="map-places"></div>
+  <button class="map-open-btn" id="map-open-btn" onclick="openBibleMap()">Ver en Google Maps</button>
+</div>
+<!-- CONTROLES DE AUDIO -->
+<div class="audio-controls" id="audio-controls" style="display:none;">
+  <button class="audio-btn" id="audio-play-btn" onclick="toggleAudio()">
+    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+    Escuchar
+  </button>
+  <select class="audio-speed" id="audio-speed" onchange="changeAudioSpeed(this.value)">
+    <option value="0.8">0.8x</option>
+    <option value="1" selected>1x</option>
+    <option value="1.2">1.2x</option>
+    <option value="1.5">1.5x</option>
+  </select>
+  <span class="audio-status" id="audio-status">Listo para escuchar</span>
+  <button onclick="stopAudio()" style="background:none;border:none;color:rgba(255,255,255,.5);cursor:pointer;font-size:18px;">x</button>
+</div>
+<!-- NOTA API.BIBLE -->
+<div class="api-bible-note" id="api-bible-note" style="display:none;">
+  Cargando Biblia completa desde API.Bible...
+  <span id="api-bible-status"></span>
+</div>
+<div class="bible-content-area" id="bible-content">
       <div class="bible-chapter-title" id="bible-chapter-title">Genesis 1 - Biblia de Jerusalen</div>
       <div id="bible-verses"></div>
     </div>
@@ -811,9 +989,112 @@ const BIBLE_SAMPLES = {
 };
 
 // Versiones y sus diferencias notables
-const VERSION_LABELS = { BJ:'Biblia de Jerusalen', RV:'Reina-Valera 1960', NVI:'Nueva Version Internacional', TNM:'Traduccion del Nuevo Mundo' };
+const VERSION_LABELS = { BJ:'Biblia de Jerusalen', BLA:'Biblia Latinoamericana', RV:'Reina-Valera 1960', NVI:'Nueva Version Internacional', TNM:'Traduccion del Nuevo Mundo' };
 
 // Alteraciones conocidas de la TNM (para referencia apologetica)
+// Biblia Latinoamericana - versiculos clave
+const BLA_VARIANTS = {
+  'MAT-16': {
+    18: 'Tu eres Pedro, y sobre esta piedra edificare mi Iglesia, y el poder de la muerte no la dominara.',
+    19: 'Te dare las llaves del Reino de los Cielos; lo que ates en la tierra quedara atado en el cielo, y lo que desates en la tierra quedara desatado en el cielo.',
+  },
+  'JUA-6': {
+    51: 'Yo soy el pan vivo bajado del cielo. El que coma de este pan vivira para siempre. El pan que yo dare es mi carne, entregada por la vida del mundo.',
+    53: 'En verdad les digo: si no comen la carne del Hijo del Hombre y no beben su sangre, no tienen vida en ustedes.',
+    55: 'Porque mi carne es verdadera comida y mi sangre es verdadera bebida.',
+  },
+  'JUA-20': {
+    22: 'Soplo sobre ellos y les dijo: Reciban el Espiritu Santo.',
+    23: 'A quienes les perdonen los pecados, les seran perdonados; a quienes se los retengan, les seran retenidos.',
+  },
+  'LUC-1': {
+    28: 'Alegate, llena de gracia, el Senor esta contigo.',
+    48: 'Ha puesto sus ojos en su humilde esclava: desde ahora todas las generaciones me llamaran dichosa.',
+  },
+  'GEN-1': {
+    1: 'Al principio Dios creo el cielo y la tierra.',
+    2: 'La tierra era un caos total, las tinieblas cubrianlas aguas del oceano primordial, y el soplo de Dios aleteaba sobre las aguas.',
+    3: 'Dijo Dios: Que exista la luz. Y la luz empezo a existir.',
+    26: 'Dijo Dios: Hagamos al hombre a nuestra imagen y semejanza.',
+    27: 'Y creo Dios al hombre a su imagen; a imagen de Dios lo creo; hombre y mujer los creo.',
+  },
+};
+
+// Diccionario Teologico - dos niveles
+const THEOLOGICAL_DICT = {
+  'Transubstanciacion': {
+    simple: 'Es el cambio total del pan y el vino en el Cuerpo y Sangre de Cristo en la Eucaristia. La apariencia externa no cambia, pero la realidad profunda si.',
+    advanced: 'Termino escolastico que describe la conversion sustancial de los elementos eucaristicos. El Concilio de Trento (1551) lo definio dogmaticamente: los accidentes permanecen pero la sustancia se convierte totalmente en el Cuerpo, Sangre, Alma y Divinidad de Cristo. Base biblicas: Jn 6:51-58; Mt 26:26-28; 1Co 11:23-29.',
+    cic: 'CIC 1376',
+    verse: 'Esto es mi cuerpo — Mt 26:26',
+  },
+  'Theotokos': {
+    simple: 'Palabra griega que significa "Madre de Dios". Es el titulo que la Iglesia da a Maria porque dio a luz a Jesus, que es Dios.',
+    advanced: 'Titulo mariano definido en el Concilio de Efeso (431 d.C.) contra la herejia nestoriana que separaba las naturalezas de Cristo. Al ser Jesus una sola Persona divina con dos naturalezas, Maria es verdaderamente Madre de Dios. San Cirilo de Alejandria fue su principal defensor.',
+    cic: 'CIC 495',
+    verse: 'Por que se me concede esto a mi, que la madre de mi Senor venga a visitarme? — Lc 1:43',
+  },
+  'Magisterio': {
+    simple: 'Es la autoridad que tiene la Iglesia para ensenar y explicar la fe. El Papa y los obispos, unidos a el, forman el Magisterio.',
+    advanced: 'Oficio docente de la Iglesia confiado por Cristo a Pedro y los Apostoles (Mt 16:18-19; 28:18-20). Se divide en Magisterio ordinario (ensenanza cotidiana) y extraordinario (definiciones dogmaticas solemnes). La infalibilidad se ejerce cuando el Papa define ex cathedra o el Concilio Ecumenico define en union con el Papa.',
+    cic: 'CIC 85-87',
+    verse: 'El que los escucha a ustedes, me escucha a mi — Lc 10:16',
+  },
+  'Gracia santificante': {
+    simple: 'Es el don de Dios que nos hace hijos suyos y nos da la vida divina. La recibimos principalmente en el Bautismo.',
+    advanced: 'Participacion en la naturaleza divina (2Pe 1:4) que nos eleva al orden sobrenatural. A diferencia de la gracia actual (ayuda transitoria), la gracia santificante es habitual y permanente. San Tomas la llama forma accidentalis del alma. Se pierde por el pecado mortal y se recupera por la Confesion.',
+    cic: 'CIC 1999-2000',
+    verse: 'Ha sido derramado el amor de Dios en nuestros corazones por el Espiritu Santo — Rm 5:5',
+  },
+  'Sola Scriptura': {
+    simple: 'Es el principio protestante que dice que solo la Biblia es la regla de fe. La Iglesia Catolica lo rechaza porque la misma Biblia no lo ensena.',
+    advanced: 'Principio hermeneutico formulado por Lutero en el s. XVI. Es autocontradictorio: si solo la Escritura es norma, el principio mismo no esta en la Escritura. Ademas, el canon biblico fue definido por la Iglesia en los concilios de Hipona (393) y Cartago (397). Pablo manda guardar tambien las tradiciones orales (2Tes 2:15; 1Co 11:2).',
+    cic: 'CIC 80-83',
+    verse: 'La Iglesia del Dios vivo, columna y fundamento de la verdad — 1Tim 3:15',
+  },
+  'Purgatorio': {
+    simple: 'Es un estado de purificacion despues de la muerte para quienes mueren en gracia de Dios pero aun imperfectos. No es un segundo infierno.',
+    advanced: 'Doctrina definida en los concilios de Lyon II (1274), Florencia (1439) y Trento (1563). Base biblica: 2Mac 12:46 (oracion por difuntos); Mt 12:32 (pecados perdonados en el venidero); 1Co 3:15 (salvacion como por fuego). Tertuliano y Agustin atestiguan la practica de orar por los difuntos.',
+    cic: 'CIC 1030-1032',
+    verse: 'El mismo se salvara, pero como quien pasa a traves del fuego — 1Co 3:15',
+  },
+};
+
+// Concordancia Strong - terminos clave
+const STRONG_CONCORDANCE = {
+  'G4074': { word: 'Petros', lang: 'Griego', meaning: 'Piedra, roca (nombre propio). Cristo cambia el nombre de Simon a Pedro, simbolizando su funcion como fundamento de la Iglesia.', verse: 'Mt 16:18', refs: ['Mt 16:18','Lc 6:14','Jn 1:42','Hch 2:14'] },
+  'G2316': { word: 'Theos', lang: 'Griego', meaning: 'Dios. Usado en Jn 1:1 para afirmar la divinidad del Logos. La TNM lo traduce "un dios" sin justificacion gramatical.', verse: 'Jn 1:1', refs: ['Jn 1:1','Jn 20:28','Hch 2:36','Rm 9:5'] },
+  'G2962': { word: 'Kyrios', lang: 'Griego', meaning: 'Senor. Titulo divino del AT (YHWH) aplicado a Jesus en el NT, afirmando su divinidad.', verse: 'Flp 2:11', refs: ['Flp 2:11','Hch 2:36','Rm 10:9','1Co 12:3'] },
+  'G5485': { word: 'Charis', lang: 'Griego', meaning: 'Gracia. En Lc 1:28 (kecharitomene) es participio perfecto pasivo que indica estado permanente de gracia, base de la Inmaculada Concepcion.', verse: 'Lc 1:28', refs: ['Lc 1:28','Ef 2:8','Rm 3:24','2Co 12:9'] },
+  'G3340': { word: 'Metanoeo', lang: 'Griego', meaning: 'Arrepentirse, cambiar de mente. Base del Sacramento de la Confesion. Implica conversion interior genuina.', verse: 'Hch 2:38', refs: ['Hch 2:38','Mt 3:2','Mc 1:15','Lc 13:3'] },
+  'H6697': { word: 'Tsur', lang: 'Hebreo', meaning: 'Roca, piedra. Usado en el AT para Dios como fundamento. Jesus aplica este simbolismo a Pedro en Mt 16:18.', verse: 'Dt 32:4', refs: ['Dt 32:4','Sal 18:2','Is 26:4','1Sam 2:2'] },
+};
+
+// Mapas biblicos
+const BIBLE_MAPS = [
+  { id: 'israel_nt', name: 'Israel en tiempos de Jesus', lat: 31.7683, lng: 35.2137, zoom: 8, description: 'Galilea, Judea, Samaria y los principales lugares del ministerio de Cristo.', places: [
+    { name: 'Belen', lat: 31.7054, lng: 35.2024, note: 'Nacimiento de Jesus (Mt 2:1)' },
+    { name: 'Nazaret', lat: 32.6996, lng: 35.3035, note: 'Infancia de Jesus (Lc 2:51)' },
+    { name: 'Cafarnaum', lat: 32.8804, lng: 35.5752, note: 'Base del ministerio (Mt 4:13)' },
+    { name: 'Jerusalen', lat: 31.7683, lng: 35.2137, note: 'Pasion, muerte y resurreccion' },
+    { name: 'Jordan', lat: 31.8426, lng: 35.5476, note: 'Bautismo de Jesus (Mt 3:13)' },
+  ]},
+  { id: 'viajes_pablo', name: 'Viajes de San Pablo', lat: 37.9838, lng: 23.7275, zoom: 5, description: 'Las tres misiones apostolicas que llevaron el Evangelio por el Imperio Romano.', places: [
+    { name: 'Antioquía', lat: 36.2021, lng: 36.1606, note: 'Base de operaciones de Pablo (Hch 13:1)' },
+    { name: 'Corinto', lat: 37.9063, lng: 22.8783, note: 'Fundacion de la iglesia (Hch 18:1)' },
+    { name: 'Efeso', lat: 37.9397, lng: 27.3414, note: 'Largo ministerio de Pablo (Hch 19)' },
+    { name: 'Roma', lat: 41.9028, lng: 12.4964, note: 'Destino final y martirio (Hch 28)' },
+    { name: 'Atenas', lat: 37.9838, lng: 23.7275, note: 'Discurso en el Areópago (Hch 17)' },
+  ]},
+  { id: 'tierra_santa', name: 'Tierra Santa hoy', lat: 31.5, lng: 35.0, zoom: 7, description: 'Los lugares biblicos que aun existen y pueden visitarse hoy.', places: [
+    { name: 'Iglesia del Santo Sepulcro', lat: 31.7784, lng: 35.2297, note: 'Lugar de la crucifixion y resurreccion' },
+    { name: 'Basilica de la Natividad', lat: 31.7054, lng: 35.2076, note: 'Lugar de nacimiento de Jesus' },
+    { name: 'Monte de los Olivos', lat: 31.7784, lng: 35.2461, note: 'Ascension de Jesus (Hch 1:12)' },
+    { name: 'Rio Jordan', lat: 31.8426, lng: 35.5476, note: 'Lugar del bautismo de Jesus' },
+    { name: 'Mar de Galilea', lat: 32.8321, lng: 35.5842, note: 'Milagros y pesca de Jesus' },
+  ]},
+];
+
 const TNM_NOTES = {
   'JUA-1-1': 'La TNM traduce "la Palabra era un dios" en lugar de "la Palabra era Dios" - alteracion doctrinal para negar la divinidad de Cristo. El griego original (   ) no tiene articulo indefinido en griego, idioma que no tiene articulo indefinido.',
 };
@@ -1431,6 +1712,603 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // -- TOAST --
 
+
+// ── HERRAMIENTAS BIBLICAS ──
+let currentBibleTool = 'texto';
+let currentMapId = 'israel_nt';
+let currentDictWord = null;
+let currentDictLevel = 'simple';
+
+function setBibleTool(tool, btn) {
+  currentBibleTool = tool;
+  document.querySelectorAll('.map-tab-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+
+  // Ocultar todos los paneles
+  document.getElementById('bible-content').style.display = 'none';
+  document.getElementById('bible-panel-diccionario').style.display = 'none';
+  document.getElementById('bible-panel-dict-detail').style.display = 'none';
+  document.getElementById('bible-panel-strong').style.display = 'none';
+  document.getElementById('bible-panel-mapas').style.display = 'none';
+  document.getElementById('bible-nav-row').style.display = tool === 'texto' ? 'flex' : 'none';
+
+  if (tool === 'texto') {
+    document.getElementById('bible-content').style.display = 'block';
+  } else if (tool === 'diccionario') {
+    document.getElementById('bible-panel-diccionario').style.display = 'flex';
+    renderDictList('');
+  } else if (tool === 'strong') {
+    document.getElementById('bible-panel-strong').style.display = 'flex';
+  } else if (tool === 'mapas') {
+    document.getElementById('bible-panel-mapas').style.display = 'flex';
+    renderMaps();
+  }
+}
+
+// ── DICCIONARIO TEOLOGICO ──
+function renderDictList(filter) {
+  const list = document.getElementById('dict-terms-list');
+  const terms = Object.keys(THEOLOGICAL_DICT).filter(k =>
+    !filter || k.toLowerCase().includes(filter.toLowerCase())
+  );
+  list.innerHTML = terms.map(term => {
+    const d = THEOLOGICAL_DICT[term];
+    return `<div class="dict-term-item" onclick="showDictDetail('${term}')">
+      <div class="dict-term-name">${term}</div>
+      <div class="dict-term-preview">${d.simple.substring(0, 70)}...</div>
+    </div>`;
+  }).join('');
+}
+
+function filterDict(val) { renderDictList(val); }
+
+function showDictDetail(word) {
+  const d = THEOLOGICAL_DICT[word];
+  if (!d) return;
+  currentDictWord = word;
+  currentDictLevel = 'simple';
+  document.getElementById('dict-detail-word').textContent = word;
+  document.getElementById('dict-detail-cic').textContent = d.cic || '';
+  document.getElementById('dict-detail-verse').textContent = d.verse || '';
+  document.getElementById('dict-detail-def').textContent = d.simple;
+  document.getElementById('dict-btn-simple').classList.add('active');
+  document.getElementById('dict-btn-advanced').classList.remove('active');
+  document.getElementById('bible-panel-diccionario').style.display = 'none';
+  document.getElementById('bible-panel-dict-detail').style.display = 'flex';
+}
+
+function showDictList() {
+  document.getElementById('bible-panel-dict-detail').style.display = 'none';
+  document.getElementById('bible-panel-diccionario').style.display = 'flex';
+}
+
+function setDictLevel(level) {
+  if (!currentDictWord) return;
+  currentDictLevel = level;
+  const d = THEOLOGICAL_DICT[currentDictWord];
+  document.getElementById('dict-detail-def').textContent = d[level];
+  document.getElementById('dict-btn-simple').classList.toggle('active', level === 'simple');
+  document.getElementById('dict-btn-advanced').classList.toggle('active', level === 'advanced');
+}
+
+// ── CONCORDANCIA STRONG ──
+function searchStrong(val) {
+  const results = document.getElementById('strong-results');
+  if (!val || val.length < 2) {
+    results.innerHTML = '<div style="font-size:12px;color:var(--text3)">Escribe un numero Strong o palabra clave.</div>';
+    return;
+  }
+  const matches = Object.entries(STRONG_CONCORDANCE).filter(([k, v]) =>
+    k.toLowerCase().includes(val.toLowerCase()) ||
+    v.word.toLowerCase().includes(val.toLowerCase()) ||
+    v.meaning.toLowerCase().includes(val.toLowerCase())
+  );
+  if (!matches.length) {
+    results.innerHTML = '<div style="font-size:12px;color:var(--text3)">No se encontraron resultados.</div>';
+    return;
+  }
+  results.innerHTML = matches.map(([num, d]) => `
+    <div class="strong-card">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="strong-number">${num}</span>
+        <span class="strong-word">${d.word}</span>
+        <span class="strong-lang">${d.lang}</span>
+      </div>
+      <div class="strong-meaning">${d.meaning}</div>
+      <div style="font-size:11px;color:var(--text3)">Versiculo clave: <strong>${d.verse}</strong></div>
+      <div class="strong-refs">${(d.refs||[]).map(r => `<span class="strong-ref">${r}</span>`).join('')}</div>
+    </div>`).join('');
+}
+
+// ── MAPAS BIBLICOS ──
+let currentMapData = null;
+function renderMaps() {
+  const tabs = document.getElementById('map-tabs');
+  tabs.innerHTML = BIBLE_MAPS.map(m =>
+    `<button class="map-tab-btn ${m.id === currentMapId ? 'active' : ''}" onclick="selectMap('${m.id}',this)">${m.name}</button>`
+  ).join('');
+  showMap(currentMapId);
+}
+
+function selectMap(id, btn) {
+  currentMapId = id;
+  document.querySelectorAll('#map-tabs .map-tab-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  showMap(id);
+}
+
+function showMap(id) {
+  const map = BIBLE_MAPS.find(m => m.id === id);
+  if (!map) return;
+  currentMapData = map;
+  document.getElementById('map-description').textContent = map.description;
+  document.getElementById('map-places').innerHTML = map.places.map(p => `
+    <div class="map-place-item" onclick="openPlaceMap('${p.name}',${p.lat},${p.lng})">
+      <div class="map-place-icon">+</div>
+      <div>
+        <div class="map-place-name">${p.name}</div>
+        <div class="map-place-note">${p.note}</div>
+      </div>
+    </div>`).join('');
+}
+
+function openBibleMap() {
+  if (!currentMapData) return;
+  const center = currentMapData.places[0];
+  const url = 'https://www.google.com/maps/@' + currentMapData.lat + ',' + currentMapData.lng + ',' + currentMapData.zoom + 'z';
+  window.open(url, '_blank');
+}
+
+function openPlaceMap(name, lat, lng) {
+  window.open('https://www.google.com/maps/search/' + encodeURIComponent(name) + '/@' + lat + ',' + lng + ',12z', '_blank');
+}
+
+// ── BIBLIA LATINOAMERICANA: adaptar texto segun version ──
+const _origLoadChapter = loadBibleChapter;
+function loadBibleChapterWithBLA() {
+  if (currentBibleVersion !== 'BLA') {
+    _origLoadChapter();
+    return;
+  }
+  const bookName = document.getElementById('book-select').options[document.getElementById('book-select').selectedIndex]?.text || '';
+  document.getElementById('bible-chapter-title').textContent = bookName + ' ' + currentChapter + ' - Biblia Latinoamericana';
+  const data = BIBLE_SAMPLES[currentBook];
+  const blaKey = currentBook + '-' + currentChapter;
+  const blaData = BLA_VARIANTS[blaKey];
+
+  if (!data || !data[String(currentChapter)]) {
+    document.getElementById('bible-verses').innerHTML = '<div style="text-align:center;padding:30px;color:var(--text3);font-size:13px;">Este capitulo estara disponible en la version completa de la Biblia Latinoamericana.</div>';
+    return;
+  }
+
+  const verses = data[String(currentChapter)];
+  document.getElementById('bible-verses').innerHTML = verses.map(v => {
+    const blaText = blaData && blaData[v.n] ? blaData[v.n] : v.t + ' <span style="font-size:10px;color:var(--text3)">[BJ]</span>';
+    return `<div class="bible-verse-item"><span class="bv-num">${v.n}</span><div><span class="bv-text">${blaText}</span></div></div>`;
+  }).join('');
+}
+
+// Override loadBibleChapter para BLA
+const origLoadBibleChapter = loadBibleChapter;
+loadBibleChapter = function() {
+  if (currentBibleVersion === 'BLA') {
+    loadBibleChapterWithBLA();
+  } else {
+    origLoadBibleChapter();
+  }
+};
+
+// ════════════════════════════════════════════════
+// API.BIBLE - Biblia completa
+// ════════════════════════════════════════════════
+// Para obtener tu API Key gratuita:
+// 1. Ve a https://scripture.api.bible/register
+// 2. Crea una cuenta gratuita
+// 3. Crea una app y copia el API Key
+// 4. Pegalo aqui:
+const API_BIBLE_KEY = 'TU_API_BIBLE_KEY_AQUI';
+
+// IDs de las versiones en API.Bible (espanol)
+const API_BIBLE_VERSIONS = {
+  BJ:  '592420522e16049f-01',  // Biblia de Jerusalen (approximacion)
+  BLA: 'b32b9d1b64b4ef29-01',  // Biblia Latinoamericana
+  RV:  '592420522e16049f-01',  // Reina-Valera 1960
+  NVI: '78a9f6124f344018-01',  // NVI
+};
+
+// Mapeo de libros a IDs de API.Bible
+const BOOK_ID_MAP = {
+  GEN:'GEN',EXO:'EXO',SAL:'PSA',PRO:'PRO',ISA:'ISA',
+  MAT:'MAT',MAR:'MRK',LUC:'LUK',JUA:'JHN',HEC:'ACT',
+  ROM:'ROM','1CO':'1CO',GAL:'GAL',EFE:'EPH',COL:'COL',
+  '1TI':'1TI',HEB:'HEB',SAN:'JAS','1PE':'1PE',APO:'REV',
+  '1MA':'1MA','2MA':'2MA',
+};
+
+let apiBibleCache = {};
+
+async function loadChapterFromAPI(book, chapter, version) {
+  if (API_BIBLE_KEY === 'TU_API_BIBLE_KEY_AQUI') return null;
+  const cacheKey = version + '-' + book + '-' + chapter;
+  if (apiBibleCache[cacheKey]) return apiBibleCache[cacheKey];
+  const versionId = API_BIBLE_VERSIONS[version];
+  const bookId = BOOK_ID_MAP[book] || book;
+  if (!versionId) return null;
+  try {
+    const url = 'https://api.scripture.api.bible/v1/bibles/' + versionId + '/chapters/' + bookId + '.' + chapter + '?content-type=text&include-notes=false&include-titles=false&include-chapter-numbers=false&include-verse-numbers=true&include-verse-spans=false';
+    const res = await fetch(url, { headers: { 'api-key': API_BIBLE_KEY } });
+    if (!res.ok) return null;
+    const data = await res.json();
+    const content = data.data?.content || '';
+    // Parsear el texto plano a array de versiculos
+    const verses = [];
+    const lines = content.split(/\r?\n/).filter(l => l.trim());
+    lines.forEach(line => {
+      const match = line.match(/^\[?(\d+)\]?\s*(.+)/);
+      if (match) verses.push({ n: parseInt(match[1]), t: match[2].trim() });
+    });
+    apiBibleCache[cacheKey] = verses;
+    return verses;
+  } catch(e) { return null; }
+}
+
+// Override de loadBibleChapter para usar API.Bible cuando hay key
+const _baseLoadChapter = loadBibleChapter;
+loadBibleChapter = async function() {
+  if (API_BIBLE_KEY !== 'TU_API_BIBLE_KEY_AQUI') {
+    const note = document.getElementById('api-bible-note');
+    const status = document.getElementById('api-bible-status');
+    note.style.display = 'block';
+    status.textContent = 'Cargando ' + currentBibleVersion + '...';
+    const verses = await loadChapterFromAPI(currentBook, currentChapter, currentBibleVersion);
+    if (verses && verses.length > 0) {
+      const bookName = document.getElementById('book-select').options[document.getElementById('book-select').selectedIndex]?.text || '';
+      const vName = VERSION_LABELS[currentBibleVersion] || currentBibleVersion;
+      document.getElementById('bible-chapter-title').textContent = bookName + ' ' + currentChapter + ' - ' + vName;
+      document.getElementById('bible-verses').innerHTML = verses.map(v =>
+        '<div class="bible-verse-item" id="verse-' + v.n + '">' +
+        '<span class="bv-num">' + v.n + '</span>' +
+        '<div><span class="bv-text">' + v.t + '</span>' +
+        '<div class="verse-actions">' +
+        '<button class="share-verse-btn" onclick="shareVerse(' + v.n + ',\'' + v.t.replace(/'/g,"\\'") + '\')">WhatsApp</button>' +
+        '<button class="share-verse-btn" onclick="shareVerseTelegram(' + v.n + ',\'' + v.t.replace(/'/g,"\\'") + '\')">Telegram</button>' +
+        '</div></div></div>'
+      ).join('');
+      note.style.display = 'none';
+      document.getElementById('audio-controls').style.display = 'flex';
+      return;
+    }
+    note.style.display = 'none';
+  }
+  _baseLoadChapter();
+  // Agregar botones de compartir a versiculos existentes
+  setTimeout(() => {
+    document.querySelectorAll('.bible-verse-item').forEach(item => {
+      if (!item.querySelector('.verse-actions')) {
+        const numEl = item.querySelector('.bv-num');
+        const textEl = item.querySelector('.bv-text');
+        if (numEl && textEl) {
+          const n = numEl.textContent;
+          const t = textEl.textContent.replace(/'/g, "\'");
+          const actions = document.createElement('div');
+          actions.className = 'verse-actions';
+          actions.innerHTML = '<button class="share-verse-btn" onclick="shareVerse(' + n + ',\'' + t + '\')">WhatsApp</button>' +
+            '<button class="share-verse-btn" onclick="shareVerseTelegram(' + n + ',\'' + t + '\')">Telegram</button>';
+          item.querySelector('div').appendChild(actions);
+        }
+      }
+    });
+    document.getElementById('audio-controls').style.display = 'flex';
+  }, 300);
+};
+
+// ════════════════════════════════════════════════
+// AUDIO - Text to Speech
+// ════════════════════════════════════════════════
+let audioSpeech = null;
+let audioPlaying = false;
+let audioVerseIndex = 0;
+let audioVerses = [];
+
+function toggleAudio() {
+  if (audioPlaying) {
+    pauseAudio();
+  } else {
+    playAudio();
+  }
+}
+
+function playAudio() {
+  const items = document.querySelectorAll('.bible-verse-item');
+  audioVerses = Array.from(items).map(item => ({
+    n: item.querySelector('.bv-num')?.textContent || '',
+    t: item.querySelector('.bv-text')?.textContent || '',
+    el: item,
+  })).filter(v => v.t);
+
+  if (!audioVerses.length) { showToast('No hay texto para escuchar'); return; }
+  audioPlaying = true;
+
+  const playBtn = document.getElementById('audio-play-btn');
+  playBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg> Pausar';
+  document.getElementById('audio-status').textContent = 'Leyendo...';
+  readVerses(audioVerseIndex);
+}
+
+function readVerses(idx) {
+  if (!audioPlaying || idx >= audioVerses.length) {
+    stopAudio();
+    return;
+  }
+  audioVerseIndex = idx;
+  const verse = audioVerses[idx];
+
+  // Highlight
+  document.querySelectorAll('.bible-verse-item').forEach(el => el.style.background = '');
+  verse.el.style.background = 'var(--gold-pale)';
+  verse.el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+  const speed = parseFloat(document.getElementById('audio-speed').value || '1');
+  const lang = currentLang.speech || 'es-ES';
+
+  audioSpeech = new SpeechSynthesisUtterance(verse.n + '. ' + verse.t);
+  audioSpeech.lang = lang;
+  audioSpeech.rate = speed;
+  audioSpeech.onend = () => { if (audioPlaying) readVerses(idx + 1); };
+  audioSpeech.onerror = () => { if (audioPlaying) readVerses(idx + 1); };
+
+  window.speechSynthesis.speak(audioSpeech);
+  document.getElementById('audio-status').textContent = 'Versiculo ' + verse.n + ' de ' + audioVerses.length;
+}
+
+function pauseAudio() {
+  audioPlaying = false;
+  window.speechSynthesis.cancel();
+  const playBtn = document.getElementById('audio-play-btn');
+  playBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg> Continuar';
+  document.getElementById('audio-status').textContent = 'Pausado en versiculo ' + (audioVerseIndex + 1);
+}
+
+function stopAudio() {
+  audioPlaying = false;
+  audioVerseIndex = 0;
+  window.speechSynthesis.cancel();
+  document.querySelectorAll('.bible-verse-item').forEach(el => el.style.background = '');
+  const playBtn = document.getElementById('audio-play-btn');
+  if (playBtn) {
+    playBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg> Escuchar';
+    document.getElementById('audio-status').textContent = 'Listo para escuchar';
+  }
+}
+
+function changeAudioSpeed(val) {
+  if (audioPlaying) {
+    window.speechSynthesis.cancel();
+    readVerses(audioVerseIndex);
+  }
+}
+
+// ════════════════════════════════════════════════
+// PLANES DIARIOS
+// ════════════════════════════════════════════════
+const READING_PLANS = [
+  {
+    id: 'nt_90',
+    icon: '+',
+    name: 'NT en 90 dias',
+    desc: 'Lee el Nuevo Testamento completo en 3 meses',
+    days: [
+      { day:1, ref:'Mateo 1-4', book:'MAT', chapter:1 },
+      { day:2, ref:'Mateo 5-7', book:'MAT', chapter:5 },
+      { day:3, ref:'Mateo 8-10', book:'MAT', chapter:8 },
+      { day:4, ref:'Mateo 11-13', book:'MAT', chapter:11 },
+      { day:5, ref:'Mateo 14-17', book:'MAT', chapter:14 },
+      { day:6, ref:'Mateo 18-20', book:'MAT', chapter:18 },
+      { day:7, ref:'Mateo 21-23', book:'MAT', chapter:21 },
+      { day:8, ref:'Mateo 24-25', book:'MAT', chapter:24 },
+      { day:9, ref:'Mateo 26-28', book:'MAT', chapter:26 },
+      { day:10, ref:'Marcos 1-3', book:'MAR', chapter:1 },
+      { day:11, ref:'Marcos 4-6', book:'MAR', chapter:4 },
+      { day:12, ref:'Marcos 7-9', book:'MAR', chapter:7 },
+      { day:13, ref:'Marcos 10-12', book:'MAR', chapter:10 },
+      { day:14, ref:'Marcos 13-16', book:'MAR', chapter:13 },
+      { day:15, ref:'Lucas 1-3', book:'LUC', chapter:1 },
+      { day:16, ref:'Lucas 4-6', book:'LUC', chapter:4 },
+      { day:17, ref:'Lucas 7-9', book:'LUC', chapter:7 },
+      { day:18, ref:'Lucas 10-12', book:'LUC', chapter:10 },
+      { day:19, ref:'Lucas 13-15', book:'LUC', chapter:13 },
+      { day:20, ref:'Lucas 16-18', book:'LUC', chapter:16 },
+      { day:21, ref:'Lucas 19-21', book:'LUC', chapter:19 },
+      { day:22, ref:'Lucas 22-24', book:'LUC', chapter:22 },
+      { day:23, ref:'Juan 1-3', book:'JUA', chapter:1 },
+      { day:24, ref:'Juan 4-6', book:'JUA', chapter:4 },
+      { day:25, ref:'Juan 7-9', book:'JUA', chapter:7 },
+      { day:26, ref:'Juan 10-12', book:'JUA', chapter:10 },
+      { day:27, ref:'Juan 13-15', book:'JUA', chapter:13 },
+      { day:28, ref:'Juan 16-18', book:'JUA', chapter:16 },
+      { day:29, ref:'Juan 19-21', book:'JUA', chapter:19 },
+      { day:30, ref:'Hechos 1-3', book:'HEC', chapter:1 },
+    ]
+  },
+  {
+    id: 'salmos_30',
+    icon: 'S',
+    name: 'Salmos en 30 dias',
+    desc: 'Los Salmos mas importantes en un mes',
+    days: [
+      { day:1, ref:'Salmo 1', book:'SAL', chapter:1 },
+      { day:2, ref:'Salmo 8', book:'SAL', chapter:8 },
+      { day:3, ref:'Salmo 19', book:'SAL', chapter:19 },
+      { day:4, ref:'Salmo 22', book:'SAL', chapter:22 },
+      { day:5, ref:'Salmo 23', book:'SAL', chapter:23 },
+      { day:6, ref:'Salmo 27', book:'SAL', chapter:27 },
+      { day:7, ref:'Salmo 34', book:'SAL', chapter:34 },
+      { day:8, ref:'Salmo 46', book:'SAL', chapter:46 },
+      { day:9, ref:'Salmo 51', book:'SAL', chapter:51 },
+      { day:10, ref:'Salmo 63', book:'SAL', chapter:63 },
+      { day:11, ref:'Salmo 84', book:'SAL', chapter:84 },
+      { day:12, ref:'Salmo 90', book:'SAL', chapter:90 },
+      { day:13, ref:'Salmo 91', book:'SAL', chapter:91 },
+      { day:14, ref:'Salmo 103', book:'SAL', chapter:103 },
+      { day:15, ref:'Salmo 116', book:'SAL', chapter:116 },
+      { day:16, ref:'Salmo 119:1-48', book:'SAL', chapter:119 },
+      { day:17, ref:'Salmo 121', book:'SAL', chapter:121 },
+      { day:18, ref:'Salmo 130', book:'SAL', chapter:130 },
+      { day:19, ref:'Salmo 139', book:'SAL', chapter:139 },
+      { day:20, ref:'Salmo 145-150', book:'SAL', chapter:145 },
+    ]
+  },
+  {
+    id: 'apologetica',
+    icon: 'A',
+    name: 'Plan Apologetico',
+    desc: 'Los textos biblicos clave para defender la fe',
+    days: [
+      { day:1, ref:'Mateo 16 - El Papado', book:'MAT', chapter:16 },
+      { day:2, ref:'Juan 6 - La Eucaristia', book:'JUA', chapter:6 },
+      { day:3, ref:'Juan 20 - La Confesion', book:'JUA', chapter:20 },
+      { day:4, ref:'Lucas 1 - Maria', book:'LUC', chapter:1 },
+      { day:5, ref:'Hechos 2 - El Bautismo', book:'HEC', chapter:2 },
+      { day:6, ref:'Romanos 3 - La Justificacion', book:'ROM', chapter:3 },
+      { day:7, ref:'1 Corintios 3 - Purgatorio', book:'1CO', chapter:3 },
+      { day:8, ref:'Apocalipsis 5 - Los Santos', book:'APO', chapter:5 },
+      { day:9, ref:'Apocalipsis 12 - Maria en Ap', book:'APO', chapter:12 },
+      { day:10, ref:'2 Macabeos 12 - Oracion por difuntos', book:'2MA', chapter:12 },
+    ]
+  },
+  {
+    id: 'cuaresma',
+    icon: 'C',
+    name: 'Cuaresma 40 dias',
+    desc: 'Preparacion espiritual para la Pascua',
+    days: Array.from({length:40}, (_,i) => {
+      const refs = [
+        {ref:'Mateo 4:1-11',book:'MAT',chapter:4},
+        {ref:'Salmo 51',book:'SAL',chapter:51},
+        {ref:'Joel 2:12-18',book:'SAL',chapter:2},
+        {ref:'Lucas 4:1-13',book:'LUC',chapter:4},
+        {ref:'Juan 3:14-21',book:'JUA',chapter:3},
+        {ref:'Juan 11:1-45',book:'JUA',chapter:11},
+        {ref:'Marcos 14:32-42',book:'MAR',chapter:14},
+      ];
+      const r = refs[i % refs.length];
+      return { day: i+1, ref: 'Dia '+(i+1)+': '+r.ref, book: r.book, chapter: r.chapter };
+    })
+  },
+];
+
+let currentPlanId = null;
+let planProgress = JSON.parse(localStorage.getItem('ef_plan_progress') || '{}');
+
+function renderPlanesGrid() {
+  const grid = document.getElementById('planes-grid');
+  grid.innerHTML = READING_PLANS.map(plan => {
+    const progress = planProgress[plan.id] || {};
+    const completed = Object.keys(progress).length;
+    const total = plan.days.length;
+    const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
+    return '<div class="plan-item ' + (currentPlanId === plan.id ? 'active-plan' : '') + '" onclick="openPlan(\'' + plan.id + '\')">' +
+      `<div class="plan-item-icon">${plan.icon}</div>` +
+      `<div class="plan-item-name">${plan.name}</div>` +
+      `<div class="plan-item-desc">${plan.desc}</div>` +
+      `<div class="plan-progress-bar"><div class="plan-progress-fill" style="width:${pct}%"></div></div>` +
+      `<div class="plan-progress-label">${pct}% completado (${completed}/${total} dias)</div>` +
+    '</div>';
+  }).join('');
+}
+
+function openPlan(planId) {
+  currentPlanId = planId;
+  const plan = READING_PLANS.find(p => p.id === planId);
+  if (!plan) return;
+  const progress = planProgress[planId] || {};
+  const completed = Object.keys(progress).length;
+  const pct = Math.round((completed / plan.days.length) * 100);
+
+  document.getElementById('plan-detail-name').textContent = plan.name;
+  document.getElementById('plan-detail-pct').textContent = pct + '%';
+  document.getElementById('plan-detail-days').textContent = completed + ' de ' + plan.days.length + ' dias';
+  document.getElementById('plan-detail-fill').style.width = pct + '%';
+
+  const list = document.getElementById('plan-day-list');
+  list.innerHTML = plan.days.map(day => {
+    const done = progress[day.day];
+    const cls = 'plan-day-item' + (done ? ' completed' : '');
+    const check = done ? 'v' : '';
+    return `<div class="${cls}" onclick="togglePlanDay('${planId}',${day.day},'${day.book}',${day.chapter})">` +
+      `<div class="plan-day-check">${check}</div>` +
+      `<div><div class="plan-day-text">Dia ${day.day}</div><div class="plan-day-ref">${day.ref}</div></div>` +
+      '</div>';
+  }).join('');
+
+  document.getElementById('planes-grid-view').style.display = 'none';
+  document.getElementById('planes-detail-view').style.display = 'flex';
+}
+
+function togglePlanDay(planId, day, book, chapter) {
+  if (!planProgress[planId]) planProgress[planId] = {};
+  if (planProgress[planId][day]) {
+    delete planProgress[planId][day];
+  } else {
+    planProgress[planId][day] = Date.now();
+    // Ir al capitulo
+    const bookSel = document.getElementById('book-select');
+    for (let i = 0; i < bookSel.options.length; i++) {
+      if (bookSel.options[i].value === book) { bookSel.selectedIndex = i; break; }
+    }
+    currentBook = book; currentChapter = chapter;
+    setBibleTool('texto', null);
+    const tabs = document.querySelectorAll('[onclick*="setBibleTool"]');
+    tabs.forEach(t => { if (t.textContent === 'Texto') t.classList.add('active'); else t.classList.remove('active'); });
+    loadBibleChapter();
+    showToast('Dia ' + day + ' marcado como leido');
+  }
+  localStorage.setItem('ef_plan_progress', JSON.stringify(planProgress));
+  openPlan(planId);
+}
+
+function showPlanesGrid() {
+  document.getElementById('planes-detail-view').style.display = 'none';
+  document.getElementById('planes-grid-view').style.display = 'block';
+  renderPlanesGrid();
+}
+
+// ════════════════════════════════════════════════
+// COMUNIDAD - Compartir versiculos
+// ════════════════════════════════════════════════
+function shareVerse(num, text) {
+  const bookName = document.getElementById('book-select').options[document.getElementById('book-select').selectedIndex]?.text || '';
+  const version = VERSION_LABELS[currentBibleVersion] || currentBibleVersion;
+  const msg = bookName + ' ' + currentChapter + ':' + num + '\n\n"' + text + '"\n\n- ' + version + '\n\nEscudo de Fe - Apologetica Catolica\nhttps://isaig91-tech.github.io/escudo-de-fe';
+  window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
+}
+
+function shareVerseTelegram(num, text) {
+  const bookName = document.getElementById('book-select').options[document.getElementById('book-select').selectedIndex]?.text || '';
+  const version = VERSION_LABELS[currentBibleVersion] || currentBibleVersion;
+  const msg = bookName + ' ' + currentChapter + ':' + num + '\n\n"' + text + '"\n\n- ' + version + '\n\nEscudo de Fe';
+  window.open('https://t.me/share/url?url=https://isaig91-tech.github.io/escudo-de-fe&text=' + encodeURIComponent(msg), '_blank');
+}
+
+// ── Override setBibleTool para incluir planes ──
+const _origSetBibleTool = setBibleTool;
+setBibleTool = function(tool, btn) {
+  if (tool === 'planes') {
+    currentBibleTool = 'planes';
+    document.querySelectorAll('.map-tab-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+    ['bible-content','bible-panel-diccionario','bible-panel-dict-detail','bible-panel-strong','bible-panel-mapas'].forEach(id => {
+      const el = document.getElementById(id); if (el) el.style.display = 'none';
+    });
+    document.getElementById('bible-panel-planes').style.display = 'flex';
+    document.getElementById('bible-nav-row').style.display = 'none';
+    document.getElementById('audio-controls').style.display = 'none';
+    renderPlanesGrid();
+  } else {
+    _origSetBibleTool(tool, btn);
+    document.getElementById('bible-panel-planes').style.display = 'none';
+  }
+};
 </script>
 </body>
 </html>
