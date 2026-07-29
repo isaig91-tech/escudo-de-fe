@@ -682,6 +682,86 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
     <div style="text-align:center;font-size:10px;color:var(--text3);padding-bottom:8px;">Escudo de Fe v1.0 - Gratuita para todos los catolicos del mundo</div>
   </div>
 </section>
+
+<!-- ── BIBLIA ── -->
+<section class="screen" id="screen-biblia">
+  <div class="bible-area">
+
+    <!-- BARRA SUPERIOR: version + herramientas -->
+    <div class="bible-topbar">
+      <button class="bible-version-selector" id="bible-ver-btn" onclick="openModal('bible-version-modal')">
+        <span id="bible-ver-label">Biblia de Jerusalen</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div style="display:flex;gap:6px;">
+        <button class="bible-tool-icon" onclick="toggleAudio()" id="audio-top-btn" title="Escuchar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 013 3v7a3 3 0 11-6 0V5a3 3 0 013-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/></svg>
+        </button>
+        <button class="bible-tool-icon" onclick="openBibleTools()" title="Herramientas">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- BARRA DE AUDIO (oculta por defecto) -->
+    <div class="bible-audio-bar" id="bible-audio-bar" style="display:none;">
+      <button class="audio-action-btn" id="audio-play-btn" onclick="toggleAudioPlay()">
+        <svg id="audio-icon" viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      </button>
+      <div class="audio-progress-wrap">
+        <span class="audio-verse-info" id="audio-status">Listo</span>
+      </div>
+      <select class="audio-speed-sel" id="audio-speed" onchange="changeAudioSpeed(this.value)">
+        <option value="0.8">0.8x</option>
+        <option value="1" selected>1x</option>
+        <option value="1.2">1.2x</option>
+        <option value="1.5">1.5x</option>
+      </select>
+      <button onclick="stopAudio()" class="audio-close-btn">x</button>
+    </div>
+
+    <!-- NAVEGACION LIBRO / CAPITULO -->
+    <div class="bible-nav-bar">
+      <button class="bible-nav-btn" onclick="openModal('bible-book-modal')">
+        <span id="bible-book-label">Genesis</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="bible-chapter-nav">
+        <button class="bible-ch-arrow" onclick="prevChapter()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="bible-nav-btn" onclick="openModal('bible-chapter-modal')">
+          <span id="bible-ch-label">Cap. 1</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <button class="bible-ch-arrow" onclick="nextChapter()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ADVERTENCIA TNM -->
+    <div id="bible-warn-tnm" class="bible-warn-bar" style="display:none;">
+      Solo para uso apologetico. La TNM contiene alteraciones doctrinales.
+    </div>
+
+    <!-- CONTENIDO BIBLICO -->
+    <div class="bible-scroll-area" id="bible-scroll-area">
+      <div id="bible-chapter-heading" class="bible-ch-heading"></div>
+      <div id="bible-verses-container"></div>
+      <div class="bible-chapter-nav-bottom">
+        <button class="bible-nav-bottom-btn" onclick="prevChapter()">Capitulo anterior</button>
+        <button class="bible-nav-bottom-btn primary" onclick="nextChapter()">Siguiente capitulo</button>
+      </div>
+    </div>
+
+    <!-- LOADING -->
+    <div id="bible-loading" style="display:none;text-align:center;padding:40px;color:var(--text3);font-size:13px;">
+      Cargando...
+    </div>
+
+  </div>
+</section>
 </div><!-- /screens -->
 
 <!-- ANUNCIO PANTALLA COMPLETA cada 5 consultas -->
@@ -822,85 +902,7 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
   </div>
 </div>
 
-<!-- ── BIBLIA ── -->
-<section class="screen" id="screen-biblia">
-  <div class="bible-area">
 
-    <!-- BARRA SUPERIOR: version + herramientas -->
-    <div class="bible-topbar">
-      <button class="bible-version-selector" id="bible-ver-btn" onclick="openModal('bible-version-modal')">
-        <span id="bible-ver-label">Biblia de Jerusalen</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div style="display:flex;gap:6px;">
-        <button class="bible-tool-icon" onclick="toggleAudio()" id="audio-top-btn" title="Escuchar">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 013 3v7a3 3 0 11-6 0V5a3 3 0 013-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/></svg>
-        </button>
-        <button class="bible-tool-icon" onclick="openBibleTools()" title="Herramientas">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- BARRA DE AUDIO (oculta por defecto) -->
-    <div class="bible-audio-bar" id="bible-audio-bar" style="display:none;">
-      <button class="audio-action-btn" id="audio-play-btn" onclick="toggleAudioPlay()">
-        <svg id="audio-icon" viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-      </button>
-      <div class="audio-progress-wrap">
-        <span class="audio-verse-info" id="audio-status">Listo</span>
-      </div>
-      <select class="audio-speed-sel" id="audio-speed" onchange="changeAudioSpeed(this.value)">
-        <option value="0.8">0.8x</option>
-        <option value="1" selected>1x</option>
-        <option value="1.2">1.2x</option>
-        <option value="1.5">1.5x</option>
-      </select>
-      <button onclick="stopAudio()" class="audio-close-btn">x</button>
-    </div>
-
-    <!-- NAVEGACION LIBRO / CAPITULO -->
-    <div class="bible-nav-bar">
-      <button class="bible-nav-btn" onclick="openModal('bible-book-modal')">
-        <span id="bible-book-label">Genesis</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="bible-chapter-nav">
-        <button class="bible-ch-arrow" onclick="prevChapter()">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
-        <button class="bible-nav-btn" onclick="openModal('bible-chapter-modal')">
-          <span id="bible-ch-label">Cap. 1</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <button class="bible-ch-arrow" onclick="nextChapter()">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- ADVERTENCIA TNM -->
-    <div id="bible-warn-tnm" class="bible-warn-bar" style="display:none;">
-      Solo para uso apologetico. La TNM contiene alteraciones doctrinales.
-    </div>
-
-    <!-- CONTENIDO BIBLICO -->
-    <div class="bible-scroll-area" id="bible-scroll-area">
-      <div id="bible-chapter-heading" class="bible-ch-heading"></div>
-      <div id="bible-verses-container"></div>
-      <div class="bible-chapter-nav-bottom">
-        <button class="bible-nav-bottom-btn" onclick="prevChapter()">Capitulo anterior</button>
-        <button class="bible-nav-bottom-btn primary" onclick="nextChapter()">Siguiente capitulo</button>
-      </div>
-    </div>
-
-    <!-- LOADING -->
-    <div id="bible-loading" style="display:none;text-align:center;padding:40px;color:var(--text3);font-size:13px;">
-      Cargando...
-    </div>
-
-  </div>
-</section>
 
 <!-- MODAL SELECCION DE VERSION -->
 <div class="modal-backdrop" id="bible-version-modal">
