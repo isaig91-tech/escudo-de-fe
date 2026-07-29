@@ -30,8 +30,8 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
 .tab{flex:1;padding:8px 2px 7px;font-size:9.5px;color:rgba(255,255,255,.38);text-align:center;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;font-family:'Inter',sans-serif;}
 .tab svg{display:block;margin:0 auto 3px;width:17px;height:17px;}
 .tab.active{color:var(--gold);border-bottom-color:var(--gold);}
-.screens{flex:1;overflow:hidden;position:relative;}
-.screen{display:none;height:100%;flex-direction:column;overflow:hidden;}
+.screens{flex:1;overflow:hidden;position:relative;min-height:0;}
+.screen{display:none;height:100%;flex-direction:column;overflow:hidden;min-height:0;}
 .screen.active{display:flex;}
 
 /* -- DEBATE -- */
@@ -84,7 +84,7 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
 .premium-lock .unlock-btn{background:var(--gold);color:var(--navy);border:none;border-radius:9px;padding:8px 20px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Cinzel',serif;}
 
 /* -- BIBLIA -- */
-.bible-area{flex:1;overflow-y:auto;display:flex;flex-direction:column;}
+.bible-area{flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:0;}
 .bible-top{padding:12px 13px 8px;display:flex;flex-direction:column;gap:8px;flex-shrink:0;}
 .bible-version-row{display:flex;gap:5px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none;}
 .bible-version-row::-webkit-scrollbar{display:none;}
@@ -339,7 +339,7 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
 .offline-badge{font-size:10px;background:#e8f2fc;color:var(--blue);padding:2px 7px;border-radius:20px;font-weight:500;}
 
 /* ── BIBLIA REDISEÑADA (estilo Oremos) ── */
-.bible-area{flex:1;display:flex;flex-direction:column;overflow:hidden;}
+.bible-area{flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:0;}
 .bible-topbar{background:var(--navy2);padding:9px 13px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;border-bottom:.5px solid rgba(255,255,255,.06);}
 .bible-version-selector{background:rgba(255,255,255,.08);border:.5px solid rgba(255,255,255,.15);border-radius:9px;color:#fff;font-size:12px;font-weight:500;padding:6px 11px;cursor:pointer;display:flex;align-items:center;gap:6px;font-family:Inter,sans-serif;max-width:200px;}
 .bible-tool-icon{background:rgba(255,255,255,.08);border:.5px solid rgba(255,255,255,.12);border-radius:8px;color:var(--gold);padding:6px 8px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
@@ -895,7 +895,7 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
     </div>
 
     <!-- LOADING -->
-    <div id="bible-loading" style="display:none;text-align:center;padding:40px;color:var(--text3);font-size:13px;flex:1;">
+    <div id="bible-loading" style="display:none;text-align:center;padding:40px;color:var(--text3);font-size:13px;">
       Cargando...
     </div>
 
@@ -1039,8 +1039,8 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
 .tab{flex:1;padding:8px 2px 7px;font-size:9.5px;color:rgba(255,255,255,.38);text-align:center;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;font-family:'Inter',sans-serif;}
 .tab svg{display:block;margin:0 auto 3px;width:17px;height:17px;}
 .tab.active{color:var(--gold);border-bottom-color:var(--gold);}
-.screens{flex:1;overflow:hidden;position:relative;}
-.screen{display:none;height:100%;flex-direction:column;overflow:hidden;}
+.screens{flex:1;overflow:hidden;position:relative;min-height:0;}
+.screen{display:none;height:100%;flex-direction:column;overflow:hidden;min-height:0;}
 .screen.active{display:flex;}
 
 /* -- DEBATE -- */
@@ -1093,7 +1093,7 @@ html,body{height:100%;font-family:'Inter',system-ui,sans-serif;background:#222;c
 .premium-lock .unlock-btn{background:var(--gold);color:var(--navy);border:none;border-radius:9px;padding:8px 20px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Cinzel',serif;}
 
 /* -- BIBLIA -- */
-.bible-area{flex:1;overflow-y:auto;display:flex;flex-direction:column;}
+.bible-area{flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:0;}
 .bible-top{padding:12px 13px 8px;display:flex;flex-direction:column;gap:8px;flex-shrink:0;}
 .bible-version-row{display:flex;gap:5px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none;}
 .bible-version-row::-webkit-scrollbar{display:none;}
